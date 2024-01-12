@@ -1,0 +1,882 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDF5D964-4C0F-4F19-B674-58A38A5E5401}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Storemey</RootNamespace>
+    <AssemblyName>Storemey.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abp, Version=3.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.3.8.1\lib\netstandard2.0\Abp.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.AutoMapper, Version=3.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.AutoMapper.3.8.1\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero, Version=3.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.3.8.1\lib\net461\Abp.Zero.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero.Common, Version=3.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.Common.3.8.1\lib\netstandard2.0\Abp.Zero.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Collection, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e57c3f0a3d6646db, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.Collection.4.0.0\lib\net45\AutoMapper.Collection.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.3.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.LoggingFacility.4.1.0\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="envdte, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\VSSDK.DTE.7.0.4\lib\net20\envdte.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="EnvDTE80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\EnvDTE80.8.0.1\lib\net10\EnvDTE80.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="FileHelpers, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e0c08d59cc3d657, processorArchitecture=MSIL">
+      <HintPath>..\packages\FileHelpers.3.3.0\lib\net45\FileHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.11.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.OLE.Interop.7.10.6070\lib\Microsoft.VisualStudio.OLE.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.7.10.6071\lib\Microsoft.VisualStudio.Shell.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.10.0.10.0.30319\lib\Microsoft.VisualStudio.Shell.Interop.10.0.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.11.0.11.0.61030\lib\Microsoft.VisualStudio.Shell.Interop.11.0.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.12.0.12.0.30110\lib\Microsoft.VisualStudio.Shell.Interop.12.0.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.8.0.8.0.50727\lib\Microsoft.VisualStudio.Shell.Interop.8.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TemplateWizardInterface, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\VSSDK.TemplateWizardInterface.12.0.4\lib\net20\Microsoft.VisualStudio.TemplateWizardInterface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.TextManager.Interop.7.10.6070\lib\Microsoft.VisualStudio.TextManager.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.TextManager.Interop.8.0.8.0.50727\lib\Microsoft.VisualStudio.TextManager.Interop.8.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Administration, Version=10.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Administration.11.1.0\lib\netstandard1.5\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.0.1\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.0.0\lib\net46\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Concurrent, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.Concurrent.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Context, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Context.1.1.0\lib\net46\Nito.AsyncEx.Context.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Coordination, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Coordination.1.0.2\lib\net46\Nito.AsyncEx.Coordination.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Enlightenment, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.Enlightenment.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Tasks, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Tasks.1.1.0\lib\net46\Nito.AsyncEx.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Collections.Deque, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Collections.Deque.1.0.4\lib\netstandard2.0\Nito.Collections.Deque.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Disposables, Version=1.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Disposables.1.2.3\lib\netstandard2.0\Nito.Disposables.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.VisualStudio, Version=4.9.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.VisualStudio.4.9.1\lib\net46\NuGet.VisualStudio.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\VSSDK.DTE.7.0.4\lib\net20\stdole.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext">
+      <HintPath>..\packages\System.AppContext.4.1.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.5.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Console">
+      <HintPath>..\packages\System.Console.4.0.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceSource">
+      <HintPath>..\packages\System.Diagnostics.TraceSource.4.0.0\lib\net46\System.Diagnostics.TraceSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Globalization.Calendars">
+      <HintPath>..\packages\System.Globalization.Calendars.4.0.1\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>..\packages\System.IO.Compression.4.1.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.0.1\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+      <HintPath>..\packages\System.IO.FileSystem.4.0.1\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.0.8.11\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http">
+      <HintPath>..\packages\System.Net.Http.4.1.0\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets">
+      <HintPath>..\packages\System.Net.Sockets.4.1.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.TypeExtensions, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.TypeExtensions.4.4.0\lib\net461\System.Reflection.TypeExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Formatters.4.3.0\lib\net46\System.Runtime.Serialization.Formatters.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Claims, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Claims.4.3.0\lib\net46\System.Security.Claims.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.2.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.0.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.0.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.1.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.ServiceProcess.ServiceController, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceProcess.ServiceController.4.1.0\lib\net461\System.ServiceProcess.ServiceController.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.4.3.0\lib\net46\System.Xml.XPath.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.XmlDocument.4.3.0\lib\net46\System.Xml.XPath.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="TimeZoneConverter, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TimeZoneConverter.2.4.1\lib\net45\TimeZoneConverter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminBugTrackerComments\AdminBugTrackerCommentsAppService.cs" />
+    <Compile Include="AdminBugTrackerComments\Dto\AdminBugTrackerCommentsAdvanceSearchInputDto.cs" />
+    <Compile Include="AdminBugTrackerComments\Dto\CreateAdminBugTrackerCommentsInputDto.cs" />
+    <Compile Include="AdminBugTrackerComments\Dto\DeleteAdminBugTrackerCommentsInputDto.cs" />
+    <Compile Include="AdminBugTrackerComments\Dto\ExportAdminBugTrackerCommentsOutputDto.cs" />
+    <Compile Include="AdminBugTrackerComments\Dto\GetAdminBugTrackerCommentsInputDto.cs" />
+    <Compile Include="AdminBugTrackerComments\Dto\GetAdminBugTrackerCommentsOutputDto.cs" />
+    <Compile Include="AdminBugTrackerComments\Dto\UpdateAdminBugTrackerCommentsInputDto.cs" />
+    <Compile Include="AdminBugTrackerComments\IAdminBugTrackerCommentsAppService.cs" />
+    <Compile Include="AdminBugTrackers\AdminBugTrackersAppService.cs" />
+    <Compile Include="AdminBugTrackers\Dto\AdminBugTrackersAdvanceSearchInputDto.cs" />
+    <Compile Include="AdminBugTrackers\Dto\CreateAdminBugTrackersInputDto.cs" />
+    <Compile Include="AdminBugTrackers\Dto\DeleteAdminBugTrackersInputDto.cs" />
+    <Compile Include="AdminBugTrackers\Dto\ExportAdminBugTrackersOutputDto.cs" />
+    <Compile Include="AdminBugTrackers\Dto\GetAdminBugTrackersInputDto.cs" />
+    <Compile Include="AdminBugTrackers\Dto\GetAdminBugTrackersOutputDto.cs" />
+    <Compile Include="AdminBugTrackers\Dto\UpdateAdminBugTrackersInputDto.cs" />
+    <Compile Include="AdminBugTrackers\IAdminBugTrackersAppService.cs" />
+    <Compile Include="AdminEmailTemplates\AdminEmailTemplatesAppService.cs" />
+    <Compile Include="AdminEmailTemplates\Dto\AdminEmailTemplatesAdvanceSearchInputDto.cs" />
+    <Compile Include="AdminEmailTemplates\Dto\CreateAdminEmailTemplatesInputDto.cs" />
+    <Compile Include="AdminEmailTemplates\Dto\DeleteAdminEmailTemplatesInputDto.cs" />
+    <Compile Include="AdminEmailTemplates\Dto\ExportAdminEmailTemplatesOutputDto.cs" />
+    <Compile Include="AdminEmailTemplates\Dto\GetAdminEmailTemplatesInputDto.cs" />
+    <Compile Include="AdminEmailTemplates\Dto\GetAdminEmailTemplatesOutputDto.cs" />
+    <Compile Include="AdminEmailTemplates\Dto\UpdateAdminEmailTemplatesInputDto.cs" />
+    <Compile Include="AdminEmailTemplates\IAdminEmailTemplatesAppService.cs" />
+    <Compile Include="AdminSMTPsettings\AdminSMTPsettingsAppService.cs" />
+    <Compile Include="AdminSMTPsettings\Dto\AdminSMTPsettingsAdvanceSearchInputDto.cs" />
+    <Compile Include="AdminSMTPsettings\Dto\CreateAdminSMTPsettingsInputDto.cs" />
+    <Compile Include="AdminSMTPsettings\Dto\DeleteAdminSMTPsettingsInputDto.cs" />
+    <Compile Include="AdminSMTPsettings\Dto\ExportAdminSMTPsettingsOutputDto.cs" />
+    <Compile Include="AdminSMTPsettings\Dto\GetAdminSMTPsettingsInputDto.cs" />
+    <Compile Include="AdminSMTPsettings\Dto\GetAdminSMTPsettingsOutputDto.cs" />
+    <Compile Include="AdminSMTPsettings\Dto\UpdateAdminSMTPsettingsInputDto.cs" />
+    <Compile Include="AdminSMTPsettings\IAdminSMTPsettingsAppService.cs" />
+    <Compile Include="AdminStoreScheduler\AdminStoreSchedulerAppService.cs" />
+    <Compile Include="AdminStoreScheduler\Dto\AdminStoreSchedulerAdvanceSearchInputDto.cs" />
+    <Compile Include="AdminStoreScheduler\Dto\CreateAdminStoreSchedulerInputDto.cs" />
+    <Compile Include="AdminStoreScheduler\Dto\DeleteAdminStoreSchedulerInputDto.cs" />
+    <Compile Include="AdminStoreScheduler\Dto\ExportAdminStoreSchedulerOutputDto.cs" />
+    <Compile Include="AdminStoreScheduler\Dto\GetAdminStoreSchedulerInputDto.cs" />
+    <Compile Include="AdminStoreScheduler\Dto\GetAdminStoreSchedulerOutputDto.cs" />
+    <Compile Include="AdminStoreScheduler\Dto\UpdateAdminStoreSchedulerInputDto.cs" />
+    <Compile Include="AdminStoreScheduler\IAdminStoreSchedulerAppService.cs" />
+    <Compile Include="AdminStores\AdminStoresAppService.cs" />
+    <Compile Include="AdminStores\Dto\AdminStoresAdvanceSearchInputDto.cs" />
+    <Compile Include="AdminStores\Dto\CreateAdminStoresInputDto.cs" />
+    <Compile Include="AdminStores\Dto\DeleteAdminStoresInputDto.cs" />
+    <Compile Include="AdminStores\Dto\ExportAdminStoresOutputDto.cs" />
+    <Compile Include="AdminStores\Dto\GetAdminStoresInputDto.cs" />
+    <Compile Include="AdminStores\Dto\GetAdminStoresOutputDto.cs" />
+    <Compile Include="AdminStores\Dto\UpdateAdminStoresInputDto.cs" />
+    <Compile Include="AdminStores\IAdminStoresAppService.cs" />
+    <Compile Include="CommonHelper\CommonHelper.cs" />
+    <Compile Include="AdminUpdateAllDatabase\AdminUpdateAllDatabaseAppService.cs" />
+    <Compile Include="AdminUpdateAllDatabase\Dto\AdminUpdateAllDatabaseAdvanceSearchInputDto.cs" />
+    <Compile Include="AdminUpdateAllDatabase\Dto\CreateAdminUpdateAllDatabaseInputDto.cs" />
+    <Compile Include="AdminUpdateAllDatabase\Dto\DeleteAdminUpdateAllDatabaseInputDto.cs" />
+    <Compile Include="AdminUpdateAllDatabase\Dto\ExportAdminUpdateAllDatabaseOutputDto.cs" />
+    <Compile Include="AdminUpdateAllDatabase\Dto\GetAdminUpdateAllDatabaseInputDto.cs" />
+    <Compile Include="AdminUpdateAllDatabase\Dto\GetAdminUpdateAllDatabaseOutputDto.cs" />
+    <Compile Include="AdminUpdateAllDatabase\Dto\UpdateAdminUpdateAllDatabaseInputDto.cs" />
+    <Compile Include="AdminUpdateAllDatabase\IAdminUpdateAllDatabaseAppService.cs" />
+    <Compile Include="ImageServices\IImageServices.cs" />
+    <Compile Include="ImageServices\ImageServices.cs" />
+    <Compile Include="Masters\IMasterService.cs" />
+    <Compile Include="Masters\MasterService.cs" />
+    <Compile Include="StoreCashRegisterInOut\Dto\CreateStoreCashRegisterInOutInputDto.cs" />
+    <Compile Include="StoreCashRegisterInOut\Dto\DeleteStoreCashRegisterInOutInputDto.cs" />
+    <Compile Include="StoreCashRegisterInOut\Dto\ExportStoreCashRegisterInOutOutputDto.cs" />
+    <Compile Include="StoreCashRegisterInOut\Dto\GetStoreCashRegisterInOutInputDto.cs" />
+    <Compile Include="StoreCashRegisterInOut\Dto\GetStoreCashRegisterInOutOutputDto.cs" />
+    <Compile Include="StoreCashRegisterInOut\Dto\StoreCashRegisterInOutAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreCashRegisterInOut\Dto\UpdateStoreCashRegisterInOutInputDto.cs" />
+    <Compile Include="StoreCashRegisterInOut\IStoreCashRegisterInOutAppService.cs" />
+    <Compile Include="StoreCashRegisterInOut\StoreCashRegisterInOutAppService.cs" />
+    <Compile Include="StoreCashRegister\Dto\CreateStoreCashRegisterInputDto.cs" />
+    <Compile Include="StoreCashRegister\Dto\DeleteStoreCashRegisterInputDto.cs" />
+    <Compile Include="StoreCashRegister\Dto\ExportStoreCashRegisterOutputDto.cs" />
+    <Compile Include="StoreCashRegister\Dto\GetStoreCashRegisterInputDto.cs" />
+    <Compile Include="StoreCashRegister\Dto\GetStoreCashRegisterOutputDto.cs" />
+    <Compile Include="StoreCashRegister\Dto\StoreCashRegisterAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreCashRegister\Dto\UpdateStoreCashRegisterInputDto.cs" />
+    <Compile Include="StoreCashRegister\IStoreCashRegisterAppService.cs" />
+    <Compile Include="StoreCashRegister\StoreCashRegisterAppService.cs" />
+    <Compile Include="StoreGiftCards\Dto\CreateStoreGiftCardsInputDto.cs" />
+    <Compile Include="StoreGiftCards\Dto\DeleteStoreGiftCardsInputDto.cs" />
+    <Compile Include="StoreGiftCards\Dto\ExportStoreGiftCardsOutputDto.cs" />
+    <Compile Include="StoreGiftCards\Dto\GetStoreGiftCardsInputDto.cs" />
+    <Compile Include="StoreGiftCards\Dto\GetStoreGiftCardsOutputDto.cs" />
+    <Compile Include="StoreGiftCards\Dto\StoreGiftCardsAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreGiftCards\Dto\UpdateStoreGiftCardsInputDto.cs" />
+    <Compile Include="StoreGiftCards\IStoreGiftCardsAppService.cs" />
+    <Compile Include="StoreGiftCards\StoreGiftCardsAppService.cs" />
+    <Compile Include="StoreInventoryPurchaseLinks\Dto\CreateStoreInventoryPurchaseLinksInputDto.cs" />
+    <Compile Include="StoreInventoryPurchaseLinks\Dto\DeleteStoreInventoryPurchaseLinksInputDto.cs" />
+    <Compile Include="StoreInventoryPurchaseLinks\Dto\ExportStoreInventoryPurchaseLinksOutputDto.cs" />
+    <Compile Include="StoreInventoryPurchaseLinks\Dto\GetStoreInventoryPurchaseLinksInputDto.cs" />
+    <Compile Include="StoreInventoryPurchaseLinks\Dto\GetStoreInventoryPurchaseLinksOutputDto.cs" />
+    <Compile Include="StoreInventoryPurchaseLinks\Dto\StoreInventoryPurchaseLinksAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreInventoryPurchaseLinks\Dto\UpdateStoreInventoryPurchaseLinksInputDto.cs" />
+    <Compile Include="StoreInventoryPurchaseLinks\IStoreInventoryPurchaseLinksAppService.cs" />
+    <Compile Include="StoreInventoryPurchaseLinks\StoreInventoryPurchaseLinksAppService.cs" />
+    <Compile Include="StoreInventoryPurchaseOrders\Dto\CreateStoreInventoryPurchaseOrdersInputDto.cs" />
+    <Compile Include="StoreInventoryPurchaseOrders\Dto\DeleteStoreInventoryPurchaseOrdersInputDto.cs" />
+    <Compile Include="StoreInventoryPurchaseOrders\Dto\ExportStoreInventoryPurchaseOrdersOutputDto.cs" />
+    <Compile Include="StoreInventoryPurchaseOrders\Dto\GetStoreInventoryPurchaseOrdersInputDto.cs" />
+    <Compile Include="StoreInventoryPurchaseOrders\Dto\GetStoreInventoryPurchaseOrdersOutputDto.cs" />
+    <Compile Include="StoreInventoryPurchaseOrders\Dto\StoreInventoryPurchaseOrdersAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreInventoryPurchaseOrders\Dto\UpdateStoreInventoryPurchaseOrdersInputDto.cs" />
+    <Compile Include="StoreInventoryPurchaseOrders\IStoreInventoryPurchaseOrdersAppService.cs" />
+    <Compile Include="StoreInventoryPurchaseOrders\StoreInventoryPurchaseOrdersAppService.cs" />
+    <Compile Include="StoreInventoryTransferLinks\Dto\CreateStoreInventoryTransferLinksInputDto.cs" />
+    <Compile Include="StoreInventoryTransferLinks\Dto\DeleteStoreInventoryTransferLinksInputDto.cs" />
+    <Compile Include="StoreInventoryTransferLinks\Dto\ExportStoreInventoryTransferLinksOutputDto.cs" />
+    <Compile Include="StoreInventoryTransferLinks\Dto\GetStoreInventoryTransferLinksInputDto.cs" />
+    <Compile Include="StoreInventoryTransferLinks\Dto\GetStoreInventoryTransferLinksOutputDto.cs" />
+    <Compile Include="StoreInventoryTransferLinks\Dto\StoreInventoryTransferLinksAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreInventoryTransferLinks\Dto\UpdateStoreInventoryTransferLinksInputDto.cs" />
+    <Compile Include="StoreInventoryTransferLinks\IStoreInventoryTransferLinksAppService.cs" />
+    <Compile Include="StoreInventoryTransferLinks\StoreInventoryTransferLinksAppService.cs" />
+    <Compile Include="StoreInventoryTransferOrders\Dto\CreateStoreInventoryTransferOrdersInputDto.cs" />
+    <Compile Include="StoreInventoryTransferOrders\Dto\DeleteStoreInventoryTransferOrdersInputDto.cs" />
+    <Compile Include="StoreInventoryTransferOrders\Dto\ExportStoreInventoryTransferOrdersOutputDto.cs" />
+    <Compile Include="StoreInventoryTransferOrders\Dto\GetStoreInventoryTransferOrdersInputDto.cs" />
+    <Compile Include="StoreInventoryTransferOrders\Dto\GetStoreInventoryTransferOrdersOutputDto.cs" />
+    <Compile Include="StoreInventoryTransferOrders\Dto\StoreInventoryTransferOrdersAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreInventoryTransferOrders\Dto\UpdateStoreInventoryTransferOrdersInputDto.cs" />
+    <Compile Include="StoreInventoryTransferOrders\IStoreInventoryTransferOrdersAppService.cs" />
+    <Compile Include="StoreInventoryTransferOrders\StoreInventoryTransferOrdersAppService.cs" />
+    <Compile Include="StoreInventory\Dto\CreateStoreInventoryInputDto.cs" />
+    <Compile Include="StoreInventory\Dto\DeleteStoreInventoryInputDto.cs" />
+    <Compile Include="StoreInventory\Dto\ExportStoreInventoryOutputDto.cs" />
+    <Compile Include="StoreInventory\Dto\GetStoreInventoryInputDto.cs" />
+    <Compile Include="StoreInventory\Dto\GetStoreInventoryOutputDto.cs" />
+    <Compile Include="StoreInventory\Dto\StoreInventoryAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreInventory\Dto\UpdateStoreInventoryInputDto.cs" />
+    <Compile Include="StoreInventory\IStoreInventoryAppService.cs" />
+    <Compile Include="StoreInventory\StoreInventoryAppService.cs" />
+    <Compile Include="StoreOutlets\Dto\CreateStoreOutletsInputDto.cs" />
+    <Compile Include="StoreOutlets\Dto\DeleteStoreOutletsInputDto.cs" />
+    <Compile Include="StoreOutlets\Dto\ExportStoreOutletsOutputDto.cs" />
+    <Compile Include="StoreOutlets\Dto\GetStoreOutletsInputDto.cs" />
+    <Compile Include="StoreOutlets\Dto\GetStoreOutletsOutputDto.cs" />
+    <Compile Include="StoreOutlets\Dto\StoreOutletsAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreOutlets\Dto\UpdateStoreOutletsInputDto.cs" />
+    <Compile Include="StoreOutlets\IStoreOutletsAppService.cs" />
+    <Compile Include="StoreOutlets\StoreOutletsAppService.cs" />
+    <Compile Include="StoreProductBrandLinks\Dto\CreateStoreProductBrandLinksInputDto.cs" />
+    <Compile Include="StoreProductBrandLinks\Dto\DeleteStoreProductBrandLinksInputDto.cs" />
+    <Compile Include="StoreProductBrandLinks\Dto\ExportStoreProductBrandLinksOutputDto.cs" />
+    <Compile Include="StoreProductBrandLinks\Dto\GetStoreProductBrandLinksInputDto.cs" />
+    <Compile Include="StoreProductBrandLinks\Dto\GetStoreProductBrandLinksOutputDto.cs" />
+    <Compile Include="StoreProductBrandLinks\Dto\StoreProductBrandLinksAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreProductBrandLinks\Dto\UpdateStoreProductBrandLinksInputDto.cs" />
+    <Compile Include="StoreProductBrandLinks\IStoreProductBrandLinksAppService.cs" />
+    <Compile Include="StoreProductBrandLinks\StoreProductBrandLinksAppService.cs" />
+    <Compile Include="StoreProductCategoryLinks\Dto\CreateStoreProductCategoryLinksInputDto.cs" />
+    <Compile Include="StoreProductCategoryLinks\Dto\DeleteStoreProductCategoryLinksInputDto.cs" />
+    <Compile Include="StoreProductCategoryLinks\Dto\ExportStoreProductCategoryLinksOutputDto.cs" />
+    <Compile Include="StoreProductCategoryLinks\Dto\GetStoreProductCategoryLinksInputDto.cs" />
+    <Compile Include="StoreProductCategoryLinks\Dto\GetStoreProductCategoryLinksOutputDto.cs" />
+    <Compile Include="StoreProductCategoryLinks\Dto\StoreProductCategoryLinksAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreProductCategoryLinks\Dto\UpdateStoreProductCategoryLinksInputDto.cs" />
+    <Compile Include="StoreProductCategoryLinks\IStoreProductCategoryLinksAppService.cs" />
+    <Compile Include="StoreProductCategoryLinks\StoreProductCategoryLinksAppService.cs" />
+    <Compile Include="StoreProductImages\Dto\CreateStoreProductImagesInputDto.cs" />
+    <Compile Include="StoreProductImages\Dto\DeleteStoreProductImagesInputDto.cs" />
+    <Compile Include="StoreProductImages\Dto\ExportStoreProductImagesOutputDto.cs" />
+    <Compile Include="StoreProductImages\Dto\GetStoreProductImagesInputDto.cs" />
+    <Compile Include="StoreProductImages\Dto\GetStoreProductImagesOutputDto.cs" />
+    <Compile Include="StoreProductImages\Dto\StoreProductImagesAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreProductImages\Dto\UpdateStoreProductImagesInputDto.cs" />
+    <Compile Include="StoreProductImages\IStoreProductImagesAppService.cs" />
+    <Compile Include="StoreProductImages\StoreProductImagesAppService.cs" />
+    <Compile Include="StoreProductSeasonLinks\Dto\CreateStoreProductSeasonLinksInputDto.cs" />
+    <Compile Include="StoreProductSeasonLinks\Dto\DeleteStoreProductSeasonLinksInputDto.cs" />
+    <Compile Include="StoreProductSeasonLinks\Dto\ExportStoreProductSeasonLinksOutputDto.cs" />
+    <Compile Include="StoreProductSeasonLinks\Dto\GetStoreProductSeasonLinksInputDto.cs" />
+    <Compile Include="StoreProductSeasonLinks\Dto\GetStoreProductSeasonLinksOutputDto.cs" />
+    <Compile Include="StoreProductSeasonLinks\Dto\StoreProductSeasonLinksAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreProductSeasonLinks\Dto\UpdateStoreProductSeasonLinksInputDto.cs" />
+    <Compile Include="StoreProductSeasonLinks\IStoreProductSeasonLinksAppService.cs" />
+    <Compile Include="StoreProductSeasonLinks\StoreProductSeasonLinksAppService.cs" />
+    <Compile Include="StoreProducts\Dto\CreateStoreProductsInputDto.cs" />
+    <Compile Include="StoreProducts\Dto\DeleteStoreProductsInputDto.cs" />
+    <Compile Include="StoreProducts\Dto\ExportStoreProductsOutputDto.cs" />
+    <Compile Include="StoreProducts\Dto\GetStoreProductsInputDto.cs" />
+    <Compile Include="StoreProducts\Dto\GetStoreProductsOutputDto.cs" />
+    <Compile Include="StoreProducts\Dto\StoreProductsAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreProducts\Dto\UpdateStoreProductsInputDto.cs" />
+    <Compile Include="StoreProducts\IStoreProductsAppService.cs" />
+    <Compile Include="StoreProducts\StoreProductsAppService.cs" />
+    <Compile Include="StoreProductTagLinks\Dto\CreateStoreProductTagLinksInputDto.cs" />
+    <Compile Include="StoreProductTagLinks\Dto\DeleteStoreProductTagLinksInputDto.cs" />
+    <Compile Include="StoreProductTagLinks\Dto\ExportStoreProductTagLinksOutputDto.cs" />
+    <Compile Include="StoreProductTagLinks\Dto\GetStoreProductTagLinksInputDto.cs" />
+    <Compile Include="StoreProductTagLinks\Dto\GetStoreProductTagLinksOutputDto.cs" />
+    <Compile Include="StoreProductTagLinks\Dto\StoreProductTagLinksAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreProductTagLinks\Dto\UpdateStoreProductTagLinksInputDto.cs" />
+    <Compile Include="StoreProductTagLinks\IStoreProductTagLinksAppService.cs" />
+    <Compile Include="StoreProductTagLinks\StoreProductTagLinksAppService.cs" />
+    <Compile Include="StoreRegisters\Dto\CreateStoreRegistersInputDto.cs" />
+    <Compile Include="StoreRegisters\Dto\DeleteStoreRegistersInputDto.cs" />
+    <Compile Include="StoreRegisters\Dto\ExportStoreRegistersOutputDto.cs" />
+    <Compile Include="StoreRegisters\Dto\GetStoreRegistersInputDto.cs" />
+    <Compile Include="StoreRegisters\Dto\GetStoreRegistersOutputDto.cs" />
+    <Compile Include="StoreRegisters\Dto\StoreRegistersAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreRegisters\Dto\UpdateStoreRegistersInputDto.cs" />
+    <Compile Include="StoreRegisters\IStoreRegistersAppService.cs" />
+    <Compile Include="StoreRegisters\StoreRegistersAppService.cs" />
+    <Compile Include="StoreRoles\Dto\CreateStoreRolesInputDto.cs" />
+    <Compile Include="StoreRoles\Dto\DeleteStoreRolesInputDto.cs" />
+    <Compile Include="StoreRoles\Dto\ExportStoreRolesOutputDto.cs" />
+    <Compile Include="StoreRoles\Dto\GetStoreRolesInputDto.cs" />
+    <Compile Include="StoreRoles\Dto\GetStoreRolesOutputDto.cs" />
+    <Compile Include="StoreRoles\Dto\StoreRolesAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreRoles\Dto\UpdateStoreRolesInputDto.cs" />
+    <Compile Include="StoreRoles\IStoreRolesAppService.cs" />
+    <Compile Include="StoreRoles\StoreRolesAppService.cs" />
+    <Compile Include="StoreSaleItems\Dto\CreateStoreSaleItemsInputDto.cs" />
+    <Compile Include="StoreSaleItems\Dto\DeleteStoreSaleItemsInputDto.cs" />
+    <Compile Include="StoreSaleItems\Dto\ExportStoreSaleItemsOutputDto.cs" />
+    <Compile Include="StoreSaleItems\Dto\GetStoreSaleItemsInputDto.cs" />
+    <Compile Include="StoreSaleItems\Dto\GetStoreSaleItemsOutputDto.cs" />
+    <Compile Include="StoreSaleItems\Dto\StoreSaleItemsAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreSaleItems\Dto\UpdateStoreSaleItemsInputDto.cs" />
+    <Compile Include="StoreSaleItems\IStoreSaleItemsAppService.cs" />
+    <Compile Include="StoreSaleItems\StoreSaleItemsAppService.cs" />
+    <Compile Include="StoreSalePayments\Dto\CreateStoreSalePaymentsInputDto.cs" />
+    <Compile Include="StoreSalePayments\Dto\DeleteStoreSalePaymentsInputDto.cs" />
+    <Compile Include="StoreSalePayments\Dto\ExportStoreSalePaymentsOutputDto.cs" />
+    <Compile Include="StoreSalePayments\Dto\GetStoreSalePaymentsInputDto.cs" />
+    <Compile Include="StoreSalePayments\Dto\GetStoreSalePaymentsOutputDto.cs" />
+    <Compile Include="StoreSalePayments\Dto\StoreSalePaymentsAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreSalePayments\Dto\UpdateStoreSalePaymentsInputDto.cs" />
+    <Compile Include="StoreSalePayments\IStoreSalePaymentsAppService.cs" />
+    <Compile Include="StoreSalePayments\StoreSalePaymentsAppService.cs" />
+    <Compile Include="StoreSaleTransactions\Dto\CreateStoreSaleTransactionsInputDto.cs" />
+    <Compile Include="StoreSaleTransactions\Dto\DeleteStoreSaleTransactionsInputDto.cs" />
+    <Compile Include="StoreSaleTransactions\Dto\ExportStoreSaleTransactionsOutputDto.cs" />
+    <Compile Include="StoreSaleTransactions\Dto\GetStoreSaleTransactionsInputDto.cs" />
+    <Compile Include="StoreSaleTransactions\Dto\GetStoreSaleTransactionsOutputDto.cs" />
+    <Compile Include="StoreSaleTransactions\Dto\StoreSaleTransactionsAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreSaleTransactions\Dto\UpdateStoreSaleTransactionsInputDto.cs" />
+    <Compile Include="StoreSaleTransactions\IStoreSaleTransactionsAppService.cs" />
+    <Compile Include="StoreSaleTransactions\StoreSaleTransactionsAppService.cs" />
+    <Compile Include="StoreSeasons\Dto\CreateStoreSeasonsInputDto.cs" />
+    <Compile Include="StoreSeasons\Dto\DeleteStoreSeasonsInputDto.cs" />
+    <Compile Include="StoreSeasons\Dto\ExportStoreSeasonsOutputDto.cs" />
+    <Compile Include="StoreSeasons\Dto\GetStoreSeasonsInputDto.cs" />
+    <Compile Include="StoreSeasons\Dto\GetStoreSeasonsOutputDto.cs" />
+    <Compile Include="StoreSeasons\Dto\StoreSeasonsAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreSeasons\Dto\UpdateStoreSeasonsInputDto.cs" />
+    <Compile Include="StoreSeasons\IStoreSeasonsAppService.cs" />
+    <Compile Include="StoreSeasons\StoreSeasonsAppService.cs" />
+    <Compile Include="StoreTimeZone\Dto\CreateStoreTimeZoneInputDto.cs" />
+    <Compile Include="StoreTimeZone\Dto\DeleteStoreTimeZoneInputDto.cs" />
+    <Compile Include="StoreTimeZone\Dto\ExportStoreTimeZoneOutputDto.cs" />
+    <Compile Include="StoreTimeZone\Dto\GetStoreTimeZoneInputDto.cs" />
+    <Compile Include="StoreTimeZone\Dto\GetStoreTimeZoneOutputDto.cs" />
+    <Compile Include="StoreTimeZone\Dto\StoreTimeZoneAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreTimeZone\Dto\UpdateStoreTimeZoneInputDto.cs" />
+    <Compile Include="StoreTimeZone\IStoreTimeZoneAppService.cs" />
+    <Compile Include="StoreTimeZone\StoreTimeZoneAppService.cs" />
+    <Compile Include="StoreCountryMaster\Dto\CreateStoreCountryMasterInputDto.cs" />
+    <Compile Include="StoreCountryMaster\Dto\DeleteStoreCountryMasterInputDto.cs" />
+    <Compile Include="StoreCountryMaster\Dto\ExportStoreCountryMasterOutputDto.cs" />
+    <Compile Include="StoreCountryMaster\Dto\GetStoreCountryMasterInputDto.cs" />
+    <Compile Include="StoreCountryMaster\Dto\GetStoreCountryMasterOutputDto.cs" />
+    <Compile Include="StoreCountryMaster\Dto\StoreCountryMasterAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreCountryMaster\Dto\UpdateStoreCountryMasterInputDto.cs" />
+    <Compile Include="StoreCountryMaster\IStoreCountryMasterAppService.cs" />
+    <Compile Include="StoreCountryMaster\StoreCountryMasterAppService.cs" />
+    <Compile Include="StoreCityMaster\Dto\CreateStoreCityMasterInputDto.cs" />
+    <Compile Include="StoreCityMaster\Dto\DeleteStoreCityMasterInputDto.cs" />
+    <Compile Include="StoreCityMaster\Dto\ExportStoreCityMasterOutputDto.cs" />
+    <Compile Include="StoreCityMaster\Dto\GetStoreCityMasterInputDto.cs" />
+    <Compile Include="StoreCityMaster\Dto\GetStoreCityMasterOutputDto.cs" />
+    <Compile Include="StoreCityMaster\Dto\StoreCityMasterAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreCityMaster\Dto\UpdateStoreCityMasterInputDto.cs" />
+    <Compile Include="StoreCityMaster\IStoreCityMasterAppService.cs" />
+    <Compile Include="StoreCityMaster\StoreCityMasterAppService.cs" />
+    <Compile Include="StoreCategories\Dto\CreateStoreCategoriesInputDto.cs" />
+    <Compile Include="StoreCategories\Dto\DeleteStoreCategoriesInputDto.cs" />
+    <Compile Include="StoreCategories\Dto\ExportStoreCategoriesOutputDto.cs" />
+    <Compile Include="StoreCategories\Dto\GetStoreCategoriesInputDto.cs" />
+    <Compile Include="StoreCategories\Dto\GetStoreCategoriesOutputDto.cs" />
+    <Compile Include="StoreCategories\Dto\StoreCategoriesAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreCategories\Dto\UpdateStoreCategoriesInputDto.cs" />
+    <Compile Include="StoreCategories\IStoreCategoriesAppService.cs" />
+    <Compile Include="StoreCategories\StoreCategoriesAppService.cs" />
+    <Compile Include="StoreBrands\Dto\CreateStoreBrandsInputDto.cs" />
+    <Compile Include="StoreBrands\Dto\DeleteStoreBrandsInputDto.cs" />
+    <Compile Include="StoreBrands\Dto\ExportStoreBrandsOutputDto.cs" />
+    <Compile Include="StoreBrands\Dto\GetStoreBrandsInputDto.cs" />
+    <Compile Include="StoreBrands\Dto\GetStoreBrandsOutputDto.cs" />
+    <Compile Include="StoreBrands\Dto\StoreBrandsAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreBrands\Dto\UpdateStoreBrandsInputDto.cs" />
+    <Compile Include="StoreBrands\IStoreBrandsAppService.cs" />
+    <Compile Include="StoreBrands\StoreBrandsAppService.cs" />
+    <Compile Include="StoreTaxGroupMapping\Dto\CreateStoreTaxGroupMappingInputDto.cs" />
+    <Compile Include="StoreTaxGroupMapping\Dto\DeleteStoreTaxGroupMappingInputDto.cs" />
+    <Compile Include="StoreTaxGroupMapping\Dto\ExportStoreTaxGroupMappingOutputDto.cs" />
+    <Compile Include="StoreTaxGroupMapping\Dto\GetStoreTaxGroupMappingInputDto.cs" />
+    <Compile Include="StoreTaxGroupMapping\Dto\GetStoreTaxGroupMappingOutputDto.cs" />
+    <Compile Include="StoreTaxGroupMapping\Dto\StoreTaxGroupMappingAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreTaxGroupMapping\Dto\UpdateStoreTaxGroupMappingInputDto.cs" />
+    <Compile Include="StoreTaxGroupMapping\IStoreTaxGroupMappingAppService.cs" />
+    <Compile Include="StoreTaxGroupMapping\StoreTaxGroupMappingAppService.cs" />
+    <Compile Include="StoreTax\Dto\CreateStoreTaxInputDto.cs" />
+    <Compile Include="StoreTax\Dto\DeleteStoreTaxInputDto.cs" />
+    <Compile Include="StoreTax\Dto\ExportStoreTaxOutputDto.cs" />
+    <Compile Include="StoreTax\Dto\GetStoreTaxInputDto.cs" />
+    <Compile Include="StoreTax\Dto\GetStoreTaxOutputDto.cs" />
+    <Compile Include="StoreTax\Dto\StoreTaxAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreTax\Dto\UpdateStoreTaxInputDto.cs" />
+    <Compile Include="StoreTax\IStoreTaxAppService.cs" />
+    <Compile Include="StoreTax\StoreTaxAppService.cs" />
+    <Compile Include="StoreTags\Dto\CreateStoreTagsInputDto.cs" />
+    <Compile Include="StoreTags\Dto\DeleteStoreTagsInputDto.cs" />
+    <Compile Include="StoreTags\Dto\ExportStoreTagsOutputDto.cs" />
+    <Compile Include="StoreTags\Dto\GetStoreTagsInputDto.cs" />
+    <Compile Include="StoreTags\Dto\GetStoreTagsOutputDto.cs" />
+    <Compile Include="StoreTags\Dto\StoreTagsAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreTags\Dto\UpdateStoreTagsInputDto.cs" />
+    <Compile Include="StoreTags\IStoreTagsAppService.cs" />
+    <Compile Include="StoreTags\StoreTagsAppService.cs" />
+    <Compile Include="StoreSuppliers\Dto\CreateStoreSuppliersInputDto.cs" />
+    <Compile Include="StoreSuppliers\Dto\DeleteStoreSuppliersInputDto.cs" />
+    <Compile Include="StoreSuppliers\Dto\ExportStoreSuppliersOutputDto.cs" />
+    <Compile Include="StoreSuppliers\Dto\GetStoreSuppliersInputDto.cs" />
+    <Compile Include="StoreSuppliers\Dto\GetStoreSuppliersOutputDto.cs" />
+    <Compile Include="StoreSuppliers\Dto\StoreSuppliersAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreSuppliers\Dto\UpdateStoreSuppliersInputDto.cs" />
+    <Compile Include="StoreSuppliers\IStoreSuppliersAppService.cs" />
+    <Compile Include="StoreSuppliers\StoreSuppliersAppService.cs" />
+    <Compile Include="StoreStateMaster\Dto\CreateStoreStateMasterInputDto.cs" />
+    <Compile Include="StoreStateMaster\Dto\DeleteStoreStateMasterInputDto.cs" />
+    <Compile Include="StoreStateMaster\Dto\ExportStoreStateMasterOutputDto.cs" />
+    <Compile Include="StoreStateMaster\Dto\GetStoreStateMasterInputDto.cs" />
+    <Compile Include="StoreStateMaster\Dto\GetStoreStateMasterOutputDto.cs" />
+    <Compile Include="StoreStateMaster\Dto\StoreStateMasterAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreStateMaster\Dto\UpdateStoreStateMasterInputDto.cs" />
+    <Compile Include="StoreStateMaster\IStoreStateMasterAppService.cs" />
+    <Compile Include="StoreStateMaster\StoreStateMasterAppService.cs" />
+    <Compile Include="StoreReceiptTemplates\Dto\CreateStoreReceiptTemplatesInputDto.cs" />
+    <Compile Include="StoreReceiptTemplates\Dto\DeleteStoreReceiptTemplatesInputDto.cs" />
+    <Compile Include="StoreReceiptTemplates\Dto\ExportStoreReceiptTemplatesOutputDto.cs" />
+    <Compile Include="StoreReceiptTemplates\Dto\GetStoreReceiptTemplatesInputDto.cs" />
+    <Compile Include="StoreReceiptTemplates\Dto\GetStoreReceiptTemplatesOutputDto.cs" />
+    <Compile Include="StoreReceiptTemplates\Dto\StoreReceiptTemplatesAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreReceiptTemplates\Dto\UpdateStoreReceiptTemplatesInputDto.cs" />
+    <Compile Include="StoreReceiptTemplates\IStoreReceiptTemplatesAppService.cs" />
+    <Compile Include="StoreReceiptTemplates\StoreReceiptTemplatesAppService.cs" />
+    <Compile Include="StorePaymentTypes\Dto\CreateStorePaymentTypesInputDto.cs" />
+    <Compile Include="StorePaymentTypes\Dto\DeleteStorePaymentTypesInputDto.cs" />
+    <Compile Include="StorePaymentTypes\Dto\ExportStorePaymentTypesOutputDto.cs" />
+    <Compile Include="StorePaymentTypes\Dto\GetStorePaymentTypesInputDto.cs" />
+    <Compile Include="StorePaymentTypes\Dto\GetStorePaymentTypesOutputDto.cs" />
+    <Compile Include="StorePaymentTypes\Dto\StorePaymentTypesAdvanceSearchInputDto.cs" />
+    <Compile Include="StorePaymentTypes\Dto\UpdateStorePaymentTypesInputDto.cs" />
+    <Compile Include="StorePaymentTypes\IStorePaymentTypesAppService.cs" />
+    <Compile Include="StorePaymentTypes\StorePaymentTypesAppService.cs" />
+    <Compile Include="StoreCustomers\Dto\CreateStoreCustomersInputDto.cs" />
+    <Compile Include="StoreCustomers\Dto\DeleteStoreCustomersInputDto.cs" />
+    <Compile Include="StoreCustomers\Dto\ExportStoreCustomersOutputDto.cs" />
+    <Compile Include="StoreCustomers\Dto\GetStoreCustomersInputDto.cs" />
+    <Compile Include="StoreCustomers\Dto\GetStoreCustomersOutputDto.cs" />
+    <Compile Include="StoreCustomers\Dto\StoreCustomersAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreCustomers\Dto\UpdateStoreCustomersInputDto.cs" />
+    <Compile Include="StoreCustomers\IStoreCustomersAppService.cs" />
+    <Compile Include="StoreCustomers\StoreCustomersAppService.cs" />
+    <Compile Include="StoreTaxGroups\Dto\CreateStoreTaxGroupsInputDto.cs" />
+    <Compile Include="StoreTaxGroups\Dto\DeleteStoreTaxGroupsInputDto.cs" />
+    <Compile Include="StoreTaxGroups\Dto\ExportStoreTaxGroupsOutputDto.cs" />
+    <Compile Include="StoreTaxGroups\Dto\GetStoreTaxGroupsInputDto.cs" />
+    <Compile Include="StoreTaxGroups\Dto\GetStoreTaxGroupsOutputDto.cs" />
+    <Compile Include="StoreTaxGroups\Dto\StoreTaxGroupsAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreTaxGroups\Dto\UpdateStoreTaxGroupsInputDto.cs" />
+    <Compile Include="StoreTaxGroups\IStoreTaxGroupsAppService.cs" />
+    <Compile Include="StoreTaxGroups\StoreTaxGroupsAppService.cs" />
+    <Compile Include="StoreGeneralSettings\Dto\CreateStoreGeneralSettingsInputDto.cs" />
+    <Compile Include="StoreGeneralSettings\Dto\DeleteStoreGeneralSettingsInputDto.cs" />
+    <Compile Include="StoreGeneralSettings\Dto\ExportStoreGeneralSettingsOutputDto.cs" />
+    <Compile Include="StoreCurrencies\Dto\CreateStoreCurrenciesInputDto.cs" />
+    <Compile Include="StoreCurrencies\Dto\DeleteStoreCurrenciesInputDto.cs" />
+    <Compile Include="StoreCurrencies\Dto\ExportStoreCurrenciesOutputDto.cs" />
+    <Compile Include="StoreCurrencies\Dto\GetStoreCurrenciesInputDto.cs" />
+    <Compile Include="StoreCurrencies\Dto\GetStoreCurrenciesOutputDto.cs" />
+    <Compile Include="StoreCurrencies\Dto\StoreCurrenciesAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreCurrencies\Dto\UpdateStoreCurrenciesInputDto.cs" />
+    <Compile Include="StoreCurrencies\IStoreCurrenciesAppService.cs" />
+    <Compile Include="StoreCurrencies\StoreCurrenciesAppService.cs" />
+    <Compile Include="MasterCountries\Dto\ExportMasterCountriesOutputDto.cs" />
+    <Compile Include="MasterPlanPrices\Dto\CreateMasterPlanPricesInputDto.cs" />
+    <Compile Include="MasterPlanPrices\Dto\DeleteMasterPlanPricesInputDto.cs" />
+    <Compile Include="MasterPlanPrices\Dto\GetMasterPlanPricesInputDto.cs" />
+    <Compile Include="MasterPlanPrices\Dto\GetMasterPlanPricesOutputDto.cs" />
+    <Compile Include="MasterPlanPrices\Dto\MasterPlanPricesAdvanceSearchInputDto.cs" />
+    <Compile Include="MasterPlanPrices\Dto\UpdateMasterPlanPricesInputDto.cs" />
+    <Compile Include="MasterPlanPrices\IMasterPlanPricesAppService.cs" />
+    <Compile Include="MasterPlanPrices\MasterPlanPricesAppService.cs" />
+    <Compile Include="MasterPlanServices\Dto\ExportMasterPlanServicesOutputDto.cs" />
+    <Compile Include="MasterPlanServices\Dto\MasterPlanServicesAdvanceSearchInputDto.cs" />
+    <Compile Include="MasterPlanServices\Dto\CreateMasterPlanServicesInputDto.cs" />
+    <Compile Include="MasterPlanServices\Dto\DeleteMasterPlanServicesInputDto.cs" />
+    <Compile Include="MasterPlanServices\Dto\GetMasterPlanServicesInputDto.cs" />
+    <Compile Include="MasterPlanServices\Dto\GetMasterPlanServicesOutputDto.cs" />
+    <Compile Include="MasterPlanServices\Dto\UpdateMasterPlanServicesInputDto.cs" />
+    <Compile Include="MasterPlanServices\IMasterPlanServicesAppService.cs" />
+    <Compile Include="MasterPlanServices\MasterPlanServicesAppService.cs" />
+    <Compile Include="MasterPlans\Dto\ExportMasterPlansOutputDto.cs" />
+    <Compile Include="MasterPlans\Dto\MasterPlansAdvanceSearchInputDto.cs" />
+    <Compile Include="MasterPlans\Dto\CreateMasterPlansInputDto.cs" />
+    <Compile Include="MasterPlans\Dto\DeleteMasterPlansInputDto.cs" />
+    <Compile Include="MasterPlans\Dto\GetMasterPlansInputDto.cs" />
+    <Compile Include="MasterPlans\Dto\GetMasterPlansOutputDto.cs" />
+    <Compile Include="MasterPlans\Dto\UpdateMasterPlansInputDto.cs" />
+    <Compile Include="MasterPlans\IMasterPlansAppService.cs" />
+    <Compile Include="MasterPlans\MasterPlansAppService.cs" />
+    <Compile Include="MasterCountries\Dto\MasterCountriesAdvanceSearchInputDto.cs" />
+    <Compile Include="MasterCountries\Dto\GetMasterCountriesInputDto.cs" />
+    <Compile Include="MasterCountries\Dto\GetMasterCountriesOutputDto.cs" />
+    <Compile Include="MasterCountries\Dto\DeleteMasterCountriesInputDto.cs" />
+    <Compile Include="MasterCountries\Dto\UpdateMasterCountriesInputDto.cs" />
+    <Compile Include="MasterCountries\Dto\CreateMasterCountriesInputDto.cs" />
+    <Compile Include="MasterCountries\MasterCountriesAppService.cs" />
+    <Compile Include="MasterCountries\IMasterCountriesAppService.cs" />
+    <Compile Include="StoreGeneralSettings\Dto\GetStoreGeneralSettingsInputDto.cs" />
+    <Compile Include="StoreGeneralSettings\Dto\GetStoreGeneralSettingsOutputDto.cs" />
+    <Compile Include="StoreGeneralSettings\Dto\StoreGeneralSettingsAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreGeneralSettings\Dto\UpdateStoreGeneralSettingsInputDto.cs" />
+    <Compile Include="StoreGeneralSettings\IStoreGeneralSettingsAppService.cs" />
+    <Compile Include="StoreGeneralSettings\StoreGeneralSettingsAppService.cs" />
+    <Compile Include="StoremeyApplicationModule.cs" />
+    <Compile Include="StoremeyAppServiceBase.cs" />
+    <Compile Include="Authorization\Accounts\AccountAppService.cs" />
+    <Compile Include="Authorization\Accounts\Dto\IsTenantAvailable.cs" />
+    <Compile Include="Authorization\Accounts\Dto\IsTenantAvailableOutput.cs" />
+    <Compile Include="Authorization\Accounts\Dto\RegisterInput.cs" />
+    <Compile Include="Authorization\Accounts\Dto\RegisterOutput.cs" />
+    <Compile Include="Authorization\Accounts\Dto\TenantAvailabilityState.cs" />
+    <Compile Include="Authorization\Accounts\IAccountAppService.cs" />
+    <Compile Include="Configuration\ConfigurationAppService.cs" />
+    <Compile Include="Configuration\Dto\ChangeUiThemeInput.cs" />
+    <Compile Include="Configuration\IConfigurationAppService.cs" />
+    <Compile Include="Configuration\Ui\UiThemeInfo.cs" />
+    <Compile Include="Configuration\Ui\UiThemes.cs" />
+    <Compile Include="MultiTenancy\Dto\CreateTenantDto.cs" />
+    <Compile Include="MultiTenancy\Dto\EditTenantDto.cs" />
+    <Compile Include="MultiTenancy\Dto\TenantDto.cs" />
+    <Compile Include="MultiTenancy\ITenantAppService.cs" />
+    <Compile Include="MultiTenancy\TenantAppService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\Dto\CreateRoleDto.cs" />
+    <Compile Include="Roles\Dto\PermissionDto.cs" />
+    <Compile Include="Roles\Dto\RoleDto.cs" />
+    <Compile Include="Roles\IRoleAppService.cs" />
+    <Compile Include="StoreUserRoleLinks\Dto\CreateStoreUserRoleLinksInputDto.cs" />
+    <Compile Include="StoreUserRoleLinks\Dto\DeleteStoreUserRoleLinksInputDto.cs" />
+    <Compile Include="StoreUserRoleLinks\Dto\ExportStoreUserRoleLinksOutputDto.cs" />
+    <Compile Include="StoreUserRoleLinks\Dto\GetStoreUserRoleLinksInputDto.cs" />
+    <Compile Include="StoreUserRoleLinks\Dto\GetStoreUserRoleLinksOutputDto.cs" />
+    <Compile Include="StoreUserRoleLinks\Dto\StoreUserRoleLinksAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreUserRoleLinks\Dto\UpdateStoreUserRoleLinksInputDto.cs" />
+    <Compile Include="StoreUserRoleLinks\IStoreUserRoleLinksAppService.cs" />
+    <Compile Include="StoreUserRoleLinks\StoreUserRoleLinksAppService.cs" />
+    <Compile Include="StoreUsers\Dto\CreateStoreUsersInputDto.cs" />
+    <Compile Include="StoreUsers\Dto\DeleteStoreUsersInputDto.cs" />
+    <Compile Include="StoreUsers\Dto\ExportStoreUsersOutputDto.cs" />
+    <Compile Include="StoreUsers\Dto\GetStoreUsersInputDto.cs" />
+    <Compile Include="StoreUsers\Dto\GetStoreUsersOutputDto.cs" />
+    <Compile Include="StoreUsers\Dto\StoreUsersAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreUsers\Dto\UpdateStoreUsersInputDto.cs" />
+    <Compile Include="StoreUsers\IStoreUsersAppService.cs" />
+    <Compile Include="StoreUsers\StoreUsersAppService.cs" />
+    <Compile Include="StoreWarehouses\Dto\CreateStoreWarehousesInputDto.cs" />
+    <Compile Include="StoreWarehouses\Dto\DeleteStoreWarehousesInputDto.cs" />
+    <Compile Include="StoreWarehouses\Dto\ExportStoreWarehousesOutputDto.cs" />
+    <Compile Include="StoreWarehouses\Dto\GetStoreWarehousesInputDto.cs" />
+    <Compile Include="StoreWarehouses\Dto\GetStoreWarehousesOutputDto.cs" />
+    <Compile Include="StoreWarehouses\Dto\StoreWarehousesAdvanceSearchInputDto.cs" />
+    <Compile Include="StoreWarehouses\Dto\UpdateStoreWarehousesInputDto.cs" />
+    <Compile Include="StoreWarehouses\IStoreWarehousesAppService.cs" />
+    <Compile Include="StoreWarehouses\StoreWarehousesAppService.cs" />
+    <Compile Include="Users\Dto\CreateUserDto.cs" />
+    <Compile Include="Users\Dto\UpdateUserDto.cs" />
+    <Compile Include="Users\Dto\UserDto.cs" />
+    <Compile Include="Users\IUserAppService.cs" />
+    <Compile Include="Roles\RoleAppService.cs" />
+    <Compile Include="Sessions\Dto\GetCurrentLoginInformationsOutput.cs" />
+    <Compile Include="Sessions\Dto\TenantLoginInfoDto.cs" />
+    <Compile Include="Sessions\Dto\UserLoginInfoDto.cs" />
+    <Compile Include="Sessions\ISessionAppService.cs" />
+    <Compile Include="Sessions\SessionAppService.cs" />
+    <Compile Include="Users\UserAppService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Storemey.Core\Storemey.Core.csproj">
+      <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
+      <Name>Storemey.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Storemey.Migrator\Storemey.Migrator.csproj">
+      <Project>{6f98c2f2-898a-421b-be3d-68fe69ec0646}</Project>
+      <Name>Storemey.Migrator</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CommanHelper\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\packages\NuGet.VisualStudio.4.9.1\build\NuGet.VisualStudio.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuGet.VisualStudio.4.9.1\build\NuGet.VisualStudio.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\NuGet.VisualStudio.4.9.1\build\NuGet.VisualStudio.targets" Condition="Exists('..\packages\NuGet.VisualStudio.4.9.1\build\NuGet.VisualStudio.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

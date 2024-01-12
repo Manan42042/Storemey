@@ -1,0 +1,190 @@
+﻿
+@{
+    string EmailPattern = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+
+}
+
+
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Customers</h4>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC EXAMPLE -->
+<div class="container-fluid container-fullw" ng-controller="app.views.storeCustomers">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h5 class="over-title margin-bottom-15">Add/Update Of, Customer!</h5>
+                    @*<p>
+                            Individual form controls automatically receive some global styling.
+                        </p>*@
+                    <div class="row margin-top-30">
+                        <form role="form" id="frmCountry" name="myForm" ng-submit="register(frmCountry)" ng-validate="validationOptions">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="panel panel-white" style="background-color: #fff;">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        FirstName
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.firstName" name="firstName" placeholder="enter first name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        LastName
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.lastName" name="lastName" placeholder="enter last name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Gender
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.gender" name="gender" placeholder="enter gender">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        DateOfBirth
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.dateofbirth" name="dateofbirth" placeholder="enter date of birth">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        CompanyName
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.companyName" name="companyName" placeholder="enter company name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Bill_Email
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.bill_Email" name="bill_Email" placeholder="enter bill email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Bill_Phone
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.bill_Phone" name="bill_Phone" placeholder="enter bill phone">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Bill_Address
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.bill_address" name="bill_address" placeholder="enter bill address">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Bill_Country
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.bill_country" name="bill_country" placeholder="enter bill country">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Bill_State
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.bill_State" name="bill_State" placeholder="enter bill state">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Bill_City
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.bill_City" name="bill_City" placeholder="enter bill city">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Bill_ZipCode
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.bill_ZipCode" name="bill_ZipCode" placeholder="enter bill zipCode">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Creadit limit
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.creaditlimit" name="creaditlimit" placeholder="enter creaditlimit">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Ship_FirstName
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.ship_FirstName" name="ship_FirstName" placeholder="enter ship firstName">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Ship_LastName
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.ship_LastName" name="ship_LastName" placeholder="enter ship LastName">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Ship_Address
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.ship_Address" name="ship_Address" placeholder="enter ship address">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Ship_Country
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.ship_Country" name="ship_Country" placeholder="enter ship_country">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Ship_State
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.ship_State" name="ship_State" placeholder="enter ship state">
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Ship_City
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.ship_City" name="ship_City" placeholder="enter ship city">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Ship_Zipcode
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.ship_Zipcode" name="ship_Zipcode" placeholder="enter ship zipcode">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Ship_Phone
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.ship_Phone" name="ship_Phone" placeholder="enter ship phone">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Ship_Email
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.ship_Email" name="ship_Email" placeholder="enter ship email">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">
+                                                        Note
+                                                    </label>
+                                                    <textarea type="text" class="form-control" ng-model="GetstoreCustomersOutputDto.note" placeholder="enter note" name="note"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <button class="btn btn-primary btn-wide" type="submit" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                            Save
+                                        </button>
+
+                                        <button class="btn btn-default btn-wide" type="button" ng-click="cancelAddEdit()">
+                                            Back
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

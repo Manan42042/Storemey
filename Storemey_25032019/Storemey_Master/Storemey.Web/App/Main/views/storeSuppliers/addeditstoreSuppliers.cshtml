@@ -1,0 +1,159 @@
+﻿
+@{
+    string EmailPattern = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+
+}
+
+
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Suppliers</h4>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC EXAMPLE -->
+<div class="container-fluid container-fullw" ng-controller="app.views.storeSuppliers">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h5 class="over-title margin-bottom-15">Add/Update Of, Supplier!</h5>
+                    @*<p>
+                            Individual form controls automatically receive some global styling.
+                        </p>*@
+                    <div class="row margin-top-30">
+                        <form role="form" id="frmCountry" name="myForm" ng-submit="register(myForm)" ng-validate="validationOptions">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="panel panel-white" style="background-color: #fff;">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Supplier Full Name
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreSuppliersOutputDto.supplierFullName" name="supplierFullName" placeholder="enter full name">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Description
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreSuppliersOutputDto.description" name="description" placeholder="enter description">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        First Name
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreSuppliersOutputDto.firstName" name="firstName" placeholder="enter first name">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Last Name
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreSuppliersOutputDto.lastName" name="lastName" placeholder="enter last name">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Company Name
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreSuppliersOutputDto.companyName" name="companyName" placeholder="enter company name">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Email
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreSuppliersOutputDto.email" name="email" placeholder="enter email">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Phone
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreSuppliersOutputDto.phone" name="phone" placeholder="enter phone">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Mobile
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreSuppliersOutputDto.mobile" name="mobile" placeholder="enter mobile">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Fax
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreSuppliersOutputDto.fax" name="Fax" placeholder="enter fax">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Web site
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreSuppliersOutputDto.website" name="Website" placeholder="enter website">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Address
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreSuppliersOutputDto.address" name="address" placeholder="enter address">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Post Code
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreSuppliersOutputDto.postCode" name="postCode" placeholder="enter postCode">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Country
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreSuppliersOutputDto.country" name="country" placeholder="enter country">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        State
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreSuppliersOutputDto.state" name="state" placeholder="enter state">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        City
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreSuppliersOutputDto.city" name="city" placeholder="enter city">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">
+                                                        Note
+                                                    </label>
+                                                    <textarea type="text" class="form-control" ng-model="GetstoreSuppliersOutputDto.note" placeholder="enter note" name="note"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <button class="btn btn-primary btn-wide" type="submit" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                            Save
+                                        </button>
+
+                                        <button class="btn btn-default btn-wide" type="button" ng-click="cancelAddEdit()">
+                                            Back
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,159 @@
+﻿
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Registers</h4>
+    @*<div ncy-breadcrumb class="pull-right"></div>*@
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC EXAMPLE -->
+<div class="container-fluid container-fullw" ng-controller="app.views.storeRegisters">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h5 class="over-title margin-bottom-15">Add/Update Of, Register!</h5>
+                    @*<p>
+                            Individual form controls automatically receive some global styling.
+                        </p>*@
+                    <div class="row margin-top-30">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="panel panel-white" style="background-color: #fff;">
+                                @*<div class="panel-heading">
+                                        <h5 class="panel-title">Default Form</h5>
+                                    </div>*@
+                                <div class="panel-body">
+
+                                    <form role="form" id="frmCountry" name="myForm">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Register name
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetstoreRegistersOutputDto.registerName" id="exampleInputEmail1" placeholder="enter register name" required>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label>
+                                                Outlet name
+                                            </label>
+                                            <ui-select ng-model="GetstoreRegistersOutputDto.outletId" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a warehouse">
+                                                <ui-select-match placeholder="Select a outlet">{{$select.selected.outletName}}</ui-select-match>
+                                                <ui-select-choices repeat="person in Outlets | propsFilter: {outletName: $select.search}">
+                                                    <div ng-bind-html="person.outletName | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <input type="text" ng-model="GetstoreRegistersOutputDto.outletId" style="visibility:hidden;height:0px;padding: 0 !important;" name="country" class="form-control" placeholder="Enter your outlel">
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <label>
+                                                Receipt template
+                                            </label>
+                                            <ui-select ng-model="GetstoreRegistersOutputDto.receiptTemplateId" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a warehouse">
+                                                <ui-select-match placeholder="Select a receipt template">{{$select.selected.name}}</ui-select-match>
+                                                <ui-select-choices repeat="person in ReceiptTemplates | propsFilter: {name: $select.search}">
+                                                    <div ng-bind-html="person.name | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <input type="text" ng-model="GetstoreRegistersOutputDto.receiptTemplateId" style="visibility:hidden;height:0px;padding: 0 !important;" name="country" class="form-control" placeholder="Enter your outlel">
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Receipt number
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetstoreRegistersOutputDto.receiptNumber" id="exampleInputEmail1" placeholder="enter receipt number" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Receipt prefix
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetstoreRegistersOutputDto.receiptPrefix" id="exampleInputEmail1" placeholder="enter receipt prefix" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Receipt suffix
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetstoreRegistersOutputDto.receiptSuffix" id="exampleInputEmail1" placeholder="enter receipt suffix" required>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <div class="checkbox clip-check check-primary">
+                                                <input type="checkbox" id="selectUserForNextSale" value="1" ng-model="GetstoreRegistersOutputDto.selectUserForNextSale">
+                                                <label for="selectUserForNextSale">
+                                                    Select user for next sale.
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="checkbox clip-check check-primary">
+                                                <input type="checkbox" id="emailReceipt" value="1" ng-model="GetstoreRegistersOutputDto.emailReceipt">
+                                                <label for="emailReceipt">
+                                                    Email receipt
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="checkbox clip-check check-primary">
+                                                <input type="checkbox" id="printReceipt" value="1" ng-model="GetstoreRegistersOutputDto.printReceipt">
+                                                <label for="printReceipt">
+                                                    Print receipt
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Ask for note
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetstoreRegistersOutputDto.askForNote" id="exampleInputEmail1" placeholder="enter ask for note" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="checkbox clip-check check-primary">
+                                                <input type="checkbox" id="printNoteOnReceipt" value="1" ng-model="GetstoreRegistersOutputDto.printNoteOnReceipt">
+                                                <label for="printNoteOnReceipt">
+                                                    Print note on receipt
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="checkbox clip-check check-primary">
+                                                <input type="checkbox" id="showDiscountOnReceipt" value="1" ng-model="GetstoreRegistersOutputDto.showDiscountOnReceipt">
+                                                <label for="showDiscountOnReceipt">
+                                                    Show discount on receipt
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">
+                                                Note
+                                            </label>
+                                            <textarea type="text" class="form-control" ng-model="GetstoreTaxOutputDto.note" placeholder="enter note" name="note"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="panel-footer">
+                                    <button class="btn btn-primary btn-wide" type="submit" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                        Save
+                                    </button>
+
+                                    <button class="btn btn-default btn-wide" type="button" ng-click="cancelAddEdit()">
+                                        Back
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

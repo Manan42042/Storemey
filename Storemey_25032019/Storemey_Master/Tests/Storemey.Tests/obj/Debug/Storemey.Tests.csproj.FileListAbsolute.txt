@@ -1,0 +1,3 @@
+D:\STOREMEY\LIVE_Storemey\Storemey02\StoremeyMaster\Storemey_Master\Tests\Storemey.Tests\obj\Debug\Storemey.Tests.csprojAssemblyReference.cache
+D:\STOREMEY\LIVE_Storemey\Storemey02\StoremeyMaster\Storemey_Master\Tests\Storemey.Tests\obj\Debug\Storemey.Tests.dll.config
+D:\STOREMEY\LIVE_Storemey\Storemey02\StoremeyMaster\Storemey_Master\Tests\Storemey.Tests\obj\Debug\Storemey.Tests.csproj.CoreCompileInputs.cache

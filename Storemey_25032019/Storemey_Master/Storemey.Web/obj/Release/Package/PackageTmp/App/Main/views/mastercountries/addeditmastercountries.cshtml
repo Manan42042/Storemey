@@ -1,0 +1,196 @@
+﻿@*<form id="frm_create_user" name="userCreateForm" novalidate>
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">
+                <span>@L("CreateNewUser")</span>
+            </h4>
+        </div>
+        <div class="modal-body">
+            <uib-tabset class="tab-container tabbable-line">
+                <uib-tab heading="User Details">
+                    <div class="row clearfix" style="margin-top:10px;">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="username" type="text" name="UserName" ng-model="vm.user.userName" required maxlength="32" minlength="2" class="validate form-control">
+                                    <label for="username" class="form-label">@L("UserName")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="name" type="text" name="Name" ng-model="vm.user.name" required maxlength="32" class="validate form-control">
+                                    <label for="name" class="form-label">@L("Name")</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="surname" type="text" name="Surname" ng-model="vm.user.surname" required maxlength="32" class="validate form-control">
+                                    <label for="surname" class="form-label">@L("Surname")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="email" type="email" name="EmailAddress" ng-model="vm.user.emailAddress" maxlength="256" class="validate form-control">
+                                    <label for="email" class="form-label">@L("EmailAddress")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="password" type="password" name="Password" ng-model="vm.user.password" required maxlength="32" class="validate form-control">
+                                    <label for="password" class="form-label">@L("Password")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input id="confirmpassword" type="password" name="ConfirmPassword" class="validate form-control" ng-model="vm.user.confirmPassword" equalTo="#password" data-msg-equalto="Please enter the same password again." required maxlength="32">
+                                    <label for="confirmpassword" class="form-label">Confirm Password</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group form-float">
+                                <div class="">
+                                    <input id="isactive" type="checkbox" name="IsActive" ng-model="vm.user.isActive" checked class="form-control" />
+                                    <label for="isactive" class="form-label">@L("IsActive")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </uib-tab>
+                <uib-tab heading="User Roles">
+                    <div class="row">
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-6" ng-repeat="role in vm.roles">
+                                <input type="checkbox" name="role" value="{{role.name}}" title="{{role.description}}" class="filled-in" id="role-{{role.id}}" checked="checked" ng-model="role.isAssigned" />
+                                <label for="role-{{role.id}}" title="{{role.displayName}}">{{role.name}}</label>
+                            </div>
+                        </div>
+                    </div>
+                </uib-tab>
+            </uib-tabset>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default waves-effect" ng-click="vm.cancel()">
+                @L("Cancel")
+            </button>
+            <button type="submit" class="btn btn-primary waves-effect" ng-click="vm.save()" ng-disabled="userCreateForm.$invalid">
+                @L("Save")
+            </button>
+        </div>
+
+    </form>*@
+
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Master Countries</h4>
+    @*<div ncy-breadcrumb class="pull-right"></div>*@
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC EXAMPLE -->
+<div class="container-fluid container-fullw" ng-controller="app.views.AddEditountrysCtrl">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h5 class="over-title margin-bottom-15">Add/Update Of, Country!</h5>
+                    @*<p>
+                            Individual form controls automatically receive some global styling.
+                        </p>*@
+                    <div class="row margin-top-30">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="panel panel-white" style="background-color: #fff;">
+                                @*<div class="panel-heading">
+                                        <h5 class="panel-title">Default Form</h5>
+                                    </div>*@
+                                <div class="panel-body">
+                                    @*<p class="text-small margin-bottom-20">
+                                            All textual <code> &lt;input&gt; </code>
+                                            , <code> &lt;textarea&gt; </code>
+                                            , and <code> &lt;select&gt; </code>
+                                            elements with <code> .form-control </code>
+                                            are set to <code> width: 100%; </code>
+                                            by default. Wrap labels and controls in <code> .form-group </code>
+                                            for optimum spacing.
+                                        </p>*@
+                                    <form role="form" id="frmCountry" name="myForm">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Name
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetMasterCountriesOutputDto.name" id="exampleInputEmail1" placeholder="enter name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">
+                                                Code
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetMasterCountriesOutputDto.code" id="exampleInputPassword1" placeholder="enter code" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Dail Code
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetMasterCountriesOutputDto.dail_Code" id="exampleInputEmail1" placeholder="enter daily code" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">
+                                                Currency Name
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetMasterCountriesOutputDto.currency_Name" id="exampleInputPassword1" placeholder="enter currency name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Curreny Symbol
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetMasterCountriesOutputDto.curreny_Symbol" id="exampleInputEmail1" placeholder="entere curreny symbol" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">
+                                                Current Code
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetMasterCountriesOutputDto.current_Code" id="exampleInputPassword1" placeholder="enter current code" required>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="panel-footer">
+                                    <button class="btn btn-primary btn-wide" type="submit" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                        Save
+                                    </button>
+
+                                    <button class="btn btn-default btn-wide" type="button" ng-click="cancelAddEdit()">
+                                        Back
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>

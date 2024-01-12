@@ -1,0 +1,30 @@
+﻿<form id="frm_create_user" name="userCreateForm" novalidate >
+    <div>
+        <div class="modal-header" style="background: #fce9a7;border-left: 10px solid #c82e29;">
+            <button type="button" class="close" ng-click="vm.cancel()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">
+                <span>Import new items</span>
+            </h4>
+        </div>
+        <div class="modal-body">
+            <p>
+                Note: Please select ".csv" file. After the selecting file the process will autostart. Also, We are accepting valid  file data format only.
+            </p>
+            <div class="row clearfix" style="margin-top:10px;">
+                <div class="col-sm-12">
+                    <div class="form-group form-float">
+                        <input type="file" onchange="angular.element(this).scope().uploadFile(this.files)"  accept=".csv" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer" style="background-color:#fffcf2">
+            <button type="button" class="btn btn-default waves-effect" ng-click="cancel()">
+                Close
+            </button>
+           
+        </div>
+    </div>
+</form>

@@ -1,0 +1,127 @@
+@*<div>
+    <div>
+        <div class="navbar-title" ng-if="menuItem.isTitle">
+            <span>Home</span>
+        </div>*@
+<ul class="main-navigation-menu">
+    <div class="navbar-title menu-heading-part" ng-repeat-start="menuItem in vm.menuItems" style="left: -25px; margin-bottom: 10px;    margin-top: 10px;width: 100%;    margin-left: 15px;    width: 300px;position: relative;">
+        <span>{{menuItem.name}}</span>
+    </div>
+    
+    <li ng-repeat-end ng-repeat="menuItem in menuItem.items" ng-class="{'active open selected': menuItem.index == vm.Index}">
+        <a ui-sref="{{menuItem.route}}" ng-click="vm.ActiveCurrentMenu(menuItem.index,menuItem.route)">
+            <div class="item-content">
+                <div class="item-media">
+                    <letter-icon data="{{ menuItem.name }}" char-count="2" size="sm"></letter-icon>
+                    @*<i class="letter-icon-wrapper {{ menuItem.icon }}" style="height:30px;width:30px;padding-top: 3px;"></i>*@
+                </div>
+                <div class="item-inner">
+                    <span class="title" translate="{{menuItem.name}}"> {{menuItem.name}} </span><i class="icon-arrow" ng-if="menuItem.items.length > 0"></i>
+                </div>
+            </div>
+        </a>
+
+        <ul class="sub-menu">
+            <li ng-repeat="subitem in menuItem.items" ui-sref-active="active">
+                <a ui-sref="{{subitem.route}}" ng-click="vm.ActiveCurrentMenu(menuItem.index,subitem.route)"> <span class="title" translate="{{subitem.name}}"> {{subitem.name}} </span> </a>
+            </li>
+        </ul>
+    </li>
+</ul>
+  
+
+<style type="text/css">
+    .icon-pos:before {
+        background-position: 0 0;
+        content: url('/Icons/icons8-pos-terminal-30.ico') !important;
+        filter: invert(100%);
+    }
+    .icon-dashboard:before {
+        background-position: 0 0;
+        content: url('/Icons/dashboard_1196108_nnp_icon.ico') !important;
+        filter: invert(100%);
+    }
+    .icon-sale:before {
+        background-position: 0 0;
+        content: url('/Icons/sale_255519_39h_icon.ico') !important;
+        filter: invert(100%);
+    }
+
+    .icon-product:before {
+        background-position: 0 0;
+        content: url('/Icons/product_technology_209622_wnR_icon.ico') !important;
+        filter: invert(100%);
+    }
+    .icon-customer:before {
+        background-position: 0 0;
+        content: url('/Icons/group_customer_277861_cgf_icon.ico') !important;
+        filter: invert(100%);
+    }
+    .icon-system-setup:before {
+        background-position: 0 0;
+        content: url('/Icons/system_394240_Pmd_icon.ico') !important;
+        filter: invert(100%);
+    }
+    .icon-basic-setup:before {
+        background-position: 0 0;
+        content: url('/Icons/basic_1013220_32d_icon.ico') !important;
+        filter: invert(100%);
+    }
+    /*.icon-general-setting:before {
+        background-position: 0 0;
+        content: url('/Icons/settings_1108420_b6U_icon.ico') !important;
+        filter: invert(100%);
+    }*/
+    .icon-comming-soon:before {
+        background-position: 0 0;
+        content: url('/Icons/coming_soon_736466_36J_icon.ico') !important;
+        filter: invert(100%);
+    }
+
+
+
+    .icon-cash-register:before {
+        background-position: 0 0;
+        content: url('/Icons/icons8-stack-of-money-30.ico') !important;
+        filter: invert(100%);
+    }
+
+
+    .icon-ecommarce:before {
+        background-position: 0 0;
+        content: url('/Icons/icons8-shopping-cart-30.ico') !important;
+        filter: invert(100%);
+    }
+    .icon-sale-history:before {
+        background-position: 0 0;
+        content: url('/Icons/icons8-combo-chart-30.ico') !important;
+        filter: invert(100%);
+    }
+
+    .icon-report:before {
+        background-position: 0 0;
+        content: url('/Icons/icons8-file-30.ico') !important;
+        filter: invert(100%);
+    }
+
+    .icon-bug-tracker:before {
+        background-position: 0 0;
+        content: url('/Icons/icons8-bug-30.ico') !important;
+        filter: invert(100%);
+    }
+
+    .icon-general-setting:before {
+        background-position: 0 0;
+        content: url('/Icons/icons8-gears-30.ico') !important;
+        filter: invert(100%);
+    }
+
+
+    .icon-third-party:before {
+        background-position: 0 0;
+        content: url('/Icons/icons8-reservation-30.ico') !important;
+        filter: invert(100%);
+    }
+
+
+</style>

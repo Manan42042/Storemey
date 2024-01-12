@@ -1,0 +1,424 @@
+﻿@using Abp.Web.Mvc.Extensions
+@using System.Web.Optimization
+@model Storemey.Web.Models.Account.LoginFormViewModel
+
+@{
+    Layout = null;
+}
+
+<link rel="shortcut icon" href="/favicon.png" />
+<title>Storemey</title>
+@{
+    string iddisabled = "";
+    if (!string.IsNullOrEmpty(Storemey.StoremeyConsts.StoreName))
+    {
+        iddisabled = "readonly=\"readonly=\"";
+    }
+}
+
+@{
+    string EmailPattern = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+
+}
+
+@*@section Styles
+    {
+        @Html.IncludeStyle("~/Views/Account/Login.css")
+    }*@
+@*@section Scripts
+    {
+        @Html.IncludeScript("~/Views/Account/Login.js")
+
+    }*@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="application">
+<head>
+    <title>Login V18</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/Logos/Storemey (2).png" />
+
+    @*<link rel="stylesheet" type="text/css" href="/Content/StoremeyLoginScreen/vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/Content/StoremeyLoginScreen/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="/Content/StoremeyLoginScreen/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+        <link rel="stylesheet" type="text/css" href="/Content/StoremeyLoginScreen/vendor/animate/animate.css">
+        <link rel="stylesheet" type="text/css" href="/Content/StoremeyLoginScreen/vendor/css-hamburgers/hamburgers.min.css">
+        <link rel="stylesheet" type="text/css" href="/Content/StoremeyLoginScreen/vendor/animsition/css/animsition.min.css">
+        <link rel="stylesheet" type="text/css" href="/Content/StoremeyLoginScreen/vendor/select2/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="/Content/StoremeyLoginScreen/vendor/daterangepicker/daterangepicker.css">
+        <link rel="stylesheet" type="text/css" href="/Content/StoremeyLoginScreen/css/util.css">
+        <link rel="stylesheet" type="text/css" href="/Content/StoremeyLoginScreen/css/main.css">
+        <link href="~/Content/StoremeyLoginScreen/css/style2.css" rel="stylesheet" />
+
+
+        <link href="/fonts/roboto/roboto.css" rel="stylesheet" />
+        <link href="/fonts/material-icons/materialicons.css" rel="stylesheet" />
+        <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+        <link href="/lib/toastr/toastr.css" rel="stylesheet" />
+        <link href="/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css" rel="stylesheet" />
+        <link href="/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link href="/lib/Waves/dist/waves.css" rel="stylesheet" />
+        <link href="/lib/animate.css/animate.css" rel="stylesheet" />
+        <link href="/css/materialize.css" rel="stylesheet" />
+        <link href="/css/style.css" rel="stylesheet" />
+        <link href="/Views/Account/_Layout.css" rel="stylesheet" />*@
+
+    @Styles.Render("~/Bundles/Login")
+
+</head>
+<body ng-controller="LayoutController">
+
+    @{
+        string loginActive = string.Empty;
+        string SignupActive = string.Empty;
+
+        string loginStyle = string.Empty;
+        string SignupStyle = string.Empty;
+        int clicksignup = 0;
+
+        if (ViewBag.Signup != null && ViewBag.Signup == true)
+        {
+            SignupActive = "active";
+            loginStyle = "display:none";
+            SignupStyle = "display:block";
+            clicksignup = 1;
+        }
+        else
+        {
+            loginActive = "active";
+            SignupStyle = "display:none";
+            loginStyle = "display:block";
+        }
+
+    }
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-form validate-form">
+                    @*<form id="LoginForm" method="POST" asp-action="Login">*@
+
+
+                    <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+                    <input type="hidden" name="returnUrlHash" />
+
+                    <span class="login100-form-title" style="margin-bottom: 15%;">
+                        <a href="/">
+                            <img src="/Logos/logo-via-logohub (3).png" style="height:40px" />
+                        </a>
+                    </span>
+
+
+                    <ul class="tab-group" style="margin-bottom:20px !important;">
+                        <li class="tab @loginActive"><a href="#lgnForm" style="padding: 10px;">Log In</a></li>
+                        <li class="tab @SignupActive"><a href="#lblsignup" class="classSignup" style="padding: 10px;">Sign Up</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="lgnForm" style="@loginStyle">
+                            <form id="LoginForm" method="POST" asp-action="Login" action="/Login" autocomplete="off">
+                                @Html.AntiForgeryToken()
+
+                                <span class="login100-form-title" style="padding-bottom: 10px;">
+                                    Login and Continue.
+                                </span>
+
+                                <div class="wrap-input100 validate-input" data-validate="Store Name is required">
+                                    <span class="label-input100">Store Name</span>
+                                    <input class="input100" type="text" data-type="Storename" name="TenancyName" @iddisabled placeholder="   Store name" value="@Storemey.StoremeyConsts.StoreName" maxlength="200" required autofocus autocomplete="off" />
+                                    <span class="focus-input100"></span>
+
+                                </div>
+
+                                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                                    <span class="label-input100">Email</span>
+                                    <input class="input100" id="txtEmail" type="text" name="UsernameOrEmailAddress" placeholder="   Email or username" required maxlength="100" autocomplete="off" />
+                                    <span class="focus-input100"></span>
+                                </div>
+
+                                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                                    <span class="label-input100">Password</span>
+                                    <input class="input100" type="password" id="txtPassword" name="Password" placeholder="   Password" required maxlength="100" autocomplete="off" />
+                                    <span class="focus-input100"></span>
+                                </div>
+
+                                <div class="flex-sb-m w-full p-t-3 p-b-32">
+                                    @*<div class="contact100-form-checkbox">
+                                            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                                            <label class="label-checkbox100" for="ckb1">
+                                                Remember me
+                                            </label>
+                                        </div>*@
+
+                                    <div>
+                                        <a href="#" class="txt1">
+                                            Forgot Password?
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="container-login100-form-btn">
+                                    <button id="LoginButton" class="login100-form-btn btn btn-block waves-effect" style="padding: 10px;height:unset !important;font-size: 20px;border-radius: unset !important;    box-shadow: none !important;" type="submit">@L("LogIn")</button>
+                                </div>
+                            </form>
+
+                            @*<div class="text-center p-t-46 p-b-20">
+                                    <span class="txt2">
+                                        or sign up using
+                                    </span>
+                                </div>
+
+
+                                <div class="login100-form-social flex-c-m">
+                                    <a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
+                                        <i class="fa fa-facebook-f" aria-hidden="true"></i>
+                                    </a>
+
+                                    <a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                </div>*@
+                        </div>
+                        <div id="lblsignup" style="@SignupStyle">
+                            <form id="RegisterForm" method="POST" action="/Registertenant" autocomplete="off">
+                                @Html.AntiForgeryToken()
+                                <span class="login100-form-title" style="padding-bottom: 10px;">
+                                    Start your <span style="color:#000;">14-Days</span> FREE TRIAL today!
+                                </span>
+
+                                <div class="wrap-input100 validate-input" data-validate="Store Name is required">
+                                    <span class="label-input100">Store Name</span>
+                                    <input class="input100" type="text" id="regStorename" name="RegStoreName" placeholder="   Store name" value="@Storemey.StoremeyConsts.StoreName" maxlength="25" minlength="3" required autofocus autocomplete="off" />
+                                    <span class="focus-input100 tenantIcon1" style="visibility:hidden;float:right;color:green">
+                                        Storename is valid. <i class="fa fa-check"></i>
+                                    </span>
+                                    <span class="focus-input100 tenantIcon2" style="visibility:hidden;float:right;color:red;">
+                                        Storename not valid. <i class="fa fa-times"></i>
+                                    </span>
+                                    <span class="focus-input100 tenantIcon" style="visibility:hidden;float:right;color:red;">
+                                        @*Storename Minimum 4 character.*@
+                                    </span>
+
+                                </div>
+
+                                <div class="wrap-input100 validate-input" data-validate="Store Name is required">
+                                    <span class="label-input100">Username</span>
+                                    <input class="input100" type="text" name="RegName" placeholder="   Username" value="" maxlength="200" required autocomplete="off" />
+                                    <span class="focus-input100"></span>
+                                </div>
+
+                                <div class="wrap-input100 validate-input" data-validate="Store Name is required">
+                                    <span class="label-input100">Email</span>
+
+
+
+                                    <input class="input100" type="text" name="RegEmail" placeholder="   Email" pattern="@EmailPattern" title="Plese enter valid email" value="" email maxlength="200" required autocomplete="off" />
+                                    <span class="focus-input100"></span>
+                                </div>
+
+                                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                                    <span class="label-input100">Password</span>
+                                    <input class="input100" type="password" id="RegPassword" name="RegPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="   Password" required maxlength="100" value="" autocomplete="off" />
+                                    <span class="focus-input100"></span>
+                                </div>
+
+                                        <div class="form-group" style="margin:0 !important">
+                                            
+                                                <input type="checkbox" id="checkbox1">
+                                                <label for="checkbox1">
+                                                    <a ng-click="asyncContent1();" class="txt1" style="text-decoration:underline;font-weight:bold;cursor: pointer;">
+                                                        I agree with storemey applications And the Terms and Conditions.
+                                                    </a>
+                                                </label>
+                                        </div>
+                                
+
+                                <div class="container-login100-form-btn">
+                                    <button id="RegButton" class="login100-form-btn btn btn-block waves-effect" style="padding: 10px;height:unset !important;font-size: 20px;border-radius: unset !important; box-shadow: none !important;margin-top: 20px;" type="submit">@L("Register")</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="login100-more" style="background-color:#000; background-image: url('/Content/StoremeyLoginScreen/images/bg-06.jpg');opacity: 0.9;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<script src="/Content/StoremeyLoginScreen/vendor/jquery/jquery-3.2.1.min.js"></script>
+        <script src="/Content/StoremeyLoginScreen/vendor/animsition/js/animsition.min.js"></script>
+        <script src="/Content/StoremeyLoginScreen/vendor/bootstrap/js/popper.js"></script>
+        <script src="/Content/StoremeyLoginScreen/vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/Content/StoremeyLoginScreen/vendor/select2/select2.min.js"></script>
+        <script src="/Content/StoremeyLoginScreen/vendor/daterangepicker/moment.min.js"></script>
+        <script src="/Content/StoremeyLoginScreen/vendor/daterangepicker/daterangepicker.js"></script>
+        <script src="/Content/StoremeyLoginScreen/vendor/countdowntime/countdowntime.js"></script>
+        <script src="/Content/StoremeyLoginScreen/js/main.js"></script>
+
+        <script src="/lib/jquery/dist/jquery.js"></script>
+        <script src="/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="/lib/json2/json2.js"></script>
+        <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="/lib/moment/min/moment-with-locales.js"></script>
+        <script src="/lib/blockUI/jquery.blockUI.js"></script>
+        <script src="/lib/toastr/toastr.js"></script>
+        <script src="/lib/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="/lib/spin.js/spin.js"></script>
+        <script src="/lib/spin.js/jquery.spin.js"></script>
+        <script src="/lib/Waves/dist/waves.js"></script>
+        <script src="/Abp/Framework/scripts/abp.js"></script>
+        <script src="/Abp/Framework/scripts/libs/abp.jquery.js"></script>
+        <script src="/Abp/Framework/scripts/libs/abp.toastr.js"></script>
+        <script src="/Abp/Framework/scripts/libs/abp.blockUI.js"></script>
+        <script src="/Abp/Framework/scripts/libs/abp.spin.js"></script>
+        <script src="/Abp/Framework/scripts/libs/abp.sweet-alert.js"></script>
+        <script src="/js/admin.js"></script>
+        <script src="/js/main.js"></script>*@
+
+
+    @Scripts.Render("~/Bundles/LoginJS")
+    <script src="/Views/Home/Login.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                $('.input100').each(function () {
+                    if ($(this).data('type') !== undefined && $(this).data('type') === "Storename") {
+                        console.log("yes");
+                    }
+                    else {
+                        $(this).val('');
+                    }
+                });
+            }, 180);
+
+            if (parseInt(@clicksignup) === 1) {
+                $('.classsignup').click();
+            }
+        })
+
+        $('.form').find('input, textarea').on('keyup blur focus', function (e) {
+
+            var $this = $(this),
+                label = $this.prev('label');
+
+            if (e.type === 'keyup') {
+                if ($this.val() === '') {
+                    label.removeClass('active highlight');
+                } else {
+                    label.addClass('active highlight');
+                }
+            } else if (e.type === 'blur') {
+                if ($this.val() === '') {
+                    label.removeClass('active highlight');
+                } else {
+                    label.removeClass('highlight');
+                }
+            } else if (e.type === 'focus') {
+
+                if ($this.val() === '') {
+                    label.removeClass('highlight');
+                }
+                else if ($this.val() !== '') {
+                    label.addClass('highlight');
+                }
+            }
+
+        });
+
+
+        $('.tab a').on('click', function (e) {
+
+            e.preventDefault();
+
+            $(this).parent().addClass('active');
+            $(this).parent().siblings().removeClass('active');
+
+            target = $(this).attr('href');
+
+            $('.tab-content > div').not(target).hide();
+
+
+            if (target == "#lgnForm") {
+                $(".login100-more").css("background-image", "url('/Content/StoremeyLoginScreen/images/bg-06.jpg')");
+            }
+            else {
+                $(".login100-more").css("background-image", "url('/assets/images/metal-coffee-tamp_4460x4460-min.jpg')");
+            }
+            $(target).fadeIn(600);
+
+        });
+
+    </script>
+    @*<style type="text/css">
+            #lblsignup #regStorename:required:focus:valid {
+                background: url("/images/check.svg") no-repeat 95% 50%;
+                background-size: 25px;
+            }
+
+            #lblsignup #regStorename:focus:invalid {
+                background: url("/images/tnt.svg") no-repeat 95% 50%;
+                background-size: 45px;
+            }
+
+        </style>*@
+
+</body>
+</html>
+<script src="/Common/Scripts/jQueryHelper.js"></script>
+
+
+
+
+<script src="~/Scripts/angular.min.js"></script>
+<link href="~/lib/angular-confirm-master/dist/angular-confirm.min.css" rel="stylesheet" />
+<script src="~/lib/angular-confirm-master/dist/angular-confirm.min.js"></script>
+
+<script type="text/javascript">
+
+    angular.module('application', ['cp.ngConfirm'])
+        .controller('LayoutController', [
+            '$scope',
+            '$ngConfirm',
+            '$interval',
+            '$ngConfirmDefaults',
+            '$timeout',
+            function ($scope, $ngConfirm, $interval, $ngConfirmDefaults, $timeout) {
+                $scope.asyncContent = function () {
+                    $ngConfirm({
+                        title: 'Privacy and policy',
+                        contentUrl: '/Views/Home/Privacya and policy .html',
+                        columnClass: 'medium', // to make the width wider.
+                        animation: 'zoom',
+                        backgroundDismiss: true,
+                    })
+                };
+
+                $scope.asyncContent1 = function () {
+                    $ngConfirm({
+                        title: 'Terms & Conditions',
+                        contentUrl: '/Views/Home/TermsAndConditions.html',
+                        columnClass: 'medium', // to make the width wider.
+                        animation: 'zoom',
+                        backgroundDismiss: true,
+                    })
+                };
+            }
+        ]);
+
+</script>
+
+<style style="">
+    .ng-confirm-bg.ng-confirm.ng-confirm-light .ng-confirm-bg, .ng-confirm.ng-confirm-white .ng-confirm-bg {
+        opacity: 0.9 !important;
+    }
+
+    .col-md-offset-3 {
+        margin-left: 15% !important;
+    }
+
+    .col-md-6 {
+        width: 70% !important;
+    }
+</style>

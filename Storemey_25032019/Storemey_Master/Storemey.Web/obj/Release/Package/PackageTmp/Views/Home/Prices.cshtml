@@ -1,0 +1,556 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutStoremeyFront.cshtml";
+}
+
+<style type="text/css">
+    .slick-slider {
+        display: table !important;
+        table-layout: fixed !important;
+        width: 100% !important;
+    }
+</style>
+
+<link href="/Views/Home/Pricing.css" rel="stylesheet" />
+
+<div class="landing-page">
+    <div id="section-0">
+        <header class="navbar navbar-default" id="landing-header" role="navigation" style="background-color: #000 !important;">
+            <!-- start: TOP NAVIGATION CONTAINER -->
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- start: RESPONSIVE MENU TOGGLER -->
+                    <a class="landing-menu-toggler btn btn-red hidden-sm hidden-md hidden-lg mobile-button" data-toggle="collapse" data-target="#landing-navbar" aria-expanded="false" aria-controls="navbar" id="landing-menu-toggler"> <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i> </a>
+                    <!-- end: RESPONSIVE MENU TOGGLER -->
+                    <!-- start: LOGO -->
+                    @*<a href="index.html" class="navbar-brand"> <img src="assets/images/logo.png" alt="Clip-Two"> </a>*@
+                    <a href="/" class="navbar-brand">
+                        <img src="/Logos/Storemey (2).png" alt="Clip-Two" style="height: 50px;">
+                    </a>
+                    <!-- end: LOGO -->
+                </div>
+                <div class="navbar-collapse collapse" id="landing-navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <a href="/"> Home </a>
+                        </li>
+                        <li>
+                            <a href="/features"> Features </a>
+                        </li>
+                        <li>
+                            <a href="/hardware"> Hardware </a>
+                        </li>
+                        <li>
+                            <a href="/prices"> Pricing </a>
+                        </li>
+                        <li>
+                            <a href="/login"> Log in </a>
+                        </li>
+                        <li>
+                            <a href="/signup"> Sign Up </a>
+                        </li>
+                    </ul>
+                    <!-- start: MENU TOGGLER FOR MOBILE DEVICES -->
+                    <div class="close-handle visible-xs-block menu-toggler">
+                        <div class="arrow-left"></div>
+                        <div class="arrow-right"></div>
+                    </div>
+                    <!-- end: MENU TOGGLER FOR MOBILE DEVICES -->
+                </div>
+            </div>
+            <!-- end: TOP NAVIGATION CONTAINER -->
+        </header>
+    </div>
+    <div id="section-4">
+
+
+        <section class="container-fluid container-fullw padding-bottom-30 bg-storemey section-testimonials" style="padding-top: 80px !important;">
+  
+                <div class="row">
+                    <div class="col-md-12">
+                        @*<h2 class="text-center">Pricing</h2>
+                        <hr />*@
+
+
+                        <div id="generic_price_table">
+                            <div style="height: 1115px;">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <!--PRICE HEADING START-->
+                                            <div class="price-heading clearfix">
+                                                <h1>Pricing</h1>
+                                            </div>
+                                            <!--//PRICE HEADING END-->
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                                <!--BLOCK ROW START-->
+                                <div class="row">
+                                    <div class="col-md-2">
+                                    </div>
+
+                                    @{
+                                        int i = 1;
+
+                                        if (ViewBag.PlanAndService != null)
+                                        {
+                                            foreach (var item in ViewBag.PlanAndService)
+                                            {
+                                                string className = "Plan" + i;
+                                                i++;
+                                                @*<div class="col-lg-3 col-md-3 col-xs-6">
+                        <ul class="plan @className featured">
+                            <li class="plan-name bg-storemey-dark">
+                                @item.PlanName
+                            </li>
+                            <li class="plan-price bg-storemey-light">
+                                <h3> @item.Price.Amount$<span class="price-month" style="margin-left: -10px;font-size: large;"> &nbsp; /per month</span></h3>
+                            </li>
+                            @{
+                                int maxBoxWidth = 12;
+                                int AddedBox = 0;
+
+                                foreach (var item1 in item.PlanServices)
+                                {
+                                    <li>
+                                        @item1.ServiceName
+                                    </li>
+                                    AddedBox++;
+                                }
+                                for (int j = 0; j < maxBoxWidth - AddedBox; j++)
+                                {
+                                    <li>
+                                        <i class="fa fa-times"></i>
+                                    </li>
+                                }
+                            }
+
+                        </ul>
+                    </div>*@
+
+                                                <div class="col-md-2">
+                                                    <div class="generic_content active clearfix">
+                                                        <div class="generic_head_price clearfix">
+                                                            <div class="generic_head_content clearfix">
+                                                                <div class="head_bg"></div>
+                                                                <div class="head">
+                                                                    <span>@item.PlanName</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="generic_price_tag clearfix">
+                                                                <span class="price">
+                                                                    <span class="sign">$</span>
+                                                                    <span class="currency">@item.Price.Amount</span>
+                                                                    <span class="cent">.00</span>
+                                                                    <span class="month">/MON</span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="generic_feature_list">
+                                                            <ul>
+                                                                @*<li><span>2GB</span> Bandwidth</li>
+        <li><span>150GB</span> Storage</li>
+        <li><span>12</span> Accounts</li>
+        <li><span>7</span> Host Domain</li>
+        <li><span>24/7</span> Support</li>*@
+
+                                                                @{
+                                                                    int maxBoxWidth = 12;
+                                                                    int AddedBox = 0;
+
+                                                                    foreach (var item1 in item.PlanServices)
+                                                                    {
+                                                                        <li>
+                                                                            @item1.ServiceName
+                                                                        </li>
+                                                                        AddedBox++;
+                                                                    }
+                                                                    for (int j = 0; j < maxBoxWidth - AddedBox; j++)
+                                                                    {
+                                                                        <li>
+                                                                            <i class="fa fa-times"></i>
+                                                                        </li>
+                                                                    }
+                                                                }
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+                                    }
+
+                                    @*<div class="col-md-2">
+
+                                        <!--PRICE CONTENT START-->
+                                        <div class="generic_content active clearfix">
+
+                                            <!--HEAD PRICE DETAIL START-->
+                                            <div class="generic_head_price clearfix">
+
+                                                <!--HEAD CONTENT START-->
+                                                <div class="generic_head_content clearfix">
+
+                                                    <!--HEAD START-->
+                                                    <div class="head_bg"></div>
+                                                    <div class="head">
+                                                        <span>Basic</span>
+                                                    </div>
+                                                    <!--//HEAD END-->
+
+                                                </div>
+                                                <!--//HEAD CONTENT END-->
+                                                <!--PRICE START-->
+                                                <div class="generic_price_tag clearfix">
+                                                    <span class="price">
+                                                        <span class="sign">$</span>
+                                                        <span class="currency">99</span>
+                                                        <span class="cent">.99</span>
+                                                        <span class="month">/MON</span>
+                                                    </span>
+                                                </div>
+                                                <!--//PRICE END-->
+
+                                            </div>
+                                            <!--//HEAD PRICE DETAIL END-->
+                                            <!--FEATURE LIST START-->
+                                            <div class="generic_feature_list">
+                                                <ul>
+                                                    <li><span>2GB</span> Bandwidth</li>
+                                                    <li><span>150GB</span> Storage</li>
+                                                    <li><span>12</span> Accounts</li>
+                                                    <li><span>7</span> Host Domain</li>
+                                                    <li><span>24/7</span> Support</li>
+                                                </ul>
+                                            </div>
+                                            <!--//FEATURE LIST END-->
+                                            <!--BUTTON START-->
+                                              <!--//BUTTON END-->
+
+                                        </div>
+                                        <!--//PRICE CONTENT END-->
+
+                                    </div>
+
+                                    <div class="col-md-2">
+
+                                        <!--PRICE CONTENT START-->
+                                        <div class="generic_content active clearfix">
+
+                                            <!--HEAD PRICE DETAIL START-->
+                                            <div class="generic_head_price clearfix">
+
+                                                <!--HEAD CONTENT START-->
+                                                <div class="generic_head_content clearfix">
+
+                                                    <!--HEAD START-->
+                                                    <div class="head_bg"></div>
+                                                    <div class="head">
+                                                        <span>Standard</span>
+                                                    </div>
+                                                    <!--//HEAD END-->
+
+                                                </div>
+                                                <!--//HEAD CONTENT END-->
+                                                <!--PRICE START-->
+                                                <div class="generic_price_tag clearfix">
+                                                    <span class="price">
+                                                        <span class="sign">$</span>
+                                                        <span class="currency">199</span>
+                                                        <span class="cent">.99</span>
+                                                        <span class="month">/MON</span>
+                                                    </span>
+                                                </div>
+                                                <!--//PRICE END-->
+
+                                            </div>
+                                            <!--//HEAD PRICE DETAIL END-->
+                                            <!--FEATURE LIST START-->
+                                            <div class="generic_feature_list">
+                                                <ul>
+                                                    <li><span>2GB</span> Bandwidth</li>
+                                                    <li><span>150GB</span> Storage</li>
+                                                    <li><span>12</span> Accounts</li>
+                                                    <li><span>7</span> Host Domain</li>
+                                                    <li><span>24/7</span> Support</li>
+                                                </ul>
+                                            </div>
+                                            <!--//FEATURE LIST END-->
+                                            <!--BUTTON START-->
+                                
+                                            <!--//BUTTON END-->
+
+                                        </div>
+                                        <!--//PRICE CONTENT END-->
+
+                                    </div>
+
+                                    <div class="col-md-2">
+
+                                        <!--PRICE CONTENT START-->
+                                        <div class="generic_content active clearfix">
+
+                                            <!--HEAD PRICE DETAIL START-->
+                                            <div class="generic_head_price clearfix">
+
+                                                <!--HEAD CONTENT START-->
+                                                <div class="generic_head_content clearfix">
+
+                                                    <!--HEAD START-->
+                                                    <div class="head_bg"></div>
+                                                    <div class="head">
+                                                        <span>Standard</span>
+                                                    </div>
+                                                    <!--//HEAD END-->
+
+                                                </div>
+                                                <!--//HEAD CONTENT END-->
+                                                <!--PRICE START-->
+                                                <div class="generic_price_tag clearfix">
+                                                    <span class="price">
+                                                        <span class="sign">$</span>
+                                                        <span class="currency">199</span>
+                                                        <span class="cent">.99</span>
+                                                        <span class="month">/MON</span>
+                                                    </span>
+                                                </div>
+                                                <!--//PRICE END-->
+
+                                            </div>
+                                            <!--//HEAD PRICE DETAIL END-->
+                                            <!--FEATURE LIST START-->
+                                            <div class="generic_feature_list">
+                                                <ul>
+                                                    <li><span>2GB</span> Bandwidth</li>
+                                                    <li><span>150GB</span> Storage</li>
+                                                    <li><span>12</span> Accounts</li>
+                                                    <li><span>7</span> Host Domain</li>
+                                                    <li><span>24/7</span> Support</li>
+                                                </ul>
+                                            </div>
+                                            <!--//FEATURE LIST END-->
+                                            <!--BUTTON START-->
+                                    
+                                            <!--//BUTTON END-->
+
+                                        </div>
+                                        <!--//PRICE CONTENT END-->
+
+                                    </div>
+
+                                    <div class="col-md-2">
+
+                                        <!--PRICE CONTENT START-->
+                                        <div class="generic_content active clearfix">
+
+                                            <!--HEAD PRICE DETAIL START-->
+                                            <div class="generic_head_price clearfix">
+
+                                                <!--HEAD CONTENT START-->
+                                                <div class="generic_head_content clearfix">
+
+                                                    <!--HEAD START-->
+                                                    <div class="head_bg"></div>
+                                                    <div class="head">
+                                                        <span>Unlimited</span>
+                                                    </div>
+                                                    <!--//HEAD END-->
+
+                                                </div>
+                                                <!--//HEAD CONTENT END-->
+                                                <!--PRICE START-->
+                                                <div class="generic_price_tag clearfix">
+                                                    <span class="price">
+                                                        <span class="sign">$</span>
+                                                        <span class="currency">299</span>
+                                                        <span class="cent">.99</span>
+                                                        <span class="month">/MON</span>
+                                                    </span>
+                                                </div>
+                                                <!--//PRICE END-->
+
+                                            </div>
+                                            <!--//HEAD PRICE DETAIL END-->
+                                            <!--FEATURE LIST START-->
+                                            <div class="generic_feature_list">
+                                                <ul>
+                                                    <li><span>2GB</span> Bandwidth</li>
+                                                    <li><span>150GB</span> Storage</li>
+                                                    <li><span>12</span> Accounts</li>
+                                                    <li><span>7</span> Host Domain</li>
+                                                    <li><span>24/7</span> Support</li>
+                                                </ul>
+                                            </div>
+                                            <!--//FEATURE LIST END-->
+                                            <!--BUTTON START-->
+                                     
+                                            <!--//BUTTON END-->
+
+                                        </div>
+                                        <!--//PRICE CONTENT END-->
+
+                                    </div>*@
+                                </div>
+                                <!--//BLOCK ROW END-->
+
+                            </div>
+                            <footer>
+                                <a class="bottom_btn" href="/signup">&copy; JOIN NOW</a>
+                            </footer>
+                        </div>
+                        @*<p class="text-center">
+                                    In commerce, price is determined by what (1) a buyer is willing to pay, (2) a seller is willing to accept, and (3) the competition is allowing to be charged.
+                                    <br>With product, promotion, and place of marketing mix, it is one of the business variables over which organizations can exercise some degree of control.
+
+                                </p>
+                                <div class="pricing-table pricing-blue">
+                                    @{
+                                        int i = 1;
+
+                                        if (ViewBag.PlanAndService != null)
+                                        {
+                                            foreach (var item in ViewBag.PlanAndService)
+                                            {
+                                                string className = "Plan" + i;
+                                                i++;
+                                                <div class="col-lg-3 col-md-3 col-xs-6">
+                                                    <ul class="plan @className featured">
+                                                        <li class="plan-name bg-storemey-dark">
+                                                            @item.PlanName
+                                                        </li>
+                                                        <li class="plan-price bg-storemey-light">
+                                                            <h3> @item.Price.Amount$<span class="price-month" style="margin-left: -10px;font-size: large;"> &nbsp; /per month</span></h3>
+                                                        </li>
+                                                        @{
+                                                            int maxBoxWidth = 12;
+                                                            int AddedBox = 0;
+
+                                                            foreach (var item1 in item.PlanServices)
+                                                            {
+                                                                <li>
+                                                                    @item1.ServiceName
+                                                                </li>
+                                                                AddedBox++;
+                                                            }
+                                                            for (int j = 0; j < maxBoxWidth - AddedBox; j++)
+                                                            {
+                                                                <li>
+                                                                    <i class="fa fa-times"></i>
+                                                                </li>
+                                                            }
+                                                        }
+
+                                                    </ul>
+                                                </div>
+                                            }
+                                        }
+                                    }
+                                </div>*@
+                    </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: SECTION 4 -->
+    <!-- start: SECTION 5 -->
+    <div id="section-5">
+        <section class="container-fluid container-fullw padding-bottom-30 section-contact" style="background-color:#FFFFFF;">
+            <div class="container">
+                @*<div class="row">
+                        <div class="col-md-12">
+                            <h2 class="text-center">Contact Us</h2>
+                            <p class="center margin-bottom-30">
+                                Nulla consequat massa quis enim. <strong>Donec pede justo</strong> fringilla vel, aliquet nec, vulputate eget, arcu.
+                                <br>
+                                In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+                            </p>
+                        </div>
+                    </div>*@
+                @*<div class="row">
+                        <div class="col-lg-3 col-lg-offset-3">
+                            <address>
+                                <h4 class="margin-bottom-5 text-red">Main Office:</h4>
+                                1234 Street Name
+                                <br>
+                                City Name, United States
+                                <br>
+                                <abbr title="Phone">P:</abbr> (123) 456-7890
+                            </address>
+                        </div>
+                        <div class="col-lg-4">
+                            <h4 class="margin-bottom-5 text-red">Get in touch</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus.
+                            </p>
+                        </div>
+                    </div>*@
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <a href="mailto:Support@Storemey.com" class="btn btn-storemey-black margin-top-30">
+                            Subscribe to Our Newsletter
+                        </a>
+                        @*<p class="margin-top-10">
+                                Or follow us on your favorite social media sites
+                            </p>
+                            <div class="social-icons">
+                                <ul>
+                                    <li class="social-twitter" uib-tooltip="Twitter" tooltip-placement="top">
+                                        <a target="_blank" href="#">
+                                            Twitter
+                                        </a>
+                                    </li>
+                                    <li class="social-linkedin" uib-tooltip="Linkedin" tooltip-placement="top">
+                                        <a target="_blank" href="#">
+                                            Linkedin
+                                        </a>
+                                    </li>
+                                    <li class="social-facebook" uib-tooltip="Facebook" tooltip-placement="top">
+                                        <a target="_blank" href="#">
+                                            Facebook
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>*@
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p class="margin-top-20" style="text-align: center !important;">
+                            @*&copy; {{app.year}} <span class="text-bold text-uppercase">{{ app.author }}</span>. <span translate="footer.copyright.MESSAGE">All rights reserved</span>
+                                <br>
+                                Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus.*@
+
+                            Storemey @DateTime.UtcNow.Year.ToString() / Version 1.1 / <a ng-click="asyncContent();" style="text-decoration:underline;font-weight:bold;">Privacy policy</a> And <a ng-click="asyncContent1();" style="text-decoration:underline;font-weight:bold;">Terms & Conditions</a> .
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: SECTION 5 -->
+</div>
+<script src="/Content/StoremeyTheme/HTML/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/Content/StoremeyTheme/HTML/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/Content/StoremeyTheme/HTML/bower_components/components-modernizr/modernizr.js"></script>
+<script src="/Content/StoremeyTheme/HTML/bower_components/js-cookie/src/js.cookie.js"></script>
+<script src="/Content/StoremeyTheme/HTML/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+<script src="/Content/StoremeyTheme/HTML/bower_components/jquery-fullscreen/jquery.fullscreen-min.js"></script>
+<script src="/Content/StoremeyTheme/HTML/bower_components/switchery/dist/switchery.min.js"></script>
+<script src="/Content/StoremeyTheme/HTML/bower_components/jquery.knobe/dist/jquery.knob.min.js"></script>
+<script src="/Content/StoremeyTheme/HTML/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+<script src="/Content/StoremeyTheme/HTML/bower_components/slick.js/slick/slick.min.js"></script>
+<script src="/Content/StoremeyTheme/HTML/bower_components/jquery-numerator/jquery-numerator.js"></script>
+<script src="/Content/StoremeyTheme/HTML/bower_components/ladda/dist/spin.min.js"></script>
+<script src="/Content/StoremeyTheme/HTML/bower_components/ladda/dist/ladda.min.js"></script>
+<script src="/Content/StoremeyTheme/HTML/bower_components/ladda/dist/ladda.jquery.min.js"></script>
+
+<script src="~/Content/StoremeyTheme/HTML/LAYOUT-1/STANDARD/assets/js/letter-icons.js"></script>
+<script src="~/Content/StoremeyTheme/HTML/LAYOUT-1/STANDARD/assets/js/main.js"></script>
+
+<script src="~/Content/StoremeyTheme/HTML/LAYOUT-1/STANDARD/assets/js/index.js"></script>
+
+<script src="/Views/Home/SiteMaster.js"></script>
+
+
+<script src="/Common/Scripts/jQueryHelper.js"></script>
