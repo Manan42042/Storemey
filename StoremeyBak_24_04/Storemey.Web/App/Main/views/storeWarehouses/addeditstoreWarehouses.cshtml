@@ -1,0 +1,145 @@
+﻿
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Time Zones</h4>
+    @*<div ncy-breadcrumb class="pull-right"></div>*@
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC EXAMPLE -->
+<div class="container-fluid container-fullw" ng-controller="app.views.storeWarehouses">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h3 class="over-title margin-bottom-15">Add/Update Of, Warehouse!</h3>
+                    @*<p>
+                            Individual form controls automatically receive some global styling.
+                        </p>*@
+                    <div class="row margin-top-30">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="panel panel-white" style="background-color: #fff;">
+                                @*<div class="panel-heading">
+                                        <h5 class="panel-title">Default Form</h5>
+                                    </div>*@
+                                <div class="panel-body">
+                                    @*<p class="text-small margin-bottom-20">
+                                            All textual <code> &lt;input&gt; </code>
+                                            , <code> &lt;textarea&gt; </code>
+                                            , and <code> &lt;select&gt; </code>
+                                            elements with <code> .form-control </code>
+                                            are set to <code> width: 100%; </code>
+                                            by default. Wrap labels and controls in <code> .form-group </code>
+                                            for optimum spacing.
+                                        </p>*@
+                                    <form role="form" id="frmCountry" name="myForm">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Warehouse name
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetstoreWarehousesOutputDto.warehouseName" id="exampleInputEmail1" placeholder="enter name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">
+                                                Street
+                                            </label>
+                                            <textarea type="text" class="form-control" ng-model="GetstoreWarehousesOutputDto.street" placeholder="enter street" name="street"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">
+                                                Street1
+                                            </label>
+                                            <textarea type="text" class="form-control" ng-model="GetstoreWarehousesOutputDto.street1" placeholder="enter street1" name="street1"></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>
+                                                Country
+                                            </label>
+                                            <ui-select ng-model="GetstoreWarehousesOutputDto.uicountryId" name="country" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a person">
+                                                <ui-select-match placeholder="Select a country">{{$select.selected.countryName}}</ui-select-match>
+                                                <ui-select-choices repeat="person in Countries | propsFilter: {countryName: $select.search}">
+                                                    <div ng-bind-html="person.countryName | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <input type="text" ng-model="GetstoreWarehousesOutputDto.uicountryId" style="visibility:hidden;height:0px;padding: 0 !important;" name="country" class="form-control" placeholder="Enter your Country">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                State
+                                            </label>
+                                            <ui-select ng-model="GetstoreWarehousesOutputDto.uistateId" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a person">
+                                                <ui-select-match placeholder="Select a state">{{$select.selected.stateName}}</ui-select-match>
+                                                <ui-select-choices repeat="person in States | propsFilter: {stateName: $select.search}">
+                                                    <div ng-bind-html="person.stateName | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <input type="text" ng-model="GetstoreWarehousesOutputDto.uistateId" style="visibility:hidden;height:0px;padding: 0 !important;" name="state" class="form-control" placeholder="Enter your state">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>
+                                                City
+                                            </label>
+                                            <ui-select ng-model="GetstoreWarehousesOutputDto.uicityId" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a person">
+                                                <ui-select-match placeholder="Select a City">{{$select.selected.cityName}}</ui-select-match>
+                                                <ui-select-choices repeat="person in Cities | propsFilter: {cityName: $select.search}">
+                                                    <div ng-bind-html="person.cityName | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <input type="text" ng-model="GetstoreWarehousesOutputDto.uicityId" style="visibility:hidden;height:0px;padding: 0 !important;" name="city" class="form-control" placeholder="Enter your City">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Zipcode
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetstoreWarehousesOutputDto.zipCode" id="exampleInputEmail1" placeholder="enter zipcode" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Contact number
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetstoreWarehousesOutputDto.contactNumber" id="exampleInputEmail1" placeholder="enter contact number" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Mobile number
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetstoreWarehousesOutputDto.mobileNumber" id="exampleInputEmail1" placeholder="enter mobile number" required>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Email
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetstoreWarehousesOutputDto.email" id="exampleInputEmail1" placeholder="enter email" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">
+                                                Note
+                                            </label>
+                                            <textarea type="text" class="form-control" ng-model="GetstoreWarehousesOutputDto.note" placeholder="enter note" name="note"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="panel-footer">
+                                    <button class="btn btn-primary btn-wide" type="submit" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                        Save
+                                    </button>
+
+                                    <button class="btn btn-default btn-wide" type="button" ng-click="cancelAddEdit()">
+                                        Back
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

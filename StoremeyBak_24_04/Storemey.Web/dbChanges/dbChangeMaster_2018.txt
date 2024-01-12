@@ -1,0 +1,221 @@
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+** 27/08/2018 **
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+USE [StoremeyMaster]
+GO
+
+/****** Object:  Table [dbo].[MasterCountries]    Script Date: 8/27/2018 9:47:18 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[MasterCountries](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](200) NULL,
+	[Code] [nvarchar](200) NULL,
+	[Dail_Code] [nvarchar](200) NULL,
+	[Currency_Name] [nvarchar](200) NULL,
+	[Curreny_Symbol] [text] NULL,
+	[Current_Code] [nvarchar](200) NULL,
+	[Flagimage] [nvarchar](500) NULL,
+	[IsActive] [bit] NULL,
+	[IsDeleted] [bit] NULL,
+	[CreatedBy] [int] NULL,
+	[CreatedDate] [datetime] NULL,
+	[UpdatedBy] [int] NULL,
+	[UpdatedDate] [datetime] NULL,
+ CONSTRAINT [PK_AbpCountries] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[MasterCountries] ADD  CONSTRAINT [DF_StoreCountries_IsActive]  DEFAULT ((1)) FOR [IsActive]
+GO
+
+ALTER TABLE [dbo].[MasterCountries] ADD  CONSTRAINT [DF_StoreCountries_IsDeleted]  DEFAULT ((0)) FOR [IsDeleted]
+GO
+
+ALTER TABLE [dbo].[MasterCountries] ADD  CONSTRAINT [DF_StoreCountries_CreatedBy]  DEFAULT ((0)) FOR [CreatedBy]
+GO
+
+ALTER TABLE [dbo].[MasterCountries] ADD  CONSTRAINT [DF_StoreCountries_CreatedDate]  DEFAULT (getdate()) FOR [CreatedDate]
+GO
+
+ALTER TABLE [dbo].[MasterCountries] ADD  CONSTRAINT [DF_StoreCountries_UpdatedBy]  DEFAULT ((0)) FOR [UpdatedBy]
+GO
+
+ALTER TABLE [dbo].[MasterCountries] ADD  CONSTRAINT [DF_StoreCountries_UpdatedDate]  DEFAULT (getdate()) FOR [UpdatedDate]
+GO
+
+
+
+
+
+
+==================================================
+
+
+
+USE [StoremeyMaster]
+GO
+
+/****** Object:  Table [dbo].[MasterPlanPrices]    Script Date: 8/27/2018 9:47:40 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[MasterPlanPrices](
+	[PriceID] [int] IDENTITY(1,1) NOT NULL,
+	[PlanID] [int] NULL,
+	[CountryID] [int] NULL,
+	[Amount] [int] NULL,
+	[IsActive] [bit] NULL,
+	[IsDeleted] [bit] NULL,
+	[CreatedBy] [int] NULL,
+	[CreatedDate] [datetime] NULL,
+	[UpdatedBy] [int] NULL,
+	[UpdatedDate] [datetime] NULL,
+ CONSTRAINT [PK_StorePlanPrices] PRIMARY KEY CLUSTERED 
+(
+	[PriceID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[MasterPlanPrices] ADD  CONSTRAINT [DF_StorePlanPrices_IsActive]  DEFAULT ((1)) FOR [IsActive]
+GO
+
+ALTER TABLE [dbo].[MasterPlanPrices] ADD  CONSTRAINT [DF_StorePlanPrices_IsDeleted]  DEFAULT ((0)) FOR [IsDeleted]
+GO
+
+ALTER TABLE [dbo].[MasterPlanPrices] ADD  CONSTRAINT [DF_StorePlanPrices_CreatedBy]  DEFAULT ((0)) FOR [CreatedBy]
+GO
+
+ALTER TABLE [dbo].[MasterPlanPrices] ADD  CONSTRAINT [DF_StorePlanPrices_CreatedDate]  DEFAULT (getdate()) FOR [CreatedDate]
+GO
+
+ALTER TABLE [dbo].[MasterPlanPrices] ADD  CONSTRAINT [DF_StorePlanPrices_UpdatedBy]  DEFAULT ((0)) FOR [UpdatedBy]
+GO
+
+ALTER TABLE [dbo].[MasterPlanPrices] ADD  CONSTRAINT [DF_StorePlanPrices_UpdatedDate]  DEFAULT (getdate()) FOR [UpdatedDate]
+GO
+
+
+
+
+==================================================
+
+
+USE [StoremeyMaster]
+GO
+
+/****** Object:  Table [dbo].[MasterPlans]    Script Date: 8/27/2018 9:48:10 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[MasterPlans](
+	[PlanID] [int] IDENTITY(1,1) NOT NULL,
+	[PlanName] [nvarchar](200) NULL,
+	[IsActive] [bit] NULL,
+	[IsDeleted] [bit] NULL,
+	[CreatedBy] [int] NULL,
+	[CreatedDate] [datetime] NULL,
+	[UpdatedBy] [int] NULL,
+	[UpdatedDate] [datetime] NULL,
+ CONSTRAINT [PK_StorePlans] PRIMARY KEY CLUSTERED 
+(
+	[PlanID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[MasterPlans] ADD  CONSTRAINT [DF_StorePlans_IsActive]  DEFAULT ((1)) FOR [IsActive]
+GO
+
+ALTER TABLE [dbo].[MasterPlans] ADD  CONSTRAINT [DF_StorePlans_IsDeleted]  DEFAULT ((0)) FOR [IsDeleted]
+GO
+
+ALTER TABLE [dbo].[MasterPlans] ADD  CONSTRAINT [DF_StorePlans_CreatedBy]  DEFAULT ((0)) FOR [CreatedBy]
+GO
+
+ALTER TABLE [dbo].[MasterPlans] ADD  CONSTRAINT [DF_StorePlans_CreatedDate]  DEFAULT (getdate()) FOR [CreatedDate]
+GO
+
+ALTER TABLE [dbo].[MasterPlans] ADD  CONSTRAINT [DF_StorePlans_UpdatedBy]  DEFAULT ((0)) FOR [UpdatedBy]
+GO
+
+ALTER TABLE [dbo].[MasterPlans] ADD  CONSTRAINT [DF_StorePlans_UpdatedDate]  DEFAULT (getdate()) FOR [UpdatedDate]
+GO
+
+
+
+==================================================
+
+
+USE [StoremeyMaster]
+GO
+
+/****** Object:  Table [dbo].[MasterPlanServices]    Script Date: 8/27/2018 9:48:30 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[MasterPlanServices](
+	[ServicePlanID] [int] IDENTITY(1,1) NOT NULL,
+	[PlanID] [int] NULL,
+	[ServiceName] [nvarchar](300) NULL,
+	[IsActive] [bit] NULL,
+	[IsDeleted] [bit] NULL,
+	[CreatedBy] [int] NULL,
+	[CreatedDate] [datetime] NULL,
+	[UpdatedBy] [int] NULL,
+	[UpdatedDate] [datetime] NULL,
+ CONSTRAINT [PK_StorePlanServices] PRIMARY KEY CLUSTERED 
+(
+	[ServicePlanID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[MasterPlanServices] ADD  CONSTRAINT [DF_StorePlanServices_IsActive]  DEFAULT ((1)) FOR [IsActive]
+GO
+
+ALTER TABLE [dbo].[MasterPlanServices] ADD  CONSTRAINT [DF_StorePlanServices_IsDeleted]  DEFAULT ((0)) FOR [IsDeleted]
+GO
+
+ALTER TABLE [dbo].[MasterPlanServices] ADD  CONSTRAINT [DF_StorePlanServices_CreatedBy]  DEFAULT ((0)) FOR [CreatedBy]
+GO
+
+ALTER TABLE [dbo].[MasterPlanServices] ADD  CONSTRAINT [DF_StorePlanServices_CreatedDate]  DEFAULT (getdate()) FOR [CreatedDate]
+GO
+
+ALTER TABLE [dbo].[MasterPlanServices] ADD  CONSTRAINT [DF_StorePlanServices_UpdatedBy]  DEFAULT ((0)) FOR [UpdatedBy]
+GO
+
+ALTER TABLE [dbo].[MasterPlanServices] ADD  CONSTRAINT [DF_StorePlanServices_UpdatedDate]  DEFAULT (getdate()) FOR [UpdatedDate]
+GO
+
+
+
+
+

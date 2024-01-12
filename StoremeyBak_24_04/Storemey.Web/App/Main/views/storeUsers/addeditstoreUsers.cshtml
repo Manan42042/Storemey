@@ -1,0 +1,119 @@
+﻿
+@{
+    string EmailPattern = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+
+}
+
+
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Users</h4>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC EXAMPLE -->
+<div class="container-fluid container-fullw" ng-controller="app.views.storeUsers">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h3 class="over-title margin-bottom-15">Add/Update Of, User!</h3>
+                    @*<p>
+                            Individual form controls automatically receive some global styling.
+                        </p>*@
+                    <div class="row margin-top-30">
+                        <form role="form" id="frmCountry" name="myForm" ng-submit="register(myForm)" ng-validate="validationOptions">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="panel panel-white" style="background-color: #fff;">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                  
+                                                    
+                                                    <table>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="cropBox croppedBox">
+                                                                    <div>
+                                                                        <img ng-src="{{GetstoreUsersOutputDto.image}}" ng-click="openCrop()" style="width:100%;height:100%;" />
+                                                                    </div>
+
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <span class="btn btn-primary btn-file">
+                                                                    Select an image file
+                                                                    <input type="file" id="fileInput" size="5" accept="image/*">
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        First Name
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreUsersOutputDto.firstName" name="firstName" placeholder="enter first name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">
+                                                        Last Name
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreUsersOutputDto.lastName" name="lastName" placeholder="enter last name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Email Address
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreUsersOutputDto.emailAddress" name="email" placeholder="enter email address">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">
+                                                        Phone Number
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreUsersOutputDto.phoneNumber" name="phoneNumber" placeholder="enter phone name">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">
+                                                        UserName
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreUsersOutputDto.userName" name="userName" placeholder="enter username">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">
+                                                        Password
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreUsersOutputDto.password" name="password" id="exampleInputPassword1" placeholder="enter password">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">
+                                                        Note
+                                                    </label>
+                                                    <textarea type="text" class="form-control" ng-model="GetstoreUsersOutputDto.note" placeholder="enter note" name="note"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <button class="btn btn-primary btn-wide" type="submit" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                            Save
+                                        </button>
+
+                                        <button class="btn btn-default btn-wide" type="button" ng-click="cancelAddEdit()">
+                                            Back
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

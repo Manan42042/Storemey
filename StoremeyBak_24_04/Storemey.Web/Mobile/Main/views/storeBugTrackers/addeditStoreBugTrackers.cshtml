@@ -1,0 +1,122 @@
+﻿
+@{
+    string EmailPattern = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+
+}
+
+
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Bug Trackers</h4>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC EXAMPLE -->
+<div class="container-fluid container-fullw" ng-controller="app.views.adminBugTrackers">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h3 class="over-title margin-bottom-15">Add/Update Of, Bug Tracker!</h3>
+                    @*<p>
+                            Individual form controls automatically receive some global styling.
+                        </p>*@
+                    <div class="row margin-top-30">
+                        <form role="form" id="frmCountry" name="myForm" ng-submit="register(myForm)" ng-validate="validationOptions">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="panel panel-white" style="background-color: #fff;">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Title
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminBugTrackersOutputDto.title" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Discription
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminBugTrackersOutputDto.discription" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        BugURL
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminBugTrackersOutputDto.bugURL" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        BugDate
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminBugTrackersOutputDto.bugDate" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Bug From Name
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminBugTrackersOutputDto.bugFromName" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Bug From Email
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminBugTrackersOutputDto.bugFromEmail" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Bug Store Name
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminBugTrackersOutputDto.bugStoreName" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Attched FileName
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminBugTrackersOutputDto.attchedFileName" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        DeadLine Date
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminBugTrackersOutputDto.deadLineDate" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Status
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminBugTrackersOutputDto.status" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Bug Resolve Date
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminBugTrackersOutputDto.bugResolveDate" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Bug Solved By Name
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminBugTrackersOutputDto.bugSolvedByName" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <button class="btn btn-primary btn-wide" type="submit" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                            Save
+                                        </button>
+
+                                        <button class="btn btn-default btn-wide" type="button" ng-click="cancelAddEdit()">
+                                            Back
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

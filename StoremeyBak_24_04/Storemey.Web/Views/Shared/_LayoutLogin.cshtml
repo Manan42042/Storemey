@@ -1,0 +1,126 @@
+﻿@using Abp.Configuration
+@using Abp.Timing
+@using Abp.Web.Mvc.Extensions
+@using Storemey.Configuration
+
+@using System.Threading
+@using System.Web.Optimization
+@using Storemey;
+@*
+    IMPORTANT NOTES FROM ASP.NET BOILERPLATE:
+
+    This _Layout.cshtml is not used actually. It's left here if you want to add some classic style (MPA)
+    pages to your application.
+
+    See App/Main/views/layout/layout.cshtml for Angular application's layout page.
+*@
+@{
+    Layout = null;
+    SetAntiForgeryCookie();
+    var uiTheme = SettingManager.GetSettingValue(AppSettingNames.UiTheme);
+}
+<!DOCTYPE html>
+<html lang="en" ng-app="application">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Storemey , POS , Ecommarce , Store , Point of sale , POS system, Point of sale systems, Storemey, Storemey.com,  Features , Hardware , Pricing ,  Log in , Sign Up, @StoremeyConsts.tenantName">
+    <meta name="keywords" content="Storemey , POS , Ecommarce , Store , Point of sale , POS system, Point of sale systems, Storemey, Storemey.com,  Features , Hardware , Pricing ,  Log in , Sign Up, @StoremeyConsts.tenantName">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta http-equiv="refresh" content="120">
+    @*<title data-ng-bind="pageTitle()">Storemey</title>*@
+    <!-- Google fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link href="/fonts/Karla/Karlacss.css" rel="stylesheet" />
+    <!-- Packet Theme -->
+    @*@Styles.Render("~/Bundles/App/vendor/css")*@
+    @Styles.Render("~/Homepage/Bundles")
+    <link rel="stylesheet" data-ng-href="/assets/css/themes/{{ app.layout.theme }}.css" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.png" />
+    <title>
+        Storemey , POS , Ecommarce , Store , Point of sale , POS system, Point of sale systems, Storemey, Storemey.com ,  Features , Hardware , Pricing ,  Log in , Sign Up, @StoremeyConsts.tenantName
+    </title>
+
+    @RenderSection("Scripts", false)
+</head>
+<body class="no-border" ng-controller="LayoutController">
+    @RenderBody()
+
+    @*@Scripts.Render("~/Bundles/StoremeythemeJS")*@
+
+
+    <script src="/HTMLassets/js/letter-icons.js"></script>
+    <script src="/HTMLassets/js/main.js"></script>
+    <!-- end: Packet JAVASCRIPTS -->
+    <!-- start: JavaScript Event Handlers for this page -->
+    <script src="/HTMLassets/js/landing-page.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            Main.init();
+            LandingPage.init();
+        });
+    </script>
+
+</body>
+</html>
+<script src="/Common/Scripts/jQueryHelper.js"></script>
+
+<script src="~/Scripts/angular.min.js"></script>
+<link href="~/lib/angular-confirm-master/dist/angular-confirm.min.css" rel="stylesheet" />
+<script src="~/lib/angular-confirm-master/dist/angular-confirm.min.js"></script>
+
+<script type="text/javascript">
+
+    angular.module('application', ['cp.ngConfirm'])
+        .controller('LayoutController', [
+            '$scope',
+            '$ngConfirm',
+            '$interval',
+            '$ngConfirmDefaults',
+            '$timeout',
+            function ($scope, $ngConfirm, $interval, $ngConfirmDefaults, $timeout) {
+                $scope.asyncContent = function () {
+                    $ngConfirm({
+                        title: 'Privacy and policy',
+                        contentUrl: '/Views/Home/Privacya and policy .html',
+                        columnClass: 'medium', // to make the width wider.
+                        animation: 'zoom',
+                        backgroundDismiss: true,
+                    })
+                };
+
+                $scope.asyncContent1 = function () {
+                    $ngConfirm({
+                        title: 'Terms & Conditions',
+                        contentUrl: '/Views/Home/TermsAndConditions.html',
+                        columnClass: 'medium', // to make the width wider.
+                        animation: 'zoom',
+                        backgroundDismiss: true,
+                    })
+                };
+            }
+        ]);
+
+</script>
+
+<style style="">
+    .ng-confirm-bg.ng-confirm.ng-confirm-light .ng-confirm-bg, .ng-confirm.ng-confirm-white .ng-confirm-bg {
+        opacity: 0.9 !important;
+    }
+
+    .col-md-offset-3 {
+        margin-left: 15% !important;
+    }
+
+    .col-md-6 {
+        width: 70% !important;
+    }
+</style>
+
+
+<!-- Widget Code -->
+<script type='text/javascript' data-cfasync='false'>window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: 'b617549e-9bf5-410f-9914-0599ad8834a0', f: true }); done = true; } }; })();</script>

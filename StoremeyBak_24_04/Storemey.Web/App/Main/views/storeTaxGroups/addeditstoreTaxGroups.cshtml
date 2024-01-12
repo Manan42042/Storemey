@@ -1,0 +1,82 @@
+﻿
+@{
+    string EmailPattern = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+
+}
+
+
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Tax Groups</h4>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC EXAMPLE -->
+<div class="container-fluid container-fullw" ng-controller="app.views.storeTaxGroups">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h3 class="over-title margin-bottom-15">Add/Update Of, Tax group!</h3>
+                    @*<p>
+                            Individual form controls automatically receive some global styling.
+                        </p>*@
+                    <div class="row margin-top-30">
+                        <form role="form" id="frmCountry" name="myForm" ng-submit="register(myForm)" ng-validate="validationOptions">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="panel panel-white" style="background-color: #fff;">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Tax Group Name
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetstoreTaxGroupsOutputDto.taxGroupName" name="taxGroupName" placeholder="enter first name">
+                                                </div>
+                                                <div ng-repeat="data in GetstoreTaxGroupsOutputDto.listTax">
+                                                    @*<input type="checkbox" ng-model="data.isassign" data-checklist-model="data.isassign" data-checklist-value="data.isassign"> {{data.taxName}}*@
+
+
+
+                                                    <div class="form-group">
+                                                        <div class="checkbox clip-check check-primary">
+                                                            <input type="checkbox" id="{{data.taxName}}" value="1" ng-model="data.isassign">
+                                                            <label for="{{data.taxName}}">
+                                                                {{data.taxName}} - ({{data.rate}})
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                @*<li class="animate-repeat" ng-repeat="friend in GetstoreTaxGroupsOutputDto.listTax track by friend.taxName">
+                                                    {{friend.taxName}}  is {{::friend.id}} years old.
+                                                </li>*@
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">
+                                                        Note
+                                                    </label>
+                                                    <textarea type="text" class="form-control" ng-model="GetstoreTaxGroupsOutputDto.note" placeholder="enter note" name="note"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <button class="btn btn-primary btn-wide" type="submit" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                            Save
+                                        </button>
+
+                                        <button class="btn btn-default btn-wide" type="button" ng-click="cancelAddEdit()">
+                                            Back
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

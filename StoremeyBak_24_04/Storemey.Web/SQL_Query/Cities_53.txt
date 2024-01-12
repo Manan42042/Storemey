@@ -1,0 +1,734 @@
+INSERT INTO [StoreCityMaster] ([CityName], [StateId]) VALUES
+( 'Southold', 3956),
+( 'Southport', 3956),
+( 'Spring Valley', 3956),
+( 'Stony Point', 3956),
+( 'Suffern', 3956),
+( 'Sullivan', 3956),
+( 'Sweden', 3956),
+( 'Syracuse', 3956),
+( 'Tarrytown', 3956),
+( 'Thompson', 3956),
+( 'Tonawanda', 3956),
+( 'Troy', 3956),
+( 'Ulster', 3956),
+( 'Union', 3956),
+( 'Utica', 3956),
+( 'Valley Stream', 3956),
+( 'Van Buren', 3956),
+( 'Vestal', 3956),
+( 'Victor', 3956),
+( 'Walden', 3956),
+( 'Wallkill', 3956),
+( 'Walworth', 3956),
+( 'Wappinger', 3956),
+( 'Warwick', 3956),
+( 'Watertown', 3956),
+( 'Watervliet', 3956),
+( 'Wawarsing', 3956),
+( 'Webster', 3956),
+( 'West Haverstraw', 3956),
+( 'West Seneca', 3956),
+( 'Westbury', 3956),
+( 'Wheatfield', 3956),
+( 'White Plains', 3956),
+( 'Whitestown', 3956),
+( 'Williston Park', 3956),
+( 'Wilton', 3956),
+( 'Woodbury', 3956),
+( 'Yonkers', 3956),
+( 'Yorktown', 3956),
+( 'Charlotte', 3957),
+( 'Raleigh', 3957),
+( 'Greensboro', 3957),
+( 'Durham', 3957),
+( 'Winston-Salem', 3957),
+( 'Fayetteville', 3957),
+( 'Cary', 3957),
+( 'Wilmington', 3957),
+( 'High Point', 3957),
+( 'Greenville', 3957),
+( 'Asheville', 3957),
+( 'Concord', 3957),
+( 'Gastonia', 3957),
+( 'Jacksonville', 3957),
+( 'Chapel Hill', 3957),
+( 'Rocky Mount', 3957),
+( 'Burlington', 3957),
+( 'Huntersville', 3957),
+( 'Wilson', 3957),
+( 'Kannapolis', 3957),
+( 'Apex', 3957),
+( 'Hickory', 3957),
+( 'Wake Forest', 3957),
+( 'Indian Trail', 3957),
+( 'Goldsboro', 3957),
+( 'Mooresville', 3957),
+( 'Monroe', 3957),
+( 'Salisbury', 3957),
+( 'New Bern', 3957),
+( 'Holly Springs', 3957),
+( 'Matthews', 3957),
+( 'Sanford', 3957),
+( 'Garner', 3957),
+( 'Cornelius', 3957),
+( 'Thomasville', 3957),
+( 'Asheboro', 3957),
+( 'Statesville', 3957),
+( 'Mint Hill', 3957),
+( 'Kernersville', 3957),
+( 'Morrisville', 3957),
+( 'Fuquay-Varina', 3957),
+( 'Lumberton', 3957),
+( 'Kinston', 3957),
+( 'Carrboro', 3957),
+( 'Havelock', 3957),
+( 'Shelby', 3957),
+( 'Clemmons', 3957),
+( 'Lexington', 3957),
+( 'Clayton', 3957),
+( 'Boone', 3957),
+( 'Fargo', 3958),
+( 'Bismarck', 3958),
+( 'Grand Forks', 3958),
+( 'Minot', 3958),
+( 'West Fargo', 3958),
+( 'Williston', 3958),
+( 'Dickinson', 3958),
+( 'Mandan', 3958),
+( 'Jamestown', 3958),
+( 'Wahpeton', 3958),
+( 'Devils Lake', 3958),
+( 'Valley City', 3958),
+( 'Providence', 3965),
+( 'Warwick', 3965),
+( 'Cranston', 3965),
+( 'Pawtucket', 3965),
+( 'East Providence', 3965),
+( 'Woonsocket', 3965),
+( 'Coventry', 3965),
+( 'Cumberland', 3965),
+( 'North Providence', 3965),
+( 'South Kingstown', 3965),
+( 'West Warwick', 3965),
+( 'Johnston', 3965),
+( 'North Kingstown', 3965),
+( 'Newport', 3965),
+( 'Bristol', 3965),
+( 'Westerly', 3965),
+( 'Smithfield', 3965),
+( 'Lincoln', 3965),
+( 'Central Falls', 3965),
+( 'Portsmouth', 3965),
+( 'Barrington', 3965),
+( 'Middletown', 3965),
+( 'Burrillville', 3965),
+( 'Narragansett', 3965),
+( 'Tiverton', 3965),
+( 'East Greenwich', 3965),
+( 'North Smithfield', 3965),
+( 'Warren', 3965),
+( 'Scituate', 3965),
+( 'Glocester', 3965),
+( 'Hopkinton', 3965),
+( 'Charlestown', 3965),
+( 'Richmond', 3965),
+( 'Columbia', 3966),
+( 'Charleston', 3966),
+( 'North Charleston', 3966),
+( 'Mount Pleasant', 3966),
+( 'Rock Hill', 3966),
+( 'Greenville', 3966),
+( 'Summerville', 3966),
+( 'Sumter', 3966),
+( 'Hilton Head Island', 3966),
+( 'Spartanburg', 3966),
+( 'Florence', 3966),
+( 'Goose Creek', 3966),
+( 'Aiken', 3966),
+( 'Myrtle Beach', 3966),
+( 'Anderson', 3966),
+( 'Greer', 3966),
+( 'Mauldin', 3966),
+( 'Greenwood', 3966),
+( 'North Augusta', 3966),
+( 'Easley', 3966),
+( 'Simpsonville', 3966),
+( 'Hanahan', 3966),
+( 'Lexington', 3966),
+( 'Conway', 3966),
+( 'West Columbia', 3966),
+( 'North Myrtle Beach', 3966),
+( 'Clemson', 3966),
+( 'Orangeburg', 3966),
+( 'Cayce', 3966),
+( 'Bluffton', 3966),
+( 'Beaufort', 3966),
+( 'Gaffney', 3966),
+( 'Irmo', 3966),
+( 'Fort Mill', 3966),
+( 'Port Royal', 3966),
+( 'Forest Acres', 3966),
+( 'Newberry', 3966),
+( 'Sioux Falls', 3967),
+( 'Rapid City', 3967),
+( 'Aberdeen', 3967),
+( 'Brookings', 3967),
+( 'Watertown', 3967),
+( 'Mitchell', 3967),
+( 'Yankton', 3967),
+( 'Pierre', 3967),
+( 'Huron', 3967),
+( 'Spearfish', 3967),
+( 'Vermillion', 3967),
+( 'Brandon', 3967),
+( 'Box Elder', 3967),
+( 'Madison', 3967),
+( 'Sturgis', 3967),
+( 'Belle Fourche', 3967),
+( 'Harrisburg', 3967),
+( 'Charleston', 3976),
+( 'Huntington', 3976),
+( 'Morgantown', 3976),
+( 'Parkersburg', 3976),
+( 'Wheeling', 3976),
+( 'Weirton', 3976),
+( 'Fairmont', 3976),
+( 'Martinsburg', 3976),
+( 'Beckley', 3976),
+( 'Clarksburg', 3976),
+( 'South Charleston', 3976),
+( 'St. Albans', 3976),
+( 'Vienna', 3976),
+( 'Bluefield', 3976),
+( 'Moundsville', 3976),
+( 'Bridgeport', 3976),
+( 'Oak Hill', 3976),
+( 'Dunbar', 3976),
+( 'Elkins', 3976),
+( 'Nitro', 3976),
+( 'Hurricane', 3976),
+( 'Princeton', 3976),
+( 'Charles Town', 3976),
+( 'Buckhannon', 3976),
+( 'Keyser', 3976),
+( 'New Martinsville', 3976),
+( 'Grafton', 3976),
+( 'Ranson', 3976),
+( 'Point Pleasant', 3976),
+( 'Westover', 3976),
+( 'Weston', 3976),
+( 'Lewisburg', 3976),
+( 'Ravenswood', 3976),
+( 'Summersville', 3976),
+('Alcala',805),
+('Andalucia',805),
+('Ansermanuevo',805),
+('Argelia',805),
+('Bolivar',805),
+('Buenaventura',805),
+('Buga',805),
+('Bugalagrande',805),
+('Caicedonia',805),
+('Cali',805),
+('Calima - El Darien',805),
+('Candelaria',805),
+('Cartago',805),
+('Dagua',805),
+('El Aguila',805),
+('El Cairo',805),
+('El Cerrito',805),
+('El Dovio',805),
+('Florida',805),
+('Ginebra',805),
+('Guacari',805),
+('Jamundi',805),
+('La Cumbre',805),
+('La Union',805),
+('La Victoria',805),
+('Obando',805),
+('Palmira',805),
+('Pradera',805),
+('Restrepo',805),
+('Riofrio',805),
+('Roldanillo',805),
+('San Pedro',805),
+('Sevilla',805),
+('Toro',805),
+('Trujillo',805),
+('Tulua',805),
+('Ulloa',805),
+('Versalles',805),
+('Vijes',805),
+('Yotoco',805),
+('Yumbo',805),
+('Zarzal',805);
+
+
+
+/* INSERT QUERY : City from state */
+
+INSERT INTO [dbo].[StoreCityMaster]
+           ([CountryId]
+           ,[StateId]
+           ,[CityName])
+          
+         select CountryId,id,StateName from	[dbo].[StoreStateMaster] where Id not in (Select Stateid from [dbo].[StoreCityMaster]);
+
+
+
+/* INSERT QUERY : Warehouse */
+
+
+INSERT INTO [dbo].[StoreWarehouses]
+           ([WarehouseName]
+           ,[Street]
+           ,[Street1]
+           ,[Country]
+           ,[CountryId]
+           ,[State]
+           ,[StateId]
+           ,[City]
+           ,[CityId]
+           ,[ZipCode]
+           ,[ContactNumber]
+           ,[MobileNumber]
+           ,[Email])
+     VALUES
+           ('warehouse one'
+           ,'NA'
+           ,'NA'
+           ,'UnitedStates'
+           ,231
+           ,'California'
+           ,3895
+           ,'California'
+           ,48753
+           ,123456
+           ,123
+           ,123
+           ,'NA');
+
+
+/* INSERT QUERY : Outlet */
+
+
+
+
+INSERT INTO [dbo].[StoreOutlets]
+           ([OutletName]
+           ,[WarehouseId]
+           ,[OrderNumberPrefix]
+           ,[OrderNumber]
+           ,[IsEnableNagativeInventory]
+           ,[SupplierReturnPrefix]
+           ,[SupplierReturnNumber]
+           ,[Street]
+           ,[Street1]
+           ,[Country]
+           ,[CountryId]
+           ,[State]
+           ,[StateId]
+           ,[City]
+           ,[CityId]
+           ,[ZipCode]
+           ,[TimeZone]
+           ,[TimeZoneId]
+           ,[Email]
+           ,[ContactNumber]
+           ,[MobileNumber])
+     VALUES
+           ('outlet one'
+           ,1
+           ,'00'
+           ,'001'
+           ,1
+           ,'00'
+           ,'001'
+           ,'NA'
+           ,'NA'
+           ,'UnitedStates'
+           ,231
+           ,'California'
+           ,3895
+           ,'California'
+           ,48753
+           ,123456
+           ,'(+00:00) UTC'
+           ,42
+           ,'NA'
+           ,123
+           ,123);
+
+
+
+/* INSERT QUERY : receipt template */
+
+
+
+
+
+INSERT INTO [dbo].[StoreReceiptTemplates]
+           ([Name]
+           ,[TemplateType]
+           ,[PrintBarcode]
+           ,[Logo]
+           ,[HeaderText]
+           ,[InvoiceNoPrefix]
+           ,[InoviceHeading]
+           ,[ServedByLabel]
+           ,[DiscountLabel]
+           ,[SubTotalLabel]
+           ,[TaxLabel]
+           ,[ToPayLabel]
+           ,[TotalLabel]
+           ,[ChangeLable]
+           ,[FooterText])
+     VALUES
+           ('receipt template one'
+           ,'80-90mm thermal'
+           ,1
+           ,'data:image/png;base64,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'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA');
+
+
+
+
+
+
+
+/* INSERT QUERY : Register */
+
+
+
+INSERT INTO [dbo].[StoreRegisters]
+           ([RegisterName]
+           ,[OutletId]
+           ,[ReceiptTemplateId]
+           ,[ReceiptNumber]
+           ,[ReceiptPrefix]
+           ,[ReceiptSuffix]
+           ,[SelectUserForNextSale]
+           ,[EmailReceipt]
+           ,[PrintReceipt]
+           ,[AskForNote]
+           ,[PrintNoteOnReceipt]
+           ,[ShowDiscountOnReceipt])
+     VALUES
+           ('cash register one'
+           ,1
+           ,1
+           ,'001'
+           ,'00'
+           ,'00'
+           ,1
+           ,1
+           ,1
+           ,'NA'
+           ,1
+           ,1
+           );
+
+
+/* INSERT QUERY : Payment Type*/
+
+
+
+INSERT INTO [dbo].[StorePaymentTypes]
+           ([Name]
+           ,[MerchantId]
+           ,[TerminalId]
+           ,[IsPOSPaymentType]
+           ,[IsEcommarcePaymentType])
+     VALUES
+           ('cash'
+           ,0
+           ,0
+           ,1
+           ,0
+           );
+
+		   
+INSERT INTO [dbo].[StorePaymentTypes]
+           ([Name]
+           ,[MerchantId]
+           ,[TerminalId]
+           ,[IsPOSPaymentType]
+           ,[IsEcommarcePaymentType])
+     VALUES
+           ('card'
+           ,0
+           ,0
+           ,1
+           ,0
+           );
+
+
+
+/* INSERT QUERY : Sale Tax*/
+
+
+
+INSERT INTO [dbo].[StoreTax]
+           ([TaxName]
+           ,[Rate]
+           ,[IsDefault])
+     VALUES
+           ('No tax'
+           ,0
+           ,1
+           );
+
+
+		   
+INSERT INTO [dbo].[StoreTax]
+           ([TaxName]
+           ,[Rate]
+           ,[IsDefault])
+     VALUES
+           ('GST'
+           ,10
+           ,1
+           );
+
+
+/* INSERT QUERY : Tags*/
+
+
+		   
+INSERT INTO [dbo].[StoreTags]
+           ([TagName]
+           ,[Description])
+     VALUES
+           ('tag one'
+           ,'NA');
+
+		   
+INSERT INTO [dbo].[StoreTags]
+           ([TagName]
+           ,[Description])
+     VALUES
+           ('tag two'
+           ,'NA');
+
+		   
+INSERT INTO [dbo].[StoreTags]
+           ([TagName]
+           ,[Description])
+     VALUES
+           ('tag three'
+           ,'NA');
+
+
+
+		   
+/* INSERT QUERY : Brands*/
+
+INSERT INTO [dbo].[StoreBrands]
+           ([BrandName]
+           ,[Description])
+     VALUES
+           ('brand one'
+           ,'NA');
+
+
+		   
+INSERT INTO [dbo].[StoreBrands]
+           ([BrandName]
+           ,[Description])
+     VALUES
+           ('brand two'
+           ,'NA');
+
+
+		   
+INSERT INTO [dbo].[StoreBrands]
+           ([BrandName]
+           ,[Description])
+     VALUES
+           ('brand three'
+           ,'NA');
+
+
+/* INSERT QUERY : Seasons*/
+
+
+
+INSERT INTO [dbo].[StoreSeasons]
+           ([SeasonName]
+           ,[Description])
+     VALUES
+           ('season one'
+           ,'NA');
+
+
+		   
+INSERT INTO [dbo].[StoreSeasons]
+           ([SeasonName]
+           ,[Description])
+     VALUES
+           ('season two'
+           ,'NA');
+
+
+		   
+INSERT INTO [dbo].[StoreSeasons]
+           ([SeasonName]
+           ,[Description])
+     VALUES
+           ('season three'
+           ,'NA');
+
+
+
+/* INSERT QUERY : Category*/
+
+
+INSERT INTO [dbo].[StoreCategories]
+           ([CategoryName]
+           ,[Image]
+           ,[Description])
+     VALUES
+           ('category one'
+           ,''
+           ,'NA');
+
+
+INSERT INTO [dbo].[StoreCategories]
+           ([CategoryName]
+           ,[Image]
+           ,[Description])
+     VALUES
+           ('category two'
+           ,''
+           ,'NA');
+
+
+INSERT INTO [dbo].[StoreCategories]
+           ([CategoryName]
+           ,[Image]
+           ,[Description])
+     VALUES
+           ('category three'
+           ,''
+           ,'NA');
+
+
+
+/* INSERT QUERY : Supplier*/
+
+
+
+
+
+INSERT INTO [dbo].[StoreSuppliers]
+           ([SupplierFullName]
+           ,[Description]
+           ,[FirstName]
+           ,[LastName]
+           ,[CompanyName]
+           ,[Email]
+           ,[Phone]
+           ,[Mobile]
+           ,[Fax]
+           ,[Website]
+           ,[Address]
+           ,[PostCode]
+           ,[Country]
+           ,[CountryId]
+           ,[State]
+           ,[StateId]
+           ,[City]
+           ,[CityId])
+     VALUES
+           ('supplier one'
+           ,'NA'
+           ,'supplier one'
+           ,'supplier one'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'UnitedStates'
+           ,231
+           ,'California'
+           ,3895
+           ,'California'
+           ,48753
+           );
+
+
+
+
+/* INSERT QUERY : Customers*/
+
+
+
+
+INSERT INTO [dbo].[StoreCustomers]
+           ([CustomerCode]
+           ,[FirstName]
+           ,[LastName]
+           ,[Gender]
+           ,[DateOfBirth]
+           ,[CompanyName]
+           ,[Bill_Email]
+           ,[Bill_Phone]
+           ,[Bill_Address]
+           ,[Bill_Country]
+           ,[Bill_State]
+           ,[Bill_City]
+           ,[Bill_ZipCode]
+           ,[Creaditlimit]
+           ,[Ship_FirstName]
+           ,[Ship_LastName]
+           ,[Ship_Address]
+           ,[Ship_Country]
+           ,[Ship_State]
+           ,[Ship_City]
+           ,[Ship_Zipcode]
+           ,[Ship_Phone]
+           ,[Ship_Email])
+     VALUES
+           ('111'
+           ,'customer one'
+           ,'customer one'
+           ,'NA'
+           ,getdate()
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,1
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA'
+           ,'NA');
+
+
+
+
+/* INSERT QUERY : Users*/

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Abp.HangFire.AspNetCore</name>
+    </assembly>
+    <members>
+        <member name="M:Abp.Hangfire.Configuration.AbpHangfireConfigurationExtensions.UseHangfire(Abp.BackgroundJobs.IBackgroundJobConfiguration)">
+            <summary>
+            Configures to use Hangfire for background job management.
+            </summary>
+        </member>
+    </members>
+</doc>

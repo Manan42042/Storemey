@@ -1,0 +1,132 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutStoremeyFront.cshtml";
+}
+
+<style type="text/css">
+    .slick-slider {
+        display: table !important;
+        table-layout: fixed !important;
+        width: 100% !important;
+    }
+</style>
+
+
+
+<div class="landing-page">
+    <div class="bg"></div>
+    <div id="section-0">
+
+        @Html.Partial("_mainMenu")
+
+    </div>
+    <div id="section-1" style="min-height:850px;">
+        <section class="container-fluid container-fullw padding-bottom-30 section-features" style="padding-top: 85px !important;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6 col-xs-offset-3 col-md-8 col-sm-8 col-md-offset-0 col-sm-offset-0">
+                        <h2 style="color:#000;">FEATURES</h2>
+                        <hr>
+                        <h4 class="over-title margin-bottom-15">Storemey is simple to use. There’s no fluff or excess.</h4>
+                        <p class="margin-bottom-30">
+                            Storemey exactly conforms to the Work the System Method, it’s an intuitive and <strong>simple platform designed</strong> to make it easy for you to create, tweak and store your important datas.
+
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-xs-offset-3 col-md-8 col-sm-8 col-md-offset-0 col-sm-offset-0">
+                        <div class="row" ng-appear="animationBlock1 = true">
+                            <div class="col-sm-6">
+                                <div class="">
+                                    <div class="block" style="font-size: 15px;">
+                                        <i class="text-red fa ti-home fa-3x storemey-color-text-dark" ></i>
+                                        <h4 class="margin-bottom-25 text-uppercase cl-effect-3">
+                                            <a href="#" class="storemey-color-text" style="color: #000 !important;">
+                                                POS System
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div ng-class="{'animated fadeInDown': animationBlock1}">
+                                        <div class="margin-top-20">
+                                            <p>
+                                                At the point of sale, the merchant calculates the amount owed by the customer, indicates that amount, may prepare an invoice for the customer (which may be a cash register printout), and indicates the options for the customer to make payment. It is also the point at which a customer makes a payment to the merchant in exchange for goods or after provision of a service. After receiving payment, the merchant may issue a receipt for the transaction, which is usually printed but is increasingly being dispensed with or sent electronically.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="">
+                                    <div class="block" style="font-size: 15px;">
+                                        <i class="text-red fa ti-shopping-cart fa-3x storemey-color-text-dark" ></i>
+                                        <h4 class="margin-bottom-25 text-uppercase cl-effect-3">
+                                            <a href="#" class="storemey-color-text" style="color: #000 !important;">
+                                                E-commarce
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div ng-class="{'animated fadeInDown': animationBlock1}">
+                                        <div class="margin-top-20">
+                                            <p>
+                                                E-commerce is the activity of buying or selling of products on online services or over the Internet. Electronic commerce draws on technologies such as mobile commerce, electronic funds transfer, supply chain management, Internet marketing, online transaction processing, electronic data interchange (EDI), inventory management systems, and automated data collection systems.e
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" ng-appear="animationBlock2 = true">
+                            <div class="col-sm-6">
+                                <div class="">
+                                    <div class="block" style="font-size: 15px;">
+                                        <i class="text-red fa  ti-control-shuffle fa-3x storemey-color-text-dark" ></i>
+                                        <h4 class="margin-bottom-25 text-uppercase cl-effect-3">
+                                            <a href="#" class="storemey-color-text" style="color: #000 !important;">
+                                                Integration
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div ng-class="{'animated fadeInDown': animationBlock2}">
+                                        <div class="margin-top-20">
+                                            <p>
+                                                Integrated business management software that helps organizations automate processes related to product planning, manufacturing, marketing and sales, inventory management, finances, shipping and human resources.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="">
+                                    <div class="block" style="font-size: 15px;">
+                                        <i class="text-red fa ti-credit-card fa-3x storemey-color-text-dark" ></i>
+                                        <h4 class="margin-bottom-25 text-uppercase cl-effect-3">
+                                            <a href="#" class="storemey-color-text" style="color: #000 !important;">
+                                                Payments methodologies
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div ng-class="{'animated fadeInDown': animationBlock2}">
+                                        <div class="margin-top-20">
+                                            <p>
+                                                The online equivalent of a cash register connecting websites to credit card carriers so that online credit card transactions can be completed in real time.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: SECTION 4 -->
+    <!-- start: SECTION 5 -->
+   
+
+        @Html.Partial("_mainFooter")
+
+   
+    <!-- end: SECTION 5 -->
+</div>

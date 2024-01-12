@@ -1,0 +1,12 @@
+﻿
+/* INSERT QUERY : City from state */
+
+INSERT INTO [dbo].[StoreCityMaster]
+           ([CountryId]
+           ,[StateId]
+           ,[CityName])
+          
+         select CountryId,id,StateName from	[dbo].[StoreStateMaster] where Id not in (Select Stateid from [dbo].[StoreCityMaster])
+
+
+

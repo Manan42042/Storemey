@@ -1,0 +1,172 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutStoremeyFront.cshtml";
+}
+
+<style type="text/css">
+    .slick-slider {
+        display: table !important;
+        table-layout: fixed !important;
+        width: 100% !important;
+    }
+    .thumbnail {
+        height: 350px;
+    }
+</style>
+
+
+
+<div class="landing-page">
+    <div id="section-0">
+        @Html.Partial("_mainMenu")
+    </div>
+
+
+    <div class="panel panel-transparent">
+        <div class="panel-body">
+            <div id="section-0" style=" padding-top: 30px;">
+                <div class="container-fluid container-fullw  padding-bottom-30">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-white" style="background-color:#FFF;">
+                                <div class="panel-body">
+                                    <center><h5 class="over-title margin-bottom-15"><h2 class="text-bold" style="font-weight:unset !important;font-size:40px;"> We are recommended for POS hardwares / equipments. </h2></h5></center>
+                                    <img src="~/assets/hardware_image/image2vector (18).png" style="margin-left: 20%;width: 60%;" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end: MEDIA OBJECT -->
+                <!-- start: IMAGES AND THUMBNAILS -->
+                <div class="container-fluid container-fullw">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-white" style="background-color:#F5F5F5">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="panel panel-transparent" style="background-color:unset !important">
+                                                <div class="panel-heading">
+                                                    @*<div class="panel-title">
+                                                            Custom Content
+                                                        </div>*@
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="col-sm-6 col-md-3">
+                                                            <div class="thumbnail">
+                                                                <img src="/assets/hardware_image/01.png" alt="">
+                                                                <div class="caption">
+                                                                    <h3>COMPUTER</h3>
+                                                                    <p>
+                                                                        The POS is web-based, so any computer/tablet with a full-function operating system that connects to the internet should work.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-3">
+                                                            <div class="thumbnail">
+                                                                <img src="/assets/hardware_image/02.png" alt="">
+                                                                <div class="caption">
+                                                                    <h3>ROUTER</h3>
+                                                                    <p>
+                                                                        If you have internet outages that are of concern to you, there is a type of router that will automatically switch over to a cellular connection as a hotspot, to save you as much down time as possible. Understand, this is purely optional, but below is a link to an excellent router by NetGear.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-3">
+                                                            <div class="thumbnail">
+                                                                <img src="/assets/hardware_image/03.png" alt="">
+                                                                <div class="caption">
+                                                                    <h3>BARCODE SCANNER </h3>
+                                                                    <p>
+                                                                        barcode scanner that connects to your computer by USB, Bluetooth, or WiFi will work.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-3">
+                                                            <div class="thumbnail">
+                                                                <img src="/assets/hardware_image/04.png" alt="">
+                                                                <div class="caption">
+                                                                    <h3>RECEIPT PRINTER</h3>
+                                                                    <p>
+                                                                        You have your own IT administrator who can set up an Ethernet-based printer, it is recommended you order the USB version, which we can help you set up.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-6 col-md-3">
+                                                            <div class="thumbnail">
+                                                                <img src="/assets/hardware_image/05.png" alt="">
+                                                                <div class="caption">
+                                                                    <h3>CASH DRAWER</h3>
+                                                                    <p>
+                                                                        Most likely, unless you have a drawer or cash box you prefer, you will want a cash drawer that can plug into your receipt printer so the drawer will pop open after a sale is completed and the receipt starts printing.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-3">
+                                                            <div class="thumbnail">
+                                                                <img src="/assets/hardware_image/06.png" alt="">
+                                                                <div class="caption">
+                                                                    <h3>LABEL PRINTER</h3>
+                                                                    <p>
+                                                                        The label printer is used to create barcode labels for products in your store. Look for one that connects to your computer. An inexpensive printer here should work just fine. We frequently set up Dymo 450 series printers and Zebra 2800 series printers. If you have a different type of printer, we can almost certainly help you set it up with our system if it plugs into your computer by USB.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-3">
+                                                            <div class="thumbnail">
+                                                                <img src="/assets/hardware_image/07.png" alt="">
+                                                                <div class="caption">
+                                                                    <h3>WIRELESS BLUTOOTH BARCODE SCANNER</h3>
+                                                                    <p>
+                                                                        Many of our clients like to use the easy form-function of a tablet, such as the iPad, for working on the floor with customers and inventory. Since the iPad does not have a USB port, external hardware, such as your barcode scanner, would need to be able to connect wirelessly.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-3">
+                                                            <div class="thumbnail">
+                                                                <img src="/assets/hardware_image/08.png" alt="">
+                                                                <div class="caption">
+                                                                    <h3>CREADIT CARD READER</h3>
+                                                                    <p>
+                                                                        Coming soon
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end: IMAGES AND THUMBNAILS -->
+                @*https://www.websitesupport.info/hc/en-us/articles/205075134-POS-Equipment-System-Requirements-Recommended-Hardware*@
+            </div>
+        </div>
+    </div>
+    <style type="text/css">
+        .thumbnail img {
+            height: 170px !important;
+        }
+    </style>
+
+    @Html.Partial("_mainFooter")
+
+</div>

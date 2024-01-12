@@ -1,0 +1,58 @@
+﻿
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Countries Management</h4>
+    @*<div ncy-breadcrumb class="pull-right"></div>*@
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC EXAMPLE -->
+<div class="container-fluid container-fullw" ng-controller="app.views.AddEditMasterPlan">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h3 class="over-title margin-bottom-15">Add/Edit Country</h3>
+                    @*<p>
+                            Individual form controls automatically receive some global styling.
+                        </p>*@
+                    <div class="row margin-top-30">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="panel panel-white" style="background-color: #fff;">
+                                @*<div class="panel-heading">
+                                        <h5 class="panel-title">Default Form</h5>
+                                    </div>*@
+                                <div class="panel-body">
+                                    @*<p class="text-small margin-bottom-20">
+                                            All textual <code> &lt;input&gt; </code>
+                                            , <code> &lt;textarea&gt; </code>
+                                            , and <code> &lt;select&gt; </code>
+                                            elements with <code> .form-control </code>
+                                            are set to <code> width: 100%; </code>
+                                            by default. Wrap labels and controls in <code> .form-group </code>
+                                            for optimum spacing.
+                                        </p>*@
+                                    <form role="form" id="frmCountry" name="myForm">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">
+                                                Name
+                                            </label>
+                                            <input type="text" class="form-control" ng-model="GetMasterCountriesOutputDto.planName" id="exampleInputEmail1" placeholder="enter name" required>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="panel-footer">
+                                    <button class="btn btn-primary btn-wide" type="submit" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                        Save
+                                    </button>
+
+                                    <button class="btn btn-default btn-wide" type="button" ng-click="cancelAddEdit()">
+                                        Back
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>

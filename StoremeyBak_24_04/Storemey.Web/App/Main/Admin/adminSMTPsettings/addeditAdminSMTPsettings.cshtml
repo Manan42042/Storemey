@@ -1,0 +1,88 @@
+﻿
+@{
+    string EmailPattern = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+
+}
+
+
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">SMTP settings</h4>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC EXAMPLE -->
+<div class="container-fluid container-fullw" ng-controller="app.views.adminSMTPsettings">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <h3 class="over-title margin-bottom-15">Add/Update Of, SMTP setting!</h3>
+                    @*<p>
+                            Individual form controls automatically receive some global styling.
+                        </p>*@
+                    <div class="row margin-top-30">
+                        <form role="form" id="frmCountry" name="myForm" ng-submit="register(myForm)" ng-validate="validationOptions">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="panel panel-white" style="background-color: #fff;">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Host
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminSMTPsettingsOutputDto.host" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Port
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminSMTPsettingsOutputDto.port" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        UserName
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminSMTPsettingsOutputDto.userName" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Password
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminSMTPsettingsOutputDto.password" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Enable SSL
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminSMTPsettingsOutputDto.enableSSL" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">
+                                                        Test Email
+                                                    </label>
+                                                    <input type="text" class="form-control" ng-model="GetadminSMTPsettingsOutputDto.testEmail" id="exampleInputEmail1" placeholder="enter name" required>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <button class="btn btn-primary btn-wide" type="submit" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                            Save
+                                        </button>
+
+                                        <button class="btn btn-default btn-wide" type="button" ng-click="cancelAddEdit()">
+                                            Back
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

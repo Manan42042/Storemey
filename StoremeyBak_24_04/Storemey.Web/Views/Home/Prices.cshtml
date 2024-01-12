@@ -1,0 +1,417 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutStoremeyFront.cshtml";
+}
+
+<style type="text/css">
+    .slick-slider {
+        display: table !important;
+        table-layout: fixed !important;
+        width: 100% !important;
+    }
+</style>
+
+<link href="/Views/Home/Pricing.css" rel="stylesheet" />
+
+<div class="landing-page">
+    <div id="section-0">
+        @Html.Partial("_mainMenu")
+    </div>
+    <div id="section-4">
+
+
+        <section class="container-fluid container-fullw padding-bottom-30 section-testimonials" style="padding-top: 80px !important;">
+  
+                <div class="row">
+                    <div class="col-md-12">
+                        @*<h2 class="text-center">Pricing</h2>
+                        <hr />*@
+
+
+                        <div id="generic_price_table">
+                            <div style="height: 1115px;">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <!--PRICE HEADING START-->
+                                            <div class="price-heading clearfix">
+                                                <h1>Pricing</h1>
+                                            </div>
+                                            <!--//PRICE HEADING END-->
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                                <!--BLOCK ROW START-->
+                                <div class="row">
+                                    <div class="col-md-2">
+                                    </div>
+
+                                    @{
+                                        int i = 1;
+
+                                        if (ViewBag.PlanAndService != null)
+                                        {
+                                            foreach (var item in ViewBag.PlanAndService)
+                                            {
+                                                string className = "Plan" + i;
+                                                i++;
+                                                @*<div class="col-lg-3 col-md-3 col-xs-6">
+                        <ul class="plan @className featured">
+                            <li class="plan-name bg-storemey-dark">
+                                @item.PlanName
+                            </li>
+                            <li class="plan-price bg-storemey-light">
+                                <h3> @item.Price.Amount$<span class="price-month" style="margin-left: -10px;font-size: large;"> &nbsp; /per month</span></h3>
+                            </li>
+                            @{
+                                int maxBoxWidth = 12;
+                                int AddedBox = 0;
+
+                                foreach (var item1 in item.PlanServices)
+                                {
+                                    <li>
+                                        @item1.ServiceName
+                                    </li>
+                                    AddedBox++;
+                                }
+                                for (int j = 0; j < maxBoxWidth - AddedBox; j++)
+                                {
+                                    <li>
+                                        <i class="fa fa-times"></i>
+                                    </li>
+                                }
+                            }
+
+                        </ul>
+                    </div>*@
+
+                                                <div class="col-md-2">
+                                                    <div class="generic_content active clearfix">
+                                                        <div class="generic_head_price clearfix">
+                                                            <div class="generic_head_content clearfix">
+                                                                <div class="head_bg"></div>
+                                                                <div class="head">
+                                                                    <span>@item.PlanName</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="generic_price_tag clearfix">
+                                                                <span class="price">
+                                                                    <span class="sign">$</span>
+                                                                    <span class="currency">@item.Price.Amount</span>
+                                                                    <span class="cent">.00</span>
+                                                                    <span class="month">/MON</span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="generic_feature_list">
+                                                            <ul>
+                                                                @*<li><span>2GB</span> Bandwidth</li>
+        <li><span>150GB</span> Storage</li>
+        <li><span>12</span> Accounts</li>
+        <li><span>7</span> Host Domain</li>
+        <li><span>24/7</span> Support</li>*@
+
+                                                                @{
+                                                                    int maxBoxWidth = 12;
+                                                                    int AddedBox = 0;
+
+                                                                    foreach (var item1 in item.PlanServices)
+                                                                    {
+                                                                        <li>
+                                                                            @item1.ServiceName
+                                                                        </li>
+                                                                        AddedBox++;
+                                                                    }
+                                                                    for (int j = 0; j < maxBoxWidth - AddedBox; j++)
+                                                                    {
+                                                                        <li>
+                                                                            <i class="fa fa-times"></i>
+                                                                        </li>
+                                                                    }
+                                                                }
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+                                    }
+
+                                    @*<div class="col-md-2">
+
+                                        <!--PRICE CONTENT START-->
+                                        <div class="generic_content active clearfix">
+
+                                            <!--HEAD PRICE DETAIL START-->
+                                            <div class="generic_head_price clearfix">
+
+                                                <!--HEAD CONTENT START-->
+                                                <div class="generic_head_content clearfix">
+
+                                                    <!--HEAD START-->
+                                                    <div class="head_bg"></div>
+                                                    <div class="head">
+                                                        <span>Basic</span>
+                                                    </div>
+                                                    <!--//HEAD END-->
+
+                                                </div>
+                                                <!--//HEAD CONTENT END-->
+                                                <!--PRICE START-->
+                                                <div class="generic_price_tag clearfix">
+                                                    <span class="price">
+                                                        <span class="sign">$</span>
+                                                        <span class="currency">99</span>
+                                                        <span class="cent">.99</span>
+                                                        <span class="month">/MON</span>
+                                                    </span>
+                                                </div>
+                                                <!--//PRICE END-->
+
+                                            </div>
+                                            <!--//HEAD PRICE DETAIL END-->
+                                            <!--FEATURE LIST START-->
+                                            <div class="generic_feature_list">
+                                                <ul>
+                                                    <li><span>2GB</span> Bandwidth</li>
+                                                    <li><span>150GB</span> Storage</li>
+                                                    <li><span>12</span> Accounts</li>
+                                                    <li><span>7</span> Host Domain</li>
+                                                    <li><span>24/7</span> Support</li>
+                                                </ul>
+                                            </div>
+                                            <!--//FEATURE LIST END-->
+                                            <!--BUTTON START-->
+                                              <!--//BUTTON END-->
+
+                                        </div>
+                                        <!--//PRICE CONTENT END-->
+
+                                    </div>
+
+                                    <div class="col-md-2">
+
+                                        <!--PRICE CONTENT START-->
+                                        <div class="generic_content active clearfix">
+
+                                            <!--HEAD PRICE DETAIL START-->
+                                            <div class="generic_head_price clearfix">
+
+                                                <!--HEAD CONTENT START-->
+                                                <div class="generic_head_content clearfix">
+
+                                                    <!--HEAD START-->
+                                                    <div class="head_bg"></div>
+                                                    <div class="head">
+                                                        <span>Standard</span>
+                                                    </div>
+                                                    <!--//HEAD END-->
+
+                                                </div>
+                                                <!--//HEAD CONTENT END-->
+                                                <!--PRICE START-->
+                                                <div class="generic_price_tag clearfix">
+                                                    <span class="price">
+                                                        <span class="sign">$</span>
+                                                        <span class="currency">199</span>
+                                                        <span class="cent">.99</span>
+                                                        <span class="month">/MON</span>
+                                                    </span>
+                                                </div>
+                                                <!--//PRICE END-->
+
+                                            </div>
+                                            <!--//HEAD PRICE DETAIL END-->
+                                            <!--FEATURE LIST START-->
+                                            <div class="generic_feature_list">
+                                                <ul>
+                                                    <li><span>2GB</span> Bandwidth</li>
+                                                    <li><span>150GB</span> Storage</li>
+                                                    <li><span>12</span> Accounts</li>
+                                                    <li><span>7</span> Host Domain</li>
+                                                    <li><span>24/7</span> Support</li>
+                                                </ul>
+                                            </div>
+                                            <!--//FEATURE LIST END-->
+                                            <!--BUTTON START-->
+                                
+                                            <!--//BUTTON END-->
+
+                                        </div>
+                                        <!--//PRICE CONTENT END-->
+
+                                    </div>
+
+                                    <div class="col-md-2">
+
+                                        <!--PRICE CONTENT START-->
+                                        <div class="generic_content active clearfix">
+
+                                            <!--HEAD PRICE DETAIL START-->
+                                            <div class="generic_head_price clearfix">
+
+                                                <!--HEAD CONTENT START-->
+                                                <div class="generic_head_content clearfix">
+
+                                                    <!--HEAD START-->
+                                                    <div class="head_bg"></div>
+                                                    <div class="head">
+                                                        <span>Standard</span>
+                                                    </div>
+                                                    <!--//HEAD END-->
+
+                                                </div>
+                                                <!--//HEAD CONTENT END-->
+                                                <!--PRICE START-->
+                                                <div class="generic_price_tag clearfix">
+                                                    <span class="price">
+                                                        <span class="sign">$</span>
+                                                        <span class="currency">199</span>
+                                                        <span class="cent">.99</span>
+                                                        <span class="month">/MON</span>
+                                                    </span>
+                                                </div>
+                                                <!--//PRICE END-->
+
+                                            </div>
+                                            <!--//HEAD PRICE DETAIL END-->
+                                            <!--FEATURE LIST START-->
+                                            <div class="generic_feature_list">
+                                                <ul>
+                                                    <li><span>2GB</span> Bandwidth</li>
+                                                    <li><span>150GB</span> Storage</li>
+                                                    <li><span>12</span> Accounts</li>
+                                                    <li><span>7</span> Host Domain</li>
+                                                    <li><span>24/7</span> Support</li>
+                                                </ul>
+                                            </div>
+                                            <!--//FEATURE LIST END-->
+                                            <!--BUTTON START-->
+                                    
+                                            <!--//BUTTON END-->
+
+                                        </div>
+                                        <!--//PRICE CONTENT END-->
+
+                                    </div>
+
+                                    <div class="col-md-2">
+
+                                        <!--PRICE CONTENT START-->
+                                        <div class="generic_content active clearfix">
+
+                                            <!--HEAD PRICE DETAIL START-->
+                                            <div class="generic_head_price clearfix">
+
+                                                <!--HEAD CONTENT START-->
+                                                <div class="generic_head_content clearfix">
+
+                                                    <!--HEAD START-->
+                                                    <div class="head_bg"></div>
+                                                    <div class="head">
+                                                        <span>Unlimited</span>
+                                                    </div>
+                                                    <!--//HEAD END-->
+
+                                                </div>
+                                                <!--//HEAD CONTENT END-->
+                                                <!--PRICE START-->
+                                                <div class="generic_price_tag clearfix">
+                                                    <span class="price">
+                                                        <span class="sign">$</span>
+                                                        <span class="currency">299</span>
+                                                        <span class="cent">.99</span>
+                                                        <span class="month">/MON</span>
+                                                    </span>
+                                                </div>
+                                                <!--//PRICE END-->
+
+                                            </div>
+                                            <!--//HEAD PRICE DETAIL END-->
+                                            <!--FEATURE LIST START-->
+                                            <div class="generic_feature_list">
+                                                <ul>
+                                                    <li><span>2GB</span> Bandwidth</li>
+                                                    <li><span>150GB</span> Storage</li>
+                                                    <li><span>12</span> Accounts</li>
+                                                    <li><span>7</span> Host Domain</li>
+                                                    <li><span>24/7</span> Support</li>
+                                                </ul>
+                                            </div>
+                                            <!--//FEATURE LIST END-->
+                                            <!--BUTTON START-->
+                                     
+                                            <!--//BUTTON END-->
+
+                                        </div>
+                                        <!--//PRICE CONTENT END-->
+
+                                    </div>*@
+                                </div>
+                                <!--//BLOCK ROW END-->
+
+                            </div>
+                            <footer>
+                                <a class="bottom_btn" href="/signup">&copy; JOIN NOW</a>
+                            </footer>
+                        </div>
+                        @*<p class="text-center">
+                                    In commerce, price is determined by what (1) a buyer is willing to pay, (2) a seller is willing to accept, and (3) the competition is allowing to be charged.
+                                    <br>With product, promotion, and place of marketing mix, it is one of the business variables over which organizations can exercise some degree of control.
+
+                                </p>
+                                <div class="pricing-table pricing-blue">
+                                    @{
+                                        int i = 1;
+
+                                        if (ViewBag.PlanAndService != null)
+                                        {
+                                            foreach (var item in ViewBag.PlanAndService)
+                                            {
+                                                string className = "Plan" + i;
+                                                i++;
+                                                <div class="col-lg-3 col-md-3 col-xs-6">
+                                                    <ul class="plan @className featured">
+                                                        <li class="plan-name bg-storemey-dark">
+                                                            @item.PlanName
+                                                        </li>
+                                                        <li class="plan-price bg-storemey-light">
+                                                            <h3> @item.Price.Amount$<span class="price-month" style="margin-left: -10px;font-size: large;"> &nbsp; /per month</span></h3>
+                                                        </li>
+                                                        @{
+                                                            int maxBoxWidth = 12;
+                                                            int AddedBox = 0;
+
+                                                            foreach (var item1 in item.PlanServices)
+                                                            {
+                                                                <li>
+                                                                    @item1.ServiceName
+                                                                </li>
+                                                                AddedBox++;
+                                                            }
+                                                            for (int j = 0; j < maxBoxWidth - AddedBox; j++)
+                                                            {
+                                                                <li>
+                                                                    <i class="fa fa-times"></i>
+                                                                </li>
+                                                            }
+                                                        }
+
+                                                    </ul>
+                                                </div>
+                                            }
+                                        }
+                                    }
+                                </div>*@
+                    </div>
+            </div>
+        </section>
+    </div>
+    <!-- end: SECTION 4 -->
+    <!-- start: SECTION 5 -->
+    <div id="section-5">
+        @Html.Partial("_mainFooter")
+    </div>
+    <!-- end: SECTION 5 -->
+</div>
