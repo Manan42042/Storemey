@@ -1,0 +1,94 @@
+﻿<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Point of sale</h4>
+</div>
+<div class="container-fluid container-fullw" ng-controller="app.views.pos">
+    <div class="row">
+        <div class="col-md-8">
+            <fieldset style="height:80vh">
+                <legend>
+                    Products
+                </legend>
+
+                <div class="panel panel-white">
+                    <div class="panel-body">
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="input-group">
+                                    <input type="text" class="form-control ng-pristine ng-valid ng-valid-mask ng-empty ng-touched" name="masked" placeholder="Search product" ng-model="x" style="">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-primary">
+                                            <i class="fa fa-calendar"></i>
+                                            Gift Card
+                                        </button>
+                                        <button type="button" class="btn btn-primary">
+                                            <i class="fa fa-calendar"></i>
+                                            Custom Sale
+                                        </button>
+                                    </span>
+                                </div>
+
+                                <div class="input-group" style="margin-top:10px;">
+                                    <div scrolling-tabs-wrapper>
+                                        <uib-tabset>
+                                            <uib-tab ng-repeat="tab in Categories" heading="{{tab.categoryName}}" active="tab.active" disabled="tab.disabled">
+
+                                            </uib-tab>
+                                        </uib-tabset>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+        <div class="col-md-4">
+            <fieldset style="height:80vh">
+                <legend>
+                    Carts
+                </legend>
+
+                <div class="panel panel-white">
+                    <div class="panel-body">
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .scrolling-tabs-header {
+        background-color: #666666;
+        color: white;
+        font-size: 24px;
+        height: 50px;
+        padding: 8px 24px;
+    }
+
+    .scrolling-tabs-subheader {
+        background-color: #f0f0f0;
+        color: #333;
+        font-size: 16px;
+        height: 65px;
+        padding: 8px 24px;
+    }
+
+        .scrolling-tabs-subheader div:first-child {
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+</style>

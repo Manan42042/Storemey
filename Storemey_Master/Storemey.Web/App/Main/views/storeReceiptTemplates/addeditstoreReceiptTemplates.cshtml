@@ -1,0 +1,182 @@
+﻿
+@{
+    string EmailPattern = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+
+}
+
+
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Receipt templates</h4>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC EXAMPLE -->
+<div class="container-fluid container-fullw" ng-controller="app.views.storeReceiptTemplates">
+    <div class="row">
+        <div class="col-md-12">
+            <fieldset>
+                <legend>
+                    Add/Update Of, Receipt template!
+                </legend>
+                <div class="panel panel-white">
+                    <div class="panel-body">
+                       
+                        <div class="row">
+                            <form role="form" id="frmCountry" name="myForm" ng-submit="register(myForm)" ng-validate="validationOptions">
+                                <div>
+                                    <div class="panel panel-white" style="background-color: #fbecb5;">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">
+                                                            Logo
+                                                        </label>
+                                                        <table>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="cropBox croppedBox">
+                                                                        <div>
+                                                                            <img ng-src="{{GetstoreReceiptTemplatesOutputDto.logo}}" ng-click="openCropreceipt()" style="width:100%;height:100%;" />
+                                                                        </div>
+
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span class="btn btn-primary btn-file">
+                                                                        Select an image file
+                                                                        <input type="file" id="fileInput" size="5" accept="image/*">
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">
+                                                            Name
+                                                        </label>
+                                                        <input type="text" class="form-control" ng-model="GetstoreReceiptTemplatesOutputDto.name" name="name" placeholder="enter name">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>
+                                                            Template Type
+                                                        </label>
+                                                        <ui-select ng-model="GetstoreReceiptTemplatesOutputDto.uiTemplateType" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a warehouse">
+                                                            <ui-select-match placeholder="Select a paymentType">{{$select.selected.name}}</ui-select-match>
+                                                            <ui-select-choices repeat="person in PaymentType | propsFilter: {name: $select.search}">
+                                                                <div ng-bind-html="person.name | highlight: $select.search"></div>
+                                                            </ui-select-choices>
+                                                        </ui-select>
+                                                        <input type="text" ng-model="GetstoreReceiptTemplatesOutputDto.uiTemplateType" style="visibility:hidden;height:0px;padding: 0 !important;" name="country" class="form-control" placeholder="Enter your Country">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="checkbox clip-check check-primary">
+                                                            <input type="checkbox" id="printBarcode" value="1" ng-model="GetstoreReceiptTemplatesOutputDto.printBarcode">
+                                                            <label for="printBarcode">
+                                                                Print barcode
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">
+                                                            Header Text
+                                                        </label>
+                                                        <input type="text" class="form-control" ng-model="GetstoreReceiptTemplatesOutputDto.headerText" name="headerText" placeholder="enter header text">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">
+                                                            Invoice No Prefix
+                                                        </label>
+                                                        <input type="text" class="form-control" ng-model="GetstoreReceiptTemplatesOutputDto.invoiceNoPrefix" name="invoiceNoPrefix" placeholder="enter invoice prefix">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">
+                                                            Inovice Heading
+                                                        </label>
+                                                        <input type="text" class="form-control" ng-model="GetstoreReceiptTemplatesOutputDto.inoviceHeading" name="inoviceHeading" placeholder="enter inovice Heading">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">
+                                                            Served By Label
+                                                        </label>
+                                                        <input type="text" class="form-control" ng-model="GetstoreReceiptTemplatesOutputDto.servedByLabel" name="servedByLabel" placeholder="enter served by label">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">
+                                                            Discount Label
+                                                        </label>
+                                                        <input type="text" class="form-control" ng-model="GetstoreReceiptTemplatesOutputDto.discountLabel" name="discountLabel" placeholder="enter discount label">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">
+                                                            Sub Total Label
+                                                        </label>
+                                                        <input type="text" class="form-control" ng-model="GetstoreReceiptTemplatesOutputDto.subTotalLabel" name="subTotalLabel" placeholder="enter sub total label">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">
+                                                            Tax Label
+                                                        </label>
+                                                        <input type="text" class="form-control" ng-model="GetstoreReceiptTemplatesOutputDto.taxLabel" name="taxLabel" placeholder="enter tax lable">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">
+                                                            To Pay Label
+                                                        </label>
+                                                        <input type="text" class="form-control" ng-model="GetstoreReceiptTemplatesOutputDto.toPayLabel" name="toPayLabel" placeholder="enter pay label">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">
+                                                            Total Label
+                                                        </label>
+                                                        <input type="text" class="form-control" ng-model="GetstoreReceiptTemplatesOutputDto.totalLabel" name="totalLabel" placeholder="enter total label">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">
+                                                            Change Lable
+                                                        </label>
+                                                        <input type="text" class="form-control" ng-model="GetstoreReceiptTemplatesOutputDto.changeLable" name="changeLable" placeholder="enter change Lable">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">
+                                                            Footer Text
+                                                        </label>
+                                                        <input type="text" class="form-control" ng-model="GetstoreReceiptTemplatesOutputDto.footerText" name="footerText" placeholder="enter footer text">
+                                                    </div>
+
+
+                                                    <div class="form-group">
+                                                        <label for="exampleInputPassword1">
+                                                            Note
+                                                        </label>
+                                                        <textarea type="text" class="form-control" ng-model="GetstoreReceiptTemplatesOutputDto.note" placeholder="enter note" name="note"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <button class="btn btn-primary btn-wide" type="submit" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                                Save
+                                            </button>
+
+                                            <button class="btn btn-default btn-wide" type="button" ng-click="cancelAddEdit()">
+                                                Back
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                </fieldset>
+        </div>
+    </div>
+</div>

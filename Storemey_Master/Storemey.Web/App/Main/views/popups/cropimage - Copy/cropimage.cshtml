@@ -1,0 +1,62 @@
+﻿
+<style>
+    .ng-confirm .ng-confirm-box div.ng-confirm-content-pane {
+        min-height: 530px !important;
+    }
+
+    .ng-confirm-box, .ng-confirm-hilight-shake, .ng-confirm-type-animated {
+        margin-top: 4% !important;
+    }
+    .ng-confirm-box {
+        width: 60% !important;
+    }
+</style>
+<script src="/lib/ng-jcrop-master/ng-jcrop-master/ng-jcrop.js"></script>
+
+<div class="col-md-12">
+    <div class="container-fluid container-fullw" ng-controller="app.views.cropimage">
+        <form role="form" id="frmCountry" name="myForm" ng-submit="register(myForm)" ng-validate="validationOptions">
+            <div class="row">
+                <div class="col-md-12">
+                    <fieldset>
+                        <legend>
+                            Crop image for better resolution!
+                        </legend>
+                        <div class="panel panel-white">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="cropBox">
+                                            <div class="cropArea">
+                                                @*<img-crop image="myImage" area-type="square" result-image="data.result"></img-crop>*@
+                                                <ui-cropper image="myImage" area-type="square" result-image="data.result" result-image-size="'max'"></ui-cropper>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="cropBox croppedBox">
+                                            <div>
+                                                <img ng-src="{{data.result}}" style="width:100%;height:100%;" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        </fieldset>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<style>
+    .cropArea {
+        background: #E4E4E4;
+        overflow: hidden;
+        /*width: 500px;*/
+        height: 350px;
+    }
+
+</style>

@@ -1,0 +1,238 @@
+﻿
+@{
+    ViewBag.Title = "storeGiftCards";
+}
+
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin" translate="">GiftCards</h4>
+    @*<div ncy-breadcrumb class="pull-right"></div>*@
+</div>
+
+<div class="container-fluid container-fullw" ng-controller="storeGiftCardssCtrl">
+    <fieldset>
+        <legend>
+            List Of, GiftCards!
+        </legend>
+
+        <div class="panel panel-white">
+            @*<div class="panel-heading border-light">
+                    <h3>  </h3>
+                </div>*@
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="panel panel-green no-border no-radius">
+                        <ct-paneltool class="panel-tools" style="display:none;" tool-refresh="load1"><a class="btn btn-transparent btn-sm" href="#" data-spinner="load1" ng-click="GetstoreGiftCardss();" uib-tooltip="Refresh" tooltip-placement="top" panel-refresh=""><i class="fa fa-circle-o"></i></a></ct-paneltool>
+                        <div class="panel-body no-padding">
+                            <div style="padding: 15px 0PX 0PX 10PX !important;">
+                                <h5 class="text-bold text-dark-transparent text-uppercase no-margin">CARDS SOLD <i class="fa fa-arrow-circle-o-right"></i></h5>
+                                <div class="block margin-top-15 margin-bottom-10  text-white">
+                                    <span class="counter" filter="number" duration="1" value="0" count-to="5635">{{CardSold}}</span>
+                                </div>
+                                @*<span class="label partition-green text-white margin-top-10 margin-right-5">+11%</span><span class="text-extra-small">Previous period</span>*@
+                            </div>
+                            <div class="padding-bottom-20">
+                                <div class="progress-xs no-radius background-dark no-margin progress ng-isolate-scope" type="azure" value="89">
+                                    <div class="progress-bar progress-bar-white" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" aria-labelledby="progressbar" style="width: 89%;" aria-valuetext="89%" ng-class="type &amp;&amp; 'progress-bar-' + type" ng-transclude="" ng-style="{width: (percent < 100 ? percent : 100) + '%'}"></div>
+                                </div>
+                                <p class="margin-10">
+                                    @*<span class="text-extra-small text-light pull-right">89%</span>*@
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="panel panel-azure no-border no-radius">
+                        <ct-paneltool class="panel-tools" style="display:none;" tool-refresh="load1"><a class="btn btn-transparent btn-sm" href="#" data-spinner="load1" ng-click="GetstoreGiftCardss();" uib-tooltip="Refresh" tooltip-placement="top" panel-refresh=""><i class="fa fa-circle-o"></i></a></ct-paneltool>
+                        <div class="panel-body no-padding">
+                            <div style="padding: 15px 0PX 0PX 10PX !important;">
+                                <h5 class="text-bold  text-dark-transparent text-uppercase no-margin">TOTAL AMOUNT <i class="fa fa-arrow-circle-o-right"></i></h5>
+                                <div class="block margin-top-15 margin-bottom-10  text-white">
+                                    <span class="counter-symbol">$</span>
+                                    <span class="counter" filter="number" duration="1" value="0" count-to="53">{{TotalAmount}}</span>
+                                </div>
+                                @*<span class="label partition-red text-white margin-top-10 margin-right-5">-1%</span><span class="text-extra-small">Previous period</span>*@
+                            </div>
+                            <div class="padding-bottom-20">
+                                <div class="progress-xs no-radius background-dark no-margin progress ng-isolate-scope" type="green" value="46">
+                                    <div class="progress-bar progress-bar-white" role="progressbar" aria-valuenow="46" aria-valuemin="0" aria-valuemax="100" aria-labelledby="progressbar" style="width: 46%;" aria-valuetext="46%" ng-class="type &amp;&amp; 'progress-bar-' + type" ng-transclude="" ng-style="{width: (percent < 100 ? percent : 100) + '%'}"></div>
+                                </div>
+                                <p class="margin-10">
+                                    @*<span class="text-extra-small text-light pull-right">46%</span>*@
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="panel panel-purple no-border no-radius">
+                        <ct-paneltool class="panel-tools" style="display:none;" tool-refresh="load1"><a class="btn btn-transparent btn-sm" href="#" data-spinner="load1" ng-click="GetstoreGiftCardss();" uib-tooltip="Refresh" tooltip-placement="top" panel-refresh=""><i class="fa fa-circle-o"></i></a></ct-paneltool>
+                        <div class="panel-body no-padding">
+                            <div style="padding: 15px 0PX 0PX 10PX !important;">
+                                <h5 class="text-bold text-dark-transparent text-uppercase no-margin">REDEEMED AMOUNT <i class="fa fa-arrow-circle-o-right"></i></h5>
+                                <div class="block margin-top-15 margin-bottom-10 text-white">
+                                    <span class="counter-symbol">$</span>
+                                    <span class="counter" filter="number" duration="1" value="0" count-to="53">{{RedeemedAmount}}</span>
+                                </div>
+                                @*<span class="label partition-red text-white margin-top-10 margin-right-5">-12%</span><span class="text-extra-small">Previous period</span>*@
+                            </div>
+                            <div class="padding-bottom-20">
+                                <div class="progress-xs no-radius background-dark no-margin progress ng-isolate-scope" type="purple" value="77">
+                                    <div class="progress-bar progress-bar-white" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" aria-labelledby="progressbar" style="width: 77%;" aria-valuetext="77%" ng-class="type &amp;&amp; 'progress-bar-' + type" ng-transclude="" ng-style="{width: (percent < 100 ? percent : 100) + '%'}"></div>
+                                </div>
+                                <p class="margin-10">
+                                    @*<span class="text-extra-small text-light pull-right">77%</span>*@
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="panel panel-pink no-border no-radius">
+                        <ct-paneltool class="panel-tools" style="display:none;" tool-refresh="load1"><a class="btn btn-transparent btn-sm" href="#" data-spinner="load1" ng-click="GetstoreGiftCardss();" uib-tooltip="Refresh" tooltip-placement="top" panel-refresh=""><i class="fa fa-circle-o"></i></a></ct-paneltool>
+                        <div class="panel-body no-padding">
+                            <div style="padding: 15px 0PX 0PX 10PX !important;">
+                                <h5 class="text-bold text-dark-transparent text-uppercase no-margin">CURRENT AMOUNT <i class="fa fa-arrow-circle-o-right"></i></h5>
+                                <div class="block margin-top-15 margin-bottom-10 text-white">
+                                    <span class="counter-symbol">$</span>
+                                    <span class="counter" filter="number" duration="1" value="0" count-to="7830">{{CurrentAmount}}</span>
+                                </div>
+                                @*<span class="label partition-green text-white margin-top-10 margin-right-5">+11%</span><span class="text-extra-small">Previous period</span>*@
+                            </div>
+                            <div class="padding-bottom-20">
+                                <div class="progress-xs no-radius background-dark no-margin progress ng-isolate-scope" type="orange" value="80">
+                                    <div class="progress-bar progress-bar-white" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-labelledby="progressbar" style="width: 80%;" aria-valuetext="80%" ng-class="type &amp;&amp; 'progress-bar-' + type" ng-transclude="" ng-style="{width: (percent < 100 ? percent : 100) + '%'}"></div>
+                                </div>
+                                <p class="margin-10">
+                                    @*<span class="text-extra-small text-light pull-right">80%</span>*@
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-heading border-light" style="margin-top:50px">
+                <ul class="panel-heading-tabs border-light">
+                    <li style="padding-top: 7px;display:none">
+                        <input type="daterange" class="form-control" ng-model="dates2" ranges="ranges" />
+                    </li>
+                    <li style="padding-top: 10px;">
+                        <input type="text" ng-model="Serachtext" placeholder="Search" id="form-field-7" class="form-control">
+                    </li>
+                    <li>
+                        <button class="btn btn-default btn-wide " type="button" ng-click="pagination.refereshGrid(1)">
+                            Search
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-primary btn-wide " type="button" ng-click="CreateAddEdit()">
+                            Add New
+                        </button>
+                    </li>
+                    <li style="display:none">
+                        <div class="btn-group" uib-dropdown is-open="status.isopen">
+                            <button type="button" class="btn btn-wide btn-primary uib-dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled">
+                                Action <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#" ng-click="DropValueChange('Export CSV')">Export CSV</a>
+                                </li>
+                                <li>
+                                    <a href="#" ng-click="DropValueChange('Import CSV')"> Import CSV </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body" style="padding-top:10px">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div ui-grid="gridOptions"
+                             ui-grid-auto-resize
+                             @*ui-grid-move-columns*@
+                             ui-grid-exporter
+                             ui-grid-pagination
+                             ui-grid-selection
+                             @*ui-grid-pinning*@
+                             class="grid" style="min-height:452px;max-height:452px; ">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div role="contentinfo" class="ui-grid-pager-panel ng-scope">
+                    <div role="navigation" class="ui-grid-pager-container">
+                        <div role="menubar" class="ui-grid-pager-control">
+                            <!-- Start Page -->
+                            <button type="button" role="menuitem" class="ui-grid-pager-first" ui-grid-one-bind-title="aria.pageToFirst"
+                                    ui-grid-one-bind-aria-label="aria.pageToFirst"
+                                    ng-click="pagination.firstPage()"
+                                    ng-disabled="cantPageBackward()" title="Page to first" aria-label="Page to first"
+                                    disabled="disabled">
+                                <div class="first-triangle">
+                                    <div class="first-bar"></div>
+                                </div>
+                            </button>
+
+                            <!-- Prev Page -->
+                            <button type="button" role="menuitem" class="ui-grid-pager-previous"
+                                    ui-grid-one-bind-title="aria.pageBack" ui-grid-one-bind-aria-label="aria.pageBack"
+                                    ng-click="pagination.previousPage()"
+                                    ng-disabled="cantPageBackward()" title="Page back" aria-label="Page back" disabled="disabled">
+                                <div class="first-triangle prev-triangle"></div>
+                            </button>
+
+                            <input type="number" ui-grid-one-bind-title="aria.pageSelected" ui-grid-one-bind-aria-label="aria.pageSelected"
+                                   class="ui-grid-pager-control-input ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-required"
+                                   ng-model="pagination.pageNumber"
+                                   min="1" max="{{pagination.getTotalPages()}}" required="" title="Selected page"
+                                   aria-label="Selected page" disabled>
+
+                            <span class="ui-grid-pager-max-pages-number ng-binding"
+                                  ng-show="pagination.getTotalPages() > 0">
+                                <abbr ui-grid-one-bind-title="paginationOf" title="of"> /</abbr>{{pagination.getTotalPages()}}
+                            </span>
+
+                            <!-- Next Page -->
+                            <button type="button" role="menuitem" class="ui-grid-pager-next" ui-grid-one-bind-title="aria.pageForward"
+                                    ui-grid-one-bind-aria-label="aria.pageForward"
+                                    ng-click="pagination.nextPage()"
+                                    ng-disabled="cantPageForward()"
+                                    title="Page forward" aria-label="Page forward">
+                                <div class="last-triangle next-triangle"></div>
+                            </button>
+
+                            <!-- Last Page -->
+                            <button type="button" role="menuitem" class="ui-grid-pager-last"
+                                    ui-grid-one-bind-title="aria.pageToLast" ui-grid-one-bind-aria-label="aria.pageToLast"
+                                    ng-click="pagination.lastPage()" ng-disabled="cantPageToLast()" title="Page to last" aria-label="Page to last">
+                                <div class="last-triangle"><div class="last-bar"></div></div>
+                            </button>
+                        </div><!-- ngIf: grid.options.paginationPageSizes.length > 1 -->
+
+                        <div class="ui-grid-pager-row-count-picker ng-scope">
+                            <select ng-model="pagination.ddlpageSize"
+                                    ng-options="o as o for o in pagination.paginationPageSizes" ng-change="pagination.pageSizeChange()"
+                                    class="ng-pristine ng-untouched ng-valid ng-not-empty"></select>
+                            <span class="ui-grid-pager-row-count-label ng-binding">&nbsp;records per page</span>
+                        </div>
+                        <!-- end ngIf: grid.options.paginationPageSizes.length > 1 -->
+                        <!-- ngIf: grid.options.paginationPageSizes.length <= 1 -->
+                    </div>
+                    <div class="ui-grid-pager-count-container">
+                        <div class="ui-grid-pager-count">
+                            <span ng-show="pagination.totalItems > 0" class="ng-binding" style="">
+                                {{pagination.pageNumber}}<abbr ui-grid-one-bind-title="paginationThrough" title="through"> / </abbr>{{pagination.ddlpageSize}} of {{pagination.totalItems}} total records
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>
+<!-- end: RESPONSIVE TABLE -->

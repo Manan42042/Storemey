@@ -1,0 +1,191 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutStoremeyFront.cshtml";
+}
+
+<style type="text/css">
+    .slick-slider {
+        display: table !important;
+        table-layout: fixed !important;
+        width: 100% !important;
+    }
+</style>
+
+
+
+<div class="landing-page">
+    <div class="bg"></div>
+    <div id="section-0">
+
+        @Html.Partial("_mainMenu")
+
+    </div>
+    <div id="section-2" style="padding-top: 85px !important;">
+        <section class="container-fluid container-fullw padding-bottom-30 bg-white no-border section-testimonials">
+            <div class="container">
+                <div class="row padding-bottom-40">
+                    <div class="col-md-12">
+                        <h2 class="center ">WHAT OUR CUSTOMERS SAY ABOUT US</h2>
+                        @*<div id="testimonial" ng-appear="animationBlock4 = true">
+                            <slick dots="true" infinite="false" speed="300" slides-to-show="1" slides-to-scroll="1" class="ng-isolate-scope slick-initialized slick-slider slick-dotted" style="display: block;">
+                                <button class="slick-prev slick-arrow" aria-label="Previous" type="button" aria-disabled="false" style="display: block;">Previous</button>
+                                <div class="slick-list draggable">
+                                    <div class="slick-track" style="opacity: 1; width: 3420px; transform: translate3d(-2280px, 0px, 0px);">
+                                        <div class="padding-left-50 padding-right-50 slick-slide" data-slick-index="0" aria-hidden="true" style="width: 1140px;" tabindex="-1" role="tabpanel" id="slick-slide10" aria-describedby="slick-slide-control10">
+                                            <div class="testimonial-container center">
+                                                <img src="assets/images/team-1.jpg" class="img-circle testimonial-thumb animated flipInY" alt="" ng-class="{'animated flipInY': animationBlock4}" style="">
+                                                <p class="testimonial_author animated fadeInDown" ng-class="{'animated fadeInDown': animationBlock4}" style="">
+                                                    Robert Kelley - <span class="author_company text-red">Apple Inc</span>
+                                                </p>
+                                                <h4 class="testimonial-text animated fadeInUp" ng-class="{'animated fadeInUp': animationBlock4}" style="">Lorem ipsum dolor sit amet, feugiat delicata liberavisse id cum, no quo maiorum intellegebat, liber regione eu sit. Mea cu case ludus integre, vide viderer eleifend ex mea. His ay diceret, cum et atqui placerat.</h4>
+                                            </div>
+                                        </div><div class="padding-left-50 padding-right-50 slick-slide" data-slick-index="1" aria-hidden="true" style="width: 1140px;" tabindex="-1" role="tabpanel" id="slick-slide11" aria-describedby="slick-slide-control11">
+                                            <div class="testimonial-container center">
+                                                <img src="assets/images/team-2.jpg" class="img-circle testimonial-thumb animated flipInY" alt="" ng-class="{'animated flipInY': animationBlock4}" style="">
+                                                <p class="testimonial_author animated fadeInDown" ng-class="{'animated fadeInDown': animationBlock4}" style="">
+                                                    William Greeson - <span class="author_company text-red">Microsoft Corporation</span>
+                                                </p>
+                                                <h4 class="testimonial-text animated fadeInUp" ng-class="{'animated fadeInUp': animationBlock4}" style="">Etiam interdum elementum elit interdum vulputate. Vivamus tristique, dolor ut sodales pulvinar, diam metus facilisis dui, vel pretium ex elit non dui.</h4>
+                                            </div>
+                                        </div><div class="padding-left-50 padding-right-50 slick-slide slick-current slick-active" data-slick-index="2" aria-hidden="false" style="width: 1140px;" tabindex="0" role="tabpanel" id="slick-slide12" aria-describedby="slick-slide-control12">
+                                            <div class="testimonial-container center">
+                                                <img src="assets/images/team-3.jpg" class="img-circle testimonial-thumb animated flipInY" alt="" ng-class="{'animated flipInY': animationBlock4}" style="">
+                                                <p class="testimonial_author animated fadeInDown" ng-class="{'animated fadeInDown': animationBlock4}" style="">
+                                                    Angela N. Seaton- <span class="author_company text-red">Amazon.com</span>
+                                                </p>
+                                                <h4 class="testimonial-text animated fadeInUp" ng-class="{'animated fadeInUp': animationBlock4}" style="">Suspendisse mauris nunc, luctus suscipit volutpat sed, sodales non mi. Quisque pretium gravida urna maximus imperdiet. In blandit nisi ipsum.</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <button class="slick-next slick-arrow slick-disabled" aria-label="Next" type="button" style="display: block;" aria-disabled="true">Next</button><ul class="slick-dots" style="display: block;" role="tablist"><li class="" role="presentation"><button type="button" role="tab" id="slick-slide-control10" aria-controls="slick-slide10" aria-label="1 of 3" tabindex="-1">1</button></li><li role="presentation" class=""><button type="button" role="tab" id="slick-slide-control11" aria-controls="slick-slide11" aria-label="2 of 3" tabindex="-1">2</button></li><li role="presentation" class="slick-active"><button type="button" role="tab" id="slick-slide-control12" aria-controls="slick-slide12" aria-label="3 of 3" tabindex="0" aria-selected="true">3</button></li></ul>
+                            </slick>
+                        </div>*@
+                    </div>
+                </div>
+                <hr class="">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="media padding-left-10 padding-right-10">
+                            <a href="#" class="pull-left">
+                                <img alt="image" class="img-circle testimonial-thumb" src="assets/images/team20.jpg">
+                            </a>
+                            <div class="media-body ">
+                                <strong>Todd S. Smith</strong> @*- <strong class="text-red">Amazon.com</strong>*@
+                                <br>
+                                @*<small class="text-light">Today 4:55 PM</small>*@
+                                <div class="well padding-15 margin-top-15">
+                                    Many point of sale system are available in the market, choose very carefully best suitable for your business. Point of sale system are needed to be faster, easier and cheaper to install.I have good expiriance with storemey.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="media padding-left-10 padding-right-10">
+                            <a href="#" class="pull-left">
+                                <img alt="image" class="img-circle testimonial-thumb" src="assets/images/team-9.jpg">
+                            </a>
+                            <div class="media-body ">
+                                <strong>Leslie M. Day</strong> @*- <strong class="text-red">Apple Inc</strong>*@
+                                <br>
+                                @*<small class="text-light">Today 10:28 AM</small>*@
+                                <div class="well padding-15 margin-top-15">
+                                   Storemey point of sale system peripherals bar code scanner facility makes transactions execution quick and save customers precious time.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="media padding-left-10 padding-right-10">
+                            <a href="#" class="pull-left">
+                                <img alt="image" class="img-circle testimonial-thumb" src="assets/images/team21.jpeg">
+                            </a>
+                            <div class="media-body ">
+                                <strong>Francisco S. Harding</strong> @*- <strong class="text-red">Apple Inc</strong>*@
+                                <br>
+                                @*<small class="text-light">Yesterday 3:52 PM</small>*@
+                                <div class="well padding-15 margin-top-15">
+                                    In a storemey web based point of sale system installation is almost zero percent is necessary.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="media padding-left-10 padding-right-10">
+                            <a href="#" class="pull-left">
+                                <img alt="image" class="img-circle testimonial-thumb" src="assets/images/team24.jpg">
+                            </a>
+                            <div class="media-body ">
+                                <strong>Manuel Barnhardt</strong> @*- <strong class="text-red">Microsoft Corporation</strong>*@
+                                <br>
+                                @*<small class="text-light">Yesterday 6:11 PM</small>*@
+                                <div class="well padding-15 margin-top-15">
+                                    Storemey point of sale system eliminates human errors and save money in the long term.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid container-fullw padding-bottom-30 bg-black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="padding-40 text-center" ng-appear="countTo1 = 8522">
+                            <i class="fa ti-user fa-4x text-red"></i>
+                            <span class="block counter" count-to="8522" value="0" duration="1" filter="number">33</span>
+                            <hr class="white-line">
+                            <p class="block text-light"  style="PADDING-LEFT: 26%;">
+                                ACTIVE USERS
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="padding-40 text-center" ng-appear="countTo2 = 532">
+                            <i class="fa fa-user-circle fa-4x text-red"></i>
+                            <span class="block counter" count-to="532" value="0" duration="1" filter="number">17</span>
+                            <hr class="white-line">
+                            <p class="block text-light"  style="PADDING-LEFT: 26%;">
+                                ACTIVE CLIENTS
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="padding-40 text-center" ng-appear="countTo3 = 118">
+                            <i class="fa fa-line-chart fa-4x text-red"></i>
+                            <div class="block">
+                                <span class="counter" count-to="118" value="0" duration="1" filter="number">90</span>
+                                <span class="counter-symbol">%</span>
+                            </div>
+                            <hr class="white-line">
+                            <p class="block text-light" style="PADDING-LEFT: 5%;">
+                                AVERAGE PROFIT MARKUP
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="padding-40 text-center" ng-appear="countTo4 = 4832">
+                            <i class="fa fa-child fa-4x text-red"></i>
+                            <span class="block counter" count-to="4832" value="0" duration="1" filter="number">500+</span>
+                            <hr class="white-line">
+                            <p class="block text-light" style="PADDING-LEFT: 15%;">
+                                SATISFIED CUSTOMERS
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div>
+        @Html.Partial("_mainFooter")
+    </div>
+
+    <!-- end: SECTION 5 -->
+</div>

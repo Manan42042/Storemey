@@ -1,0 +1,14 @@
+<!-- start: SEARCH FORM -->
+<div class="search-form hidden-md hidden-lg">
+    <form class="navbar-form" role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="{{ 'search.PLACEHOLDER' | translate }}">
+            <button class="btn search-button" type="submit">
+                <i class="ti-search"></i>
+            </button>
+        </div>
+    </form>
+</div>
+
+<nav data-ng-include=" '/App/Main/views/partials/nav.cshtml' " ng-controller="app.views.layout.sidebarNav as vm"></nav>
+<!-- end: SIDEBAR -->

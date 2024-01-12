@@ -1,0 +1,290 @@
+﻿
+<div class="panel-scroll" style="position:relative;max-height:100vh !important; padding-right:10 !important;  " perfect-scrollbar wheel-propagation="false" suppress-scroll-x="true">
+
+    <div ng-controller="app.views.modal-storeSeasons">
+        <div style="background-color:#fbecb5;border-bottom:1px solid #c9cac4;    position: fixed;    width: 100%;    z-index: 999;">
+            <div id="Closeicon" class="Closeicon" ng-click="cancelAddEdit()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+
+        <style>
+            .form-group table {
+                width: 99%;
+            }
+        </style>
+
+
+        <div class="row" ng-controller="app.views.storeProductsVariants">
+            <form role="form" id="frmCountry" name="myForm" ng-submit="register(myForm)" ng-validate="validationOptions">
+                <div>
+                    <fieldset style="margin:5%">
+                        <legend>
+                            Update product variant
+                        </legend>
+                        <div class="panel panel-white" style="background-color: #fbecb5;">
+                            <div class="panel-body">
+                                <div class="row">
+                                    @*<div class="col-md-12">*@
+                                    <div>
+                                        <div class="container-fluid container-fullw ng-scope">
+                                            <div class="row">
+                                                @*<div class="col-md-12">*@
+                                                <div>
+                                                    <div class="panel panel-white">
+                                                        <div class="panel-body">
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <fieldset>
+                                                                        <legend>
+                                                                            Product details
+                                                                        </legend>
+                                                                        <div class="form-group">
+                                                                            <label for="exampleInputEmail1">
+                                                                                Product name
+                                                                            </label>
+                                                                            <input type="text" class="form-control" ng-model="obj.productName" name="productName" placeholder="enter product name">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="exampleInputEmail1">
+                                                                                SKU
+                                                                            </label>
+                                                                            <input type="text" class="form-control" ng-model="obj.sku" name="sku" placeholder="enter sku">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="exampleInputEmail1">
+                                                                                Barcode
+                                                                            </label>
+                                                                            <input type="text" class="form-control" ng-model="obj.barcode" name="barcode" placeholder="enter barcode">
+                                                                        </div>
+                                                                    </fieldset>
+
+                                                                    <fieldset>
+                                                                        <legend>
+                                                                            Product description
+                                                                        </legend>
+                                                                        <div class="row">
+                                                                            <div class="form-group">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <div>
+                                                                                                <div ckeditor="options" ng-model="obj.description" ready="onReady()"></div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </fieldset>
+
+
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <fieldset>
+                                                                        <legend>
+                                                                            Product .variantimages
+                                                                        </legend>
+                                                                        <div class="row">
+                                                                            <span class="btn btn-primary btn-file" style="margin-bottom:30px;margin-left">
+                                                                                Select an image file
+                                                                                <input type="file" id="fileInput" size="5" accept="image/*">
+                                                                            </span>
+                                                                            <div class="form-group">
+                                                                                <div class="container">
+                                                                                    <div class="row">
+
+                                                                                        <slick slides-to-show="3" style="width: 550px;" settings="slickConfig" dots="true" slides-to-scroll=3 ng-if="varnumberLoaded">
+                                                                                            <div ng-repeat="img in variantimages  track by $index">
+                                                                                                <span style="margin:5px;">
+                                                                                                    <img ng-src="{{ img.image }}" ng-click="openCropProduct(img)" style="width:170px;height:170px;cursor:pointer;BORDER: 3PX SOLID {{  img.isDefault === true ? 'Red': '#027dc1'  }};PADDING: 3PX;MARGIN-LEFT: 5PX;" />
+                                                                                                    <center>
+                                                                                                        <div class="clip-radio radio-primary">
+
+
+                                                                                                            <button class="btn btn-default btn-wide" type="button" ng-disabled="img.isDefault" ng-click="change(img);" style="margin-top: 10px;">
+                                                                                                                Set Default
+                                                                                                            </button>
+
+                                                                                                            <button class="btn btn-default btn-wide" type="button" ng-click="remove(img);" style="margin-top: 10px;">
+                                                                                                                Delete
+                                                                                                            </button>
+                                                                                                            @*</div>*@
+                                                                                                    </center>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </slick>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </fieldset>
+
+                                                                    <fieldset>
+                                                                        <legend>
+                                                                            Product inventory management
+                                                                        </legend>
+                                                                        <div class="form-group">
+                                                                            <span style="    text-align: center;    vertical-align: middle;" class="green switch green ng-not-empty ng-valid checked" ng-click="undefined ? obj.isInventoryOn : obj.isInventoryOn=!obj.isInventoryOn" ng-class="{ checked:obj.isInventoryOn, disabled:undefined }" ng-model="obj.isInventoryOn" ng-init="obj.isInventoryOn = true" style=""><small></small><input type="checkbox" ng-model="obj.isInventoryOn" style="display: none;" class="ng-pristine ng-untouched ng-valid ng-not-empty"><span class="switch-text"> </span></span>
+
+                                                                            <span style="    text-align: center;    vertical-align: middle;">
+                                                                                <label for="IsInventoryOn">
+                                                                                    Track inventory for this product
+
+                                                                                </label>
+                                                                            </span>
+                                                                        </div>
+                                                                        <fieldset ng-if="obj.isInventoryOn">
+                                                                            <legend>
+                                                                                Product Inventory
+                                                                            </legend>
+                                                                            <div>
+                                                                                <div class="row">
+                                                                                    <div class="col-md-6">
+                                                                                        <div class="form-group">
+                                                                                            Outlet Name
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-6">
+                                                                                        <div class="form-group">
+                                                                                            Product Stock
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                                <div ng-repeat="m in obj.listProductInventory">
+
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-group">
+                                                                                                <h4> {{m.outletName}}</h4>
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-group">
+                                                                                                <input type="text" class="form-control" ng-model="m.currentStock" name="currentStock" placeholder="enter product stock">
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </fieldset>
+
+                                                                    </fieldset>
+
+
+                                                                </div>
+
+
+                                                                <div class="col-md-12">
+
+                                                                    <fieldset>
+                                                                        <legend>
+                                                                            Product Price details
+                                                                        </legend>
+
+                                                                        <div ng-repeat="m in obj.listProductPricing">
+                                                                            <div class="row">
+                                                                                @*<fieldset>
+                                                                                    <legend>
+                                                                                        {{m.outletName}}
+                                                                                    </legend>*@
+                                                                                <div class="col-md-2">
+                                                                                    <div class="form-group">
+                                                                                        <h4 style="margin-top: 25px;"> {{m.outletName}}</h4>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="col-md-2">
+                                                                                    <div class="form-group">
+                                                                                        <label for="exampleInputEmail1">
+                                                                                            Price
+                                                                                        </label>
+                                                                                        <input type="text" class="form-control" ng-model="m.price" name="price" placeholder="enter price">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-2">
+                                                                                    <div class="form-group">
+                                                                                        <label for="exampleInputEmail1">
+                                                                                            Mark-up %
+                                                                                        </label>
+                                                                                        <input type="text" class="form-control" ng-model="m.markUp" name="markUp" placeholder="enter mark up">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="col-md-2">
+                                                                                    <div class="form-group">
+                                                                                        <label for="exampleInputEmail1">
+                                                                                            Price - Excluding Tax
+                                                                                        </label>
+                                                                                        <input type="text" class="form-control" ng-model="m.priceExcludingTax" name="priceExcludingTax" placeholder="enter price excluding tax">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="col-md-2">
+                                                                                    <div class="form-group">
+                                                                                        <label for="exampleInputEmail1">
+                                                                                            Tax
+                                                                                        </label>
+                                                                                        @*<input type="text" class="form-control" ng-model="obj.tax" name="tax" placeholder="enter tax">*@
+                                                                                        <ui-select ng-model="m.uitaxId" name="tax" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a tax">
+                                                                                            <ui-select-match placeholder="Select a tax">{{$select.selected.taxName}}</ui-select-match>
+                                                                                            <ui-select-choices repeat="person in Tax | propsFilter: {taxName: $select.search}">
+                                                                                                <div ng-bind-html="person.taxName | highlight: $select.search"></div>
+                                                                                            </ui-select-choices>
+                                                                                        </ui-select>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="col-md-2">
+                                                                                    <div class="form-group">
+                                                                                        <label for="exampleInputEmail1">
+                                                                                            Price - Including Tax
+                                                                                        </label>
+                                                                                        <input type="text" class="form-control" ng-model="m.priceIncludingTax" name="priceIncludingTax" placeholder="enter price including tax">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                @*<div class="col-md-2">
+                                                                                        <div class="form-group">
+                                                                                            <label for="exampleInputEmail1">
+                                                                                                Total Price
+                                                                                            </label>
+                                                                                            <input type="text" class="form-control" ng-model="m.totalPrice" name="totalPrice" placeholder="enter total price">
+                                                                                        </div>
+                                                                                    </div>*@
+                                                                                @*</fieldset>*@
+                                                                            </div>
+                                                                        </div>
+                                                                    </fieldset>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <button class="btn btn-primary btn-wide" type="submit" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                    Save
+                                </button>
+
+                                <button class="btn btn-default btn-wide" type="button" ng-click="cancelAddEdit()">
+                                    Back
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+    </div>
