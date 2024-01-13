@@ -1,0 +1,52 @@
+﻿
+<style>
+    .ng-confirm .ng-confirm-box div.ng-confirm-content-pane {
+        min-height: 700px !important;
+    }
+
+    .ng-confirm-box, .ng-confirm-hilight-shake, .ng-confirm-type-animated {
+        margin-top: 140px !important
+    }
+
+    #frmoutletRegister .tab-content {
+        height: unset !important;
+    }
+</style>
+
+
+<div class="col-md-12">
+    <div class="container-fluid container-fullw" ng-controller="app.views.outletregister">
+        <form role="form" id="frmoutletRegister" name="myForm" ng-submit="register(myForm)" ng-validate="validationOptions">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-white">
+                        <div class="panel-body" style="background-color: #fff;">
+
+                            <fieldset>
+                                <legend>
+                                    Select Register
+                                </legend>
+                                <uib-tabset class="tabbable" active="active">
+
+                                    <uib-tab index="$index + 1" ng-repeat="tab in tabs" heading="{{tab.outletName}}">
+                                        <div ng-repeat="m in Registers">
+                                            <div ng-show="tab.id == m.outletId">
+                                                <a ladda="ldloading.xs" class="btn btn-wide btn-lg btn-info ladda-button" ng-click="saveAddEdit(tab.outletName,m)" data-style="expand-right" data-spinner-size="10" style="display:block;margin-bottom:10px !important;"><span class="ladda-label"> {{m.registerName}}</span><span class="ladda-spinner"></span></a>
+                                            </div>
+                                        </div>
+                                    </uib-tab>
+                                </uib-tabset>
+                            </fieldset>
+
+                        </div>
+                        @*<div class="panel-footer" style="height: 65px;background-color: #fff !important;">
+                                <button class="btn btn-primary btn-wide" type="submit" style="float:right" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                    SUBMIT
+                                </button>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,603 @@
+﻿@{
+    /**/
+
+    /**/
+    string EmailPattern = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+}
+
+
+<style>
+    .form-group table {
+        width: 99%;
+    }
+</style>
+
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin">Products</h4>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC EXAMPLE -->
+<div class="container-fluid container-fullw" ng-controller="app.views.storeProducts">
+    <div class="row">
+        <div class="col-md-12">
+            @*<div>*@
+            <fieldset>
+                <legend>
+                    Add/Update Of, Product!
+                </legend>
+                @*<div class="panel panel-white">
+                    <div class="panel-body">*@
+
+                <div>
+                    <form role="form" id="frmCountry" name="myForm" ng-submit="register(myForm)" ng-validate="validationOptions">
+                        <div>
+                            <div class="panel panel-white" style="background-color: #fbecb5;">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        @*<div class="col-md-12">*@
+                                        <div>
+
+
+                                            <div class="container-fluid container-fullw ng-scope">
+                                                <div class="row">
+                                                    @*<div class="col-md-12">*@
+                                                    <div>
+                                                        <div class="panel panel-white">
+                                                            <div class="panel-body">
+
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <fieldset>
+                                                                            <legend>
+                                                                                Product Type
+                                                                            </legend>
+                                                                            <div class="form-group">
+
+                                                                                <div class="clip-radio radio-primary">
+
+                                                                                    <input type="radio" id="Simple" name="IsVariant" ng-model="GetStoreProductsDto.isVariant" value="false" ng-checked="GetStoreProductsDto.isVariant === false">
+                                                                                    <label for="Simple">
+                                                                                        Simple product
+                                                                                    </label>
+                                                                                    <input type="radio" id="Variant" name="IsVariant" ng-model="GetStoreProductsDto.isVariant" value="true" ng-checked="GetStoreProductsDto.isVariant === true">
+                                                                                    <label for="Variant">
+                                                                                        Variant product
+                                                                                    </label>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </fieldset>
+                                                                        <fieldset>
+                                                                            <legend>
+                                                                                Product details
+                                                                            </legend>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">
+                                                                                    Product name
+                                                                                </label>
+                                                                                <input type="text" class="form-control" ng-model="GetStoreProductsDto.productName" name="productName" placeholder="enter product name">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">
+                                                                                    SKU
+                                                                                </label>
+                                                                                <input type="text" class="form-control" ng-model="GetStoreProductsDto.sku" name="sku" placeholder="enter sku">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">
+                                                                                    Barcode
+                                                                                </label>
+                                                                                <input type="text" class="form-control" ng-model="GetStoreProductsDto.barcode" name="barcode" placeholder="enter barcode">
+                                                                            </div>
+                                                                        </fieldset>
+
+                                                                        <fieldset>
+                                                                            <legend>
+                                                                                Supplier details
+                                                                            </legend>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">
+                                                                                    Supplier
+                                                                                </label>
+                                                                                <ui-select ng-model="GetStoreProductsDto.uisuppId" name="supplier" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a supplier">
+                                                                                    <ui-select-match placeholder="Select a supplier">{{$select.selected.supplierFullName}}</ui-select-match>
+                                                                                    <ui-select-choices repeat="person in Supplier | propsFilter: {supplierFullName: $select.search}">
+                                                                                        <div ng-bind-html="person.supplierFullName | highlight: $select.search"></div>
+                                                                                    </ui-select-choices>
+                                                                                </ui-select>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">
+                                                                                    Supplier Price
+                                                                                </label>
+                                                                                <input type="text" class="form-control" ng-model="GetStoreProductsDto.supplierPrice" name="supplierPrice" placeholder="enter supplier price">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">
+                                                                                    Supplier code
+                                                                                </label>
+                                                                                <input type="text" class="form-control" ng-model="GetStoreProductsDto.supplierCode" name="supplierCode" placeholder="enter supplier code">
+                                                                            </div>
+                                                                        </fieldset>
+
+                                                                        <fieldset>
+                                                                            <legend>
+                                                                                Product inventory management
+                                                                            </legend>
+                                                                            <div class="form-group">
+                                                                                <span style="    text-align: center;    vertical-align: middle;" class="green switch green ng-not-empty ng-valid checked" ng-click="undefined ? GetStoreProductsDto.isInventoryOn : GetStoreProductsDto.isInventoryOn=!GetStoreProductsDto.isInventoryOn" ng-class="{ checked:GetStoreProductsDto.isInventoryOn, disabled:undefined }" ng-model="GetStoreProductsDto.isInventoryOn" ng-init="GetStoreProductsDto.isInventoryOn = true" style=""><small></small><input type="checkbox" ng-model="GetStoreProductsDto.isInventoryOn" style="display: none;" class="ng-pristine ng-untouched ng-valid ng-not-empty"><span class="switch-text"> </span></span>
+
+                                                                                <span style="    text-align: center;    vertical-align: middle;">
+                                                                                    <label for="IsInventoryOn">
+                                                                                        Track inventory for this product
+
+                                                                                    </label>
+                                                                                </span>
+                                                                            </div>
+                                                                            <fieldset ng-if="GetStoreProductsDto.isInventoryOn">
+                                                                                <legend>
+                                                                                    Product Inventory
+                                                                                </legend>
+                                                                                <div>
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-group">
+                                                                                                Outlet Name
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <div class="form-group">
+                                                                                                Product Stock
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                    <div ng-repeat="m in GetStoreProductsDto.listProductInventory">
+
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="form-group">
+                                                                                                    <h4> {{m.outletName}}</h4>
+
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-md-6">
+                                                                                                <div class="form-group">
+                                                                                                    <input type="text" class="form-control" ng-model="m.currentStock" name="currentStock" placeholder="enter product stock">
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </fieldset>
+
+
+                                                                            <div class="form-group">
+                                                                                <span style="    text-align: center;    vertical-align: middle;" class="green switch green ng-not-empty ng-valid checked" ng-click="undefined ? GetStoreProductsDto.isAllowtoSellOutofStock : GetStoreProductsDto.isAllowtoSellOutofStock=!GetStoreProductsDto.isAllowtoSellOutofStock" ng-class="{ checked:GetStoreProductsDto.isAllowtoSellOutofStock, disabled:undefined }" ng-model="GetStoreProductsDto.isAllowtoSellOutofStock" ng-init="GetStoreProductsDto.isAllowtoSellOutofStock = true" style=""><small></small><input type="checkbox" ng-model="GetStoreProductsDto.isAllowtoSellOutofStock" style="display: none;" class="ng-pristine ng-untouched ng-valid ng-not-empty"><span class="switch-text"> </span></span>
+
+                                                                                <span style="    text-align: center;    vertical-align: middle;">
+                                                                                    <label for="IsAllowtoSellOutofStock">
+                                                                                        Allow selling even if this item is out of stock.
+                                                                                    </label>
+                                                                                </span>
+                                                                            </div>
+                                                                        </fieldset>
+
+
+
+                                                                        <fieldset>
+                                                                            <legend>
+                                                                                Product categories
+                                                                            </legend>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">
+                                                                                    Category
+                                                                                </label>
+                                                                                @*<input type="text"    ng-keyup="addNewCategories($event)"    class="form-control" ng-model="GetStoreProductsDto.Category" name="Category" placeholder="enter category">*@
+                                                                                <ui-select multiple tag-on-blur="true" close-on-select="true" function-value="addNewCategories" ng-model="Mastercate.ui" theme="bootstrap" title="Choose a categories">
+                                                                                    <ui-select-match placeholder="Select categories...">{{$item.categoryName}}</ui-select-match>
+                                                                                    <ui-select-choices repeat="person in Masters.listCategories.items | propsFilter: {categoryName: $select.search}">
+                                                                                        <div ng-bind-html="person.categoryName | highlight: $select.search"></div>
+                                                                                        @*<small>
+                                                                                                email: {{person.email}}
+                                                                                                age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                                                                                            </small>*@
+                                                                                    </ui-select-choices>
+                                                                                </ui-select>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">
+                                                                                    Brand
+                                                                                </label>
+                                                                                @*<input type="text" class="form-control" ng-model="GetStoreProductsDto.brand" name="brand" placeholder="enter brand">*@
+                                                                                <ui-select multiple ng-model="Masterbrand.ui" tag-on-blur="true" function-value="addNewBrands" theme="bootstrap" close-on-select="true" title="Choose a brand">
+                                                                                    <ui-select-match placeholder="Select brand...">{{$item.brandName}}</ui-select-match>
+                                                                                    <ui-select-choices repeat="person in Masters.listBrands.items | propsFilter: {brandName: $select.search}">
+                                                                                        <div ng-bind-html="person.brandName | highlight: $select.search"></div>
+                                                                                    </ui-select-choices>
+                                                                                </ui-select>
+
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">
+                                                                                    Tags
+                                                                                </label>
+                                                                                <ui-select multiple ng-model="Mastertag.ui" tag-on-blur="true" function-value="addNewTags" close-on-select="true" title="Choose a tag">
+                                                                                    <ui-select-match placeholder="Select tag...">{{$item.tagName}}</ui-select-match>
+                                                                                    <ui-select-choices repeat="person in Masters.listTags.items | propsFilter: {tagName: $select.search}">
+                                                                                        <div ng-bind-html="person.tagName | highlight: $select.search"></div>
+                                                                                    </ui-select-choices>
+                                                                                </ui-select>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleInputEmail1">
+                                                                                    season
+                                                                                </label>
+
+                                                                                <ui-select multiple ng-model="MasterSeasons.ui" tag-on-blur="true" function-value="addNewSeason" theme="bootstrap" close-on-select="true" title="Choose a season">
+                                                                                    <ui-select-match placeholder="Select season...">{{$item.seasonName}}</ui-select-match>
+                                                                                    <ui-select-choices repeat="person in Masters.listSeasons.items | propsFilter: {seasonName: $select.search}">
+                                                                                        <div ng-bind-html="person.seasonName | highlight: $select.search"></div>
+                                                                                    </ui-select-choices>
+                                                                                </ui-select>
+
+                                                                            </div>
+                                                                        </fieldset>
+
+
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <fieldset>
+                                                                            <legend>
+                                                                                Product images
+                                                                            </legend>
+                                                                            <div class="row">
+                                                                                <span class="btn btn-primary btn-file" style="margin-bottom:30px;margin-left">
+                                                                                    Select an image file
+                                                                                    <input type="file" id="fileInput" size="5" accept="image/*">
+                                                                                </span>
+                                                                                <div class="form-group">
+                                                                                    <div class="container">
+                                                                                        <div class="row">
+
+                                                                                            <slick slides-to-show="3" settings="slickConfig" dots="true" slides-to-scroll=3 ng-if="numberLoaded">
+                                                                                                <div ng-repeat="img in images  track by $index">
+                                                                                                    <span style="margin:5px;">
+                                                                                                        <img ng-src="{{ img.image }}" ng-click="openCropProduct(img)" style="width:186px;height:186px;cursor:pointer;BORDER: 3PX SOLID {{  img.isDefault === true ? 'Red': '#027dc1'  }};PADDING: 3PX;MARGIN-LEFT: 35PX;" />
+                                                                                                        <center>
+                                                                                                            <div class="clip-radio radio-primary">
+
+
+                                                                                                                <button class="btn btn-default btn-wide" type="button" ng-disabled="img.isDefault" ng-click="change(img);" style="margin-top: 10px;">
+                                                                                                                    Set Default
+                                                                                                                </button>
+
+                                                                                                                <button class="btn btn-default btn-wide" type="button" ng-click="remove(img);" style="margin-top: 10px;">
+                                                                                                                    Delete
+                                                                                                                </button>
+                                                                                                                @*</div>*@
+                                                                                                        </center>
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                            </slick>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </fieldset>
+                                                                        <fieldset>
+                                                                            <legend>
+                                                                                Product description
+                                                                            </legend>
+                                                                            <div class="row">
+                                                                                <div class="form-group">
+                                                                                    <table>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <div>
+                                                                                                    <div ckeditor="options" ng-model="GetStoreProductsDto.description" ready="onReady()"></div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </div>
+                                                                            </div>
+                                                                        </fieldset>
+                                                                        <fieldset>
+                                                                            <legend>
+                                                                                Product for
+                                                                            </legend>
+                                                                            <div class="form-group">
+                                                                                <span style="    text-align: center;    vertical-align: middle;" class="green switch green ng-not-empty ng-valid checked" ng-click="undefined ? GetStoreProductsDto.isPOSProduct : GetStoreProductsDto.isPOSProduct=!GetStoreProductsDto.isPOSProduct" ng-class="{ checked:GetStoreProductsDto.isPOSProduct, disabled:undefined }" ng-model="GetStoreProductsDto.isPOSProduct" ng-init="GetStoreProductsDto.isPOSProduct = true" style=""><small></small><input type="checkbox" ng-model="GetStoreProductsDto.isPOSProduct" style="display: none;" class="ng-pristine ng-untouched ng-valid ng-not-empty"><span class="switch-text"> </span></span>
+
+                                                                                <span style="    text-align: center;    vertical-align: middle;">
+                                                                                    <label for="IsPOSProduct">
+                                                                                        For Ecommerce
+                                                                                    </label>
+                                                                                </span>
+                                                                            </div> <div class="form-group">
+                                                                                <span style="    text-align: center;    vertical-align: middle;" class="green switch green ng-not-empty ng-valid checked" ng-click="undefined ? GetStoreProductsDto.isEcommarceProduct : GetStoreProductsDto.isEcommarceProduct=!GetStoreProductsDto.isEcommarceProduct" ng-class="{ checked:GetStoreProductsDto.isEcommarceProduct, disabled:undefined }" ng-model="GetStoreProductsDto.isEcommarceProduct" ng-init="GetStoreProductsDto.isEcommarceProduct = true" style=""><small></small><input type="checkbox" ng-model="GetStoreProductsDto.isEcommarceProduct" style="display: none;" class="ng-pristine ng-untouched ng-valid ng-not-empty"><span class="switch-text"> </span></span>
+
+                                                                                <span style="    text-align: center;    vertical-align: middle;">
+                                                                                    <label for="IsEcommarceProduct">
+                                                                                        For POS
+                                                                                    </label>
+                                                                                </span>
+
+                                                                            </div>
+                                                                        </fieldset>
+
+
+                                                                        <fieldset>
+                                                                            <legend>
+                                                                                SEO relaited fields
+                                                                            </legend>
+                                                                            <div class="form-group">
+                                                                                <span style="    text-align: center;    vertical-align: middle;" class="green switch green ng-not-empty ng-valid checked" ng-click="undefined ? GetStoreProductsDto.isEnableSEO : GetStoreProductsDto.isEnableSEO=!GetStoreProductsDto.isEnableSEO" ng-class="{ checked:GetStoreProductsDto.isEnableSEO, disabled:undefined }" ng-model="GetStoreProductsDto.isEnableSEO" ng-init="GetStoreProductsDto.isEnableSEO = true" style=""><small></small><input type="checkbox" ng-model="GetStoreProductsDto.isEnableSEO" style="display: none;" class="ng-pristine ng-untouched ng-valid ng-not-empty"><span class="switch-text"> </span></span>
+
+                                                                                <span style="    text-align: center;    vertical-align: middle;">
+                                                                                    <label for="IsEcommarceProduct">
+                                                                                        SEO Enable
+                                                                                    </label>
+                                                                                </span>
+
+                                                                            </div>
+                                                                            <div ng-if=" GetStoreProductsDto.isEnableSEO == true ||  GetStoreProductsDto.isEnableSEO === 'true'">
+                                                                                <div class="form-group">
+                                                                                    <label for="exampleInputEmail1">
+                                                                                        Meta title
+                                                                                    </label>
+                                                                                    <input type="text" class="form-control" ng-model="GetStoreProductsDto.metaTitle" name="metaTitle" placeholder="enter meta title">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="exampleInputEmail1">
+                                                                                        Meta description
+                                                                                    </label>
+                                                                                    <input type="text" class="form-control" ng-model="GetStoreProductsDto.metaDescription" name="metaDescription" placeholder="enter meta description">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label for="exampleInputEmail1">
+                                                                                        Meta keyword
+                                                                                    </label>
+                                                                                    <input type="text" class="form-control" ng-model="GetStoreProductsDto.metaKeyword" name="metaKeyword" placeholder="enter meta keyword">
+                                                                                </div>
+                                                                            </div>
+                                                                        </fieldset>
+                                                                    </div>
+
+
+                                                                    <div class="col-md-12">
+
+                                                                        <div class="col-lg-12 col-xs-7 " style="  float:right;   padding-bottom: 20px;">
+                                                                            <div class="form-group">
+                                                                                <div class="checkbox clip-check check-primary">
+                                                                                    <input type="checkbox" id="isPOSPaymentType" value="1" ng-model="GetStoreProductsDto.copyForall">
+                                                                                    <label for="isPOSPaymentType">
+                                                                                        Product Price copy for all outlets and if variants are available.
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <fieldset ng-show="GetStoreProductsDto.copyForall == true || GetStoreProductsDto.copyForall === 'true'">
+                                                                            <legend>
+                                                                                Product Price copy for all outlets and if variants are available.
+                                                                            </legend>
+
+                                                                            <div>
+                                                                                <div class="row">
+
+                                                                                    <div class="col-md-2">
+                                                                                        <div class="form-group">
+                                                                                            <h4 style="margin-top: 25px;"> All outlets and variants</h4>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-2">
+                                                                                        <div class="form-group">
+                                                                                            <label for="exampleInputEmail1">
+                                                                                                Price
+                                                                                            </label>
+                                                                                            <input type="text" class="form-control" ng-model="copyprice.price" name="price" placeholder="enter price">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-2">
+                                                                                        <div class="form-group">
+                                                                                            <label for="exampleInputEmail1">
+                                                                                                Mark-up %
+                                                                                            </label>
+                                                                                            <input type="text" class="form-control" ng-model="copyprice.markUp" name="markUp" placeholder="enter mark up">
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-2">
+                                                                                        <div class="form-group">
+                                                                                            <label for="exampleInputEmail1">
+                                                                                                Price - Excluding Tax
+                                                                                            </label>
+                                                                                            <input type="text" class="form-control" ng-model="copyprice.priceExcludingTax" name="priceExcludingTax" placeholder="enter price excluding tax">
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-2">
+                                                                                        <div class="form-group">
+                                                                                            <label for="exampleInputEmail1">
+                                                                                                Tax
+                                                                                            </label>
+                                                                                            @*<input type="text" class="form-control" ng-model="GetStoreProductsDto.tax" name="tax" placeholder="enter tax">*@
+                                                                                            <ui-select ng-model="copyprice.uitaxId" name="tax" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a tax">
+                                                                                                <ui-select-match placeholder="Select a tax">{{$select.selected.taxName}}</ui-select-match>
+                                                                                                <ui-select-choices repeat="person in Tax | propsFilter: {taxName: $select.search}">
+                                                                                                    <div ng-bind-html="person.taxName | highlight: $select.search"></div>
+                                                                                                </ui-select-choices>
+                                                                                            </ui-select>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-2">
+                                                                                        <div class="form-group">
+                                                                                            <label for="exampleInputEmail1">
+                                                                                                Price - Including Tax
+                                                                                            </label>
+                                                                                            <input type="text" class="form-control" ng-model="copyprice.priceIncludingTax" name="priceIncludingTax" placeholder="enter price including tax">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </fieldset>
+                                                                        <fieldset ng-show="GetStoreProductsDto.isVariant == true || GetStoreProductsDto.isVariant === 'true'">
+                                                                            <legend>
+                                                                                Product variant management
+                                                                            </legend>
+
+                                                                            <div class="panel panel-white no-radius no-margin">
+                                                                                <div class="panel-heading border-light padding-30">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-12">
+                                                                                            <div class="col-lg-12 col-xs-7 text-right" style="    padding-bottom: 20px;">
+                                                                                                <div class="btn-group margin-top-5" uib-dropdown ng-init="selected='Newest'">
+                                                                                                    <button type="button" class="btn btn-wide btn-primary active" ng-click="AddVariants()">
+                                                                                                        Add Variant
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div>
+                                                                                                <table class="table table-condensed table-hover" id="sample-table-4">
+                                                                                                    <thead>
+                                                                                                        <tr>
+                                                                                                            <th class="hidden-xs">Product name</th>
+                                                                                                            <th>SKU </th>
+                                                                                                            <th class="hidden-xs">Barcode</th>
+                                                                                                            <th class="hidden-xs" style="padding-left: 12%;">Action</th>
+                                                                                                        </tr>
+                                                                                                    </thead>
+                                                                                                    <tbody>
+                                                                                                        <tr ng-repeat="m in GetStoreProductsDto.listProductVariants" ng-if="m.productName != '' && m.productName != undefined">
+                                                                                                            <td><a href="#">  {{m.productName}} </a></td>
+                                                                                                            <td class="hidden-xs">    <input type="text" class="form-control" ng-model="m.sku" name="sku" placeholder="enter sku"> </td>
+                                                                                                            <td> <input type="text" class="form-control" ng-model="m.barcode" name="barcode" placeholder="enter barcode"></td>
+                                                                                                            <td class="hidden-xs">
+                                                                                                                <button class="btn btn-default btn-wide" type="button" ng-click="deleteVariant(m);" style="margin-top: 5px;    float: right;    margin-right: 10px;">
+                                                                                                                    Delete
+                                                                                                                </button>
+                                                                                                                <button class="btn btn-default btn-wide" type="button" ng-click="editVariant(m);" style="margin-top: 5px;    float: right; margin-right: 10px;">
+                                                                                                                    Edit
+                                                                                                                </button>
+
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                    </tbody>
+                                                                                                </table>
+
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="panel-body padding-top-0">
+
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                        </fieldset>
+
+
+
+
+                                                                        <fieldset ng-show="GetStoreProductsDto.isVariant == false || GetStoreProductsDto.isVariant === 'false'">
+                                                                            <legend>
+                                                                                Product Price details
+                                                                            </legend>
+
+                                                                            <div ng-repeat="m in GetStoreProductsDto.listProductPricing">
+                                                                                <div class="row">
+
+                                                                                    <div class="col-md-2">
+                                                                                        <div class="form-group">
+                                                                                            <h4 style="margin-top: 25px;"> {{m.outletName}}</h4>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-2">
+                                                                                        <div class="form-group">
+                                                                                            <label for="exampleInputEmail1">
+                                                                                                Price
+                                                                                            </label>
+                                                                                            <input type="text" class="form-control" ng-model="m.price" name="price" placeholder="enter price">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-2">
+                                                                                        <div class="form-group">
+                                                                                            <label for="exampleInputEmail1">
+                                                                                                Mark-up %
+                                                                                            </label>
+                                                                                            <input type="text" class="form-control" ng-model="m.markUp" name="markUp" placeholder="enter mark up">
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-2">
+                                                                                        <div class="form-group">
+                                                                                            <label for="exampleInputEmail1">
+                                                                                                Price - Excluding Tax
+                                                                                            </label>
+                                                                                            <input type="text" class="form-control" ng-model="m.priceExcludingTax" name="priceExcludingTax" placeholder="enter price excluding tax">
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-2">
+                                                                                        <div class="form-group">
+                                                                                            <label for="exampleInputEmail1">
+                                                                                                Tax
+                                                                                            </label>
+                                                                                            @*<input type="text" class="form-control" ng-model="GetStoreProductsDto.tax" name="tax" placeholder="enter tax">*@
+                                                                                            <ui-select ng-model="m.uitaxId" name="tax" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a tax">
+                                                                                                <ui-select-match placeholder="Select a tax">{{$select.selected.taxName}}</ui-select-match>
+                                                                                                <ui-select-choices repeat="person in Tax | propsFilter: {taxName: $select.search}">
+                                                                                                    <div ng-bind-html="person.taxName | highlight: $select.search"></div>
+                                                                                                </ui-select-choices>
+                                                                                            </ui-select>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-2">
+                                                                                        <div class="form-group">
+                                                                                            <label for="exampleInputEmail1">
+                                                                                                Price - Including Tax
+                                                                                            </label>
+                                                                                            <input type="text" class="form-control" ng-model="m.priceIncludingTax" name="priceIncludingTax" placeholder="enter price including tax">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </fieldset>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <button class="btn btn-primary btn-wide" type="submit" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                        Save
+                                    </button>
+
+                                    <button class="btn btn-default btn-wide" type="button" ng-click="cancelAddEdit()">
+                                        Back
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </fieldset>
+        </div>
+    </div>
+</div>

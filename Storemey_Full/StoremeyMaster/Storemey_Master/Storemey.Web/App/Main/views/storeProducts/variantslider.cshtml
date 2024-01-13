@@ -1,0 +1,61 @@
+﻿<div ng-controller="app.views.variantslider">
+    <div style="background-color:#fbecb5;border-bottom:1px solid #c9cac4">
+        <div id="Closeicon" class="Closeicon" ng-click="cancelAddEditslider()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+
+    <div class="row ">
+        <form role="form" id="frmCountry" name="myForm" ng-submit="register(myForm)" ng-validate="validationOptions">
+            <div>
+                <fieldset style="margin:5%">
+                    <legend>
+                        Select variant
+                    </legend>
+                    <div class="panel panel-white" style="background-color: #fbecb5;">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div ng-repeat="m in GetStoreProductsDto.selectedVariant">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <ui-select ng-model="m.variantNames" name="Variant" on-select="ChangeVariantValues($item, $model,m)" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a Variant">
+                                                    <ui-select-match placeholder="Select a Variant">{{$select.selected.variantName}}</ui-select-match>
+                                                    <ui-select-choices repeat="person in m.allVariant | propsFilter: {variantName: $select.search}">
+                                                        <div ng-bind-html="person.variantName | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <ui-select multiple ng-model="m.variantValues" tag-on-blur="true" function-value="addNewBrands" theme="bootstrap" close-on-select="true" title="Choose a values">
+                                                    <ui-select-match placeholder="Select values...">{{$item.variantValue}}</ui-select-match>
+                                                    <ui-select-choices repeat="person in m.allVariantValue | propsFilter: {variantValue: $select.search}">
+                                                        <div ng-bind-html="person.variantValue | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary btn-wide" type="submit" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                Save
+                            </button>
+
+                            <button class="btn btn-default btn-wide" type="button" ng-click="cancelAddEditslider()">
+                                Back
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>

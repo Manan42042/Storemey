@@ -1,0 +1,78 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Processing</title>
+    <link rel="shortcut icon" href="favicon.png" />
+
+    <link href="/fonts/Karla/Karlacss.css" rel="stylesheet" />
+    <link href="~/Views/Home/_loading.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        @*<div class="sk-wave">
+                <div class="sk-rect sk-rect1"></div>
+                <div class="sk-rect sk-rect2"></div>
+                <div class="sk-rect sk-rect3"></div>
+                <div class="sk-rect sk-rect4"></div>
+                <div class="sk-rect sk-rect5"></div>
+            </div>*@
+        <div id="loading-bar-spinner" class="load-wrapp">
+            <div class="load-1">
+                <p>Loading</p><div class="line"></div><div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    @*<div style="margin-left:20PX;">
+            <h1>LOADING</h1>
+        </div>*@
+</body>
+</html>
+
+
+
+<link href="/Common/commonstyle.css" rel="stylesheet" />
+
+
+
+
+<script src="/Content/StoremeyTheme/ANGULARJS/bower_components/jquery/dist/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+      $(document).ready(function () {
+
+        setTimeout(
+            function () {
+                window.location.href = "@ViewBag.urlforwarding";
+            }, parseInt("@ViewBag.LoadingTimeinsecond"));
+
+    });
+
+</script>
+
+<style>
+
+    .load-wrapp {
+        width: 120PX !important;
+        height: 120PX !important;
+        padding: 30px 30px 0px !important;
+        float: left;
+        /*width: 105PX;
+        height: 105PX;*/
+        margin: 0 0px 0px 0;
+        /*padding: 10px 10px 0px;*/
+        border-radius: 5px;
+        text-align: center;
+        background-color: #c82e29 !important;
+    }
+
+        .load-wrapp p {
+            padding: 0 0 5px 20px !important;
+        }
+</style>
+<script src="/Common/Scripts/jQueryHelper.js"></script>

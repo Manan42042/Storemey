@@ -1,0 +1,63 @@
+﻿<!-- Stylesheets -->
+@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">*@
+
+<link href="/App/Main/views/popups/processbar/style.css" rel="stylesheet" />
+@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css">*@
+
+<div class="container" ng-controller="AngularCounterDemoCtrl as ctrl" onload="counterstart()">
+
+    @*<div id="controls" class="row">
+            <div class="col-xs-4 col-sm-3">
+                <label>
+                    To:
+                    <input type="number" ng-model="ctrl.myTarget" class="form-control" step="100" min="0">
+                </label>
+            </div>
+            <div class="col-xs-4 col-sm-3">
+                <label>
+                    Duration (ms):
+                    <input type="number" ng-model="ctrl.myDuration" class="form-control" step="100" min="0">
+                </label>
+            </div>
+            <div class="col-xs-10 col-sm-6">
+                <label>
+                    Effect:
+                    <select ng-model="ctrl.myEffect" class="form-control" ng-options="effect for effect in ctrl.effects"></select>
+                </label>
+            </div>
+        </div>*@
+
+    <div class="counter number"
+         value="ctrl.myValue"
+         to="ctrl.myTarget"
+         duration="ctrl.myDuration"
+         effect="ctrl.myEffect"
+         finish="ctrl.counterFinish()">
+
+        <span class="value">Product items retrive</span> <span class="value" ng-bind="(ctrl.myValue | number:0) + '%'"></span>
+        <div class="progress">
+            <div class="progress-bar progress-bar-info" role="progressbar" ng-style="{ width: ctrl.myValue + '%' }">
+                {{ ctrl.myValue | number: 0 }}%
+            </div>
+        </div>
+        @*<small>If you use Bootstrap progress bars remember to remove <code>transition</code> rule in your stylesheet!</small>*@
+
+        @*<div class="finish-label">
+            <span class="label label-warning" ng-if="ctrl.finish">Finish</span>
+        </div>*@
+    </div>
+</div>
+
+<!-- Scripts -->
+<style type="text/css">
+
+    /*.modal-content {
+        background: -webkit-linear-gradient(90deg, #e53935 10%, #e35d5b 90%);
+        background: -moz-linear-gradient(90deg, #e53935 10%, #e35d5b 90%);
+        background: -ms-linear-gradient(90deg, #e53935 10%, #e35d5b 90%);
+        background: -o-linear-gradient(90deg, #e53935 10%, #e35d5b 90%);
+        background: linear-gradient(90deg, #e53935 10%, #e35d5b 90%);
+    }*/
+</style>

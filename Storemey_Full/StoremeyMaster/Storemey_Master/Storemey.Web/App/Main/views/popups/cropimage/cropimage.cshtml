@@ -1,0 +1,172 @@
+﻿
+<style>
+    .ng-confirm .ng-confirm-box div.ng-confirm-content-pane {
+        min-height: 530px !important;
+    }
+
+    .ng-confirm-box, .ng-confirm-hilight-shake, .ng-confirm-type-animated {
+        margin-top: 4% !important;
+    }
+
+    .ng-confirm-box {
+        width: 60% !important;
+    }
+</style>
+@*<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">*@
+<link rel="stylesheet" href="/lib/cropper-master/cropper-master/docs/css/cropper.css">
+<link rel="stylesheet" href="/lib/cropper-master/cropper-master/docs/css/main.css">
+
+@*<div class="col-md-12">
+        <div class="container-fluid container-fullw" ng-controller="app.views.cropimage">
+            <form role="form" id="frmCountry" name="myForm" ng-submit="register(myForm)" ng-validate="validationOptions">
+                <div class="row">
+                    <div class="col-md-12">
+                        <fieldset>
+                            <legend>
+                                Crop image for better resolution!
+                            </legend>
+                            <div class="panel panel-white">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="cropBox">
+                                                <div class="cropArea">
+                                                    <ui-cropper image="myImage" area-type="square" result-image="data.result" result-image-size="'max'"></ui-cropper>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="cropBox croppedBox">
+                                                <div>
+                                                    <img ng-src="{{data.result}}" style="width:100%;height:100%;" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>*@
+
+
+<div class="col-md-12">
+    <div class="container-fluid container-fullw" ng-controller="app.views.cropimagenew">
+        <form role="form" id="frmCountry" name="myForm" ng-submit="register(myForm)" ng-validate="validationOptions">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-white">
+                        <div class="panel-body" style="background-color: #fff;">
+
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <!-- <h3>Demo:</h3> -->
+                                    <div class="img-container">
+                                        <img id="image" src="{{data.src}}" alt="Picture"><img id="output" width="200" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <!-- <h3>Preview:</h3> -->
+                                    <div class="docs-preview clearfix">
+                                        <div class="img-preview preview-lg"></div>
+                                        <div class="img-preview preview-md"></div>
+                                        <div class="img-preview preview-sm"></div>
+                                        <div class="img-preview preview-xs"></div>
+                                    </div>
+
+                                    <!-- <h3>Data:</h3> -->
+                                    <div class="docs-data" style="display:none">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-prepend">
+                                                <label class="input-group-text" for="dataX">X</label>
+                                            </span>
+                                            <input type="text" class="form-control" id="dataX" placeholder="x">
+                                            <span class="input-group-append">
+                                                <span class="input-group-text">px</span>
+                                            </span>
+                                        </div>
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-prepend">
+                                                <label class="input-group-text" for="dataY">Y</label>
+                                            </span>
+                                            <input type="text" class="form-control" id="dataY" placeholder="y">
+                                            <span class="input-group-append">
+                                                <span class="input-group-text">px</span>
+                                            </span>
+                                        </div>
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-prepend">
+                                                <label class="input-group-text" for="dataWidth">Width</label>
+                                            </span>
+                                            <input type="text" class="form-control" id="dataWidth" placeholder="width">
+                                            <span class="input-group-append">
+                                                <span class="input-group-text">px</span>
+                                            </span>
+                                        </div>
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-prepend">
+                                                <label class="input-group-text" for="dataHeight">Height</label>
+                                            </span>
+                                            <input type="text" class="form-control" id="dataHeight" placeholder="height">
+                                            <span class="input-group-append">
+                                                <span class="input-group-text">px</span>
+                                            </span>
+                                        </div>
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-prepend">
+                                                <label class="input-group-text" for="dataRotate">Rotate</label>
+                                            </span>
+                                            <input type="text" class="form-control" id="dataRotate" placeholder="rotate">
+                                            <span class="input-group-append">
+                                                <span class="input-group-text">deg</span>
+                                            </span>
+                                        </div>
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-prepend">
+                                                <label class="input-group-text" for="dataScaleX">ScaleX</label>
+                                            </span>
+                                            <input type="text" class="form-control" id="dataScaleX" placeholder="scaleX">
+                                        </div>
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-prepend">
+                                                <label class="input-group-text" for="dataScaleY">ScaleY</label>
+                                            </span>
+                                            <input type="text" class="form-control" id="dataScaleY" placeholder="scaleY">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="panel-footer" style="height: 65px;background-color: #fff !important;">
+                            <button class="btn btn-primary btn-wide" type="submit" style="float:right" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                SUBMIT
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<style>
+    .cropArea {
+        background: #E4E4E4;
+        overflow: hidden;
+        /*width: 500px;*/
+        height: 350px;
+    }
+</style>
+
+
+@*<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://fengyuanchen.github.io/shared/google-analytics.js" crossorigin="anonymous"></script>*@
+<script src="/lib/cropper-master/cropper-master/docs/js/cropper.js"></script>
+<script src="/lib/cropper-master/cropper-master/docs/js/main.js"></script>

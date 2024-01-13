@@ -1,0 +1,216 @@
+﻿
+<style>
+    .ng-confirm .ng-confirm-box div.ng-confirm-content-pane {
+        min-height: 700px !important;
+    }
+
+    .ng-confirm-box, .ng-confirm-hilight-shake, .ng-confirm-type-animated {
+        margin-top: 140px !important
+    }
+</style>
+
+
+<div class="col-md-12">
+    <div class="container-fluid container-fullw" ng-controller="app.views.storeOwner">
+        <form role="form" id="frmCountry" name="myForm" ng-submit="register(myForm)" ng-validate="validationOptions">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-white">
+                        <div class="panel-body" style="background-color: #fff;">
+
+                            <fieldset>
+                                <legend>
+                                    Personal Information
+                                </legend>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>
+                                                First Name
+                                            </label>
+                                            <input type="text" name="firstName" class="form-control" ng-model="GetadminStoresrOutputDto.firstName" placeholder="Enter your First Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Last Name
+                                            </label>
+                                            <input type="text" name="lastName" class="form-control" ng-model="GetadminStoresrOutputDto.lastName" placeholder="Enter your Last Name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>
+                                                Email
+                                            </label>
+                                            <input type="text" name="email" class="form-control" ng-model="GetadminStoresrOutputDto.email" placeholder="Enter your Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Mobile
+                                            </label>
+                                            <input type="text" name="mobile" class="form-control" ng-model="GetadminStoresrOutputDto.mobile" placeholder="Enter your Mobile">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>
+                                                Address 1
+                                            </label>
+                                            <textarea class="form-control autosize area-animated msd-elastic: \n; ng-pristine ng-valid ng-empty ng-touched" name="address1" ng-model="GetadminStoresrOutputDto.address1" style="overflow: hidden; overflow-wrap: break-word; resize: horizontal; height: 71px;"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Address 2
+                                            </label>
+                                            <textarea class="form-control autosize area-animated msd-elastic: \n; ng-pristine ng-valid ng-empty ng-touched" name="address2" ng-model="GetadminStoresrOutputDto.address2" style="overflow: hidden; overflow-wrap: break-word; resize: horizontal; height: 71px;"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>
+                                                Country
+                                            </label>
+                                            @*<p>Selected: {{person.selected}}</p>*@
+
+                                            <ui-select ng-model="GetadminStoresrOutputDto.con" name="country" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a person">
+                                                <ui-select-match placeholder="Select a country">{{$select.selected.countryName}}</ui-select-match>
+                                                <ui-select-choices repeat="person in Countries | propsFilter: {countryName: $select.search}">
+                                                    <div ng-bind-html="person.countryName | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <input type="text" ng-model="GetadminStoresrOutputDto.con" style="visibility:hidden;height:0px;padding: 0 !important;" name="country" class="form-control" placeholder="Enter your Country">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                State
+                                            </label>
+                                            @*<input type="text" ng-model="GetadminStoresrOutputDto.state" name="state" class="form-control" placeholder="Enter your State">*@
+                                            <ui-select ng-model="GetadminStoresrOutputDto.stat" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a person">
+                                                <ui-select-match placeholder="Select a state">{{$select.selected.stateName}}</ui-select-match>
+                                                <ui-select-choices repeat="person in States | propsFilter: {stateName: $select.search}">
+                                                    <div ng-bind-html="person.stateName | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <input type="text" ng-model="GetadminStoresrOutputDto.stat" style="visibility:hidden;height:0px;padding: 0 !important;" name="state" class="form-control" placeholder="Enter your state">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>
+                                                City
+                                            </label>
+                                            @*<input type="text" ng-model="GetadminStoresrOutputDto.city" name="city" class="form-control" placeholder="Enter your City">*@
+                                            <ui-select ng-model="GetadminStoresrOutputDto.cit" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a person">
+                                                <ui-select-match placeholder="Select a City">{{$select.selected.cityName}}</ui-select-match>
+                                                <ui-select-choices repeat="person in Cities | propsFilter: {cityName: $select.search}">
+                                                    <div ng-bind-html="person.cityName | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <input type="text" ng-model="GetadminStoresrOutputDto.cit" style="visibility:hidden;height:0px;padding: 0 !important;" name="city" class="form-control" placeholder="Enter your City">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Zip
+                                            </label>
+                                            <input type="text" ng-model="GetadminStoresrOutputDto.zipCode" name="zip" class="form-control" placeholder="Enter your Zip">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>
+                                                Currancy
+                                            </label>
+                                            @*<input type="text" ng-model="GetadminStoresrOutputDto.currancy" name="currancy" class="form-control" placeholder="Enter your Currancy">*@
+                                            <ui-select ng-model="GetadminStoresrOutputDto.cur" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a person">
+                                                <ui-select-match placeholder="Select a currancy">{{$select.selected.currency}}</ui-select-match>
+                                                <ui-select-choices repeat="person in Currancies | propsFilter: {currency: $select.search}">
+                                                    <div ng-bind-html="person.currency | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <input type="text" ng-model="GetadminStoresrOutputDto.cur" style="visibility:hidden;height:0px;padding: 0 !important;" name="currancy" class="form-control" placeholder="Enter your Currancy">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                TimeZone
+                                            </label>
+                                            @*<input type="text" ng-model="GetadminStoresrOutputDto.timeZone" name="timeZone" class="form-control" placeholder="Enter your TimeZone">*@
+                                            <ui-select ng-model="GetadminStoresrOutputDto.time" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a person">
+                                                <ui-select-match placeholder="Select a timeZone">{{$select.selected.name}}</ui-select-match>
+                                                <ui-select-choices repeat="person in TimeZones | propsFilter: {name: $select.search}">
+                                                    <div ng-bind-html="person.name | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <input type="text" ng-model="GetadminStoresrOutputDto.time" style="visibility:hidden;height:0px;padding: 0 !important;" name="timeZone" class="form-control" placeholder="Enter your TimeZone">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>
+                                                Outlet
+                                            </label>
+                                            <ui-select ng-model="GetadminStoresrOutputDto.out" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a person">
+                                                <ui-select-match placeholder="Select a outlet">{{$select.selected.outletName}}</ui-select-match>
+                                                <ui-select-choices repeat="person in Outlets | propsFilter: {currency: $select.search}">
+                                                    <div ng-bind-html="person.outletName | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <input type="text" ng-model="GetadminStoresrOutputDto.out" style="visibility:hidden;height:0px;padding: 0 !important;" name="outlet" class="form-control" placeholder="Enter your outlet">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                Register
+                                            </label>
+                                            <ui-select ng-model="GetadminStoresrOutputDto.reg" theme="select2" ng-disabled="" style="min-width: 100%;" title="Choose a person">
+                                                <ui-select-match placeholder="Select a register">{{$select.selected.registerName}}</ui-select-match>
+                                                <ui-select-choices repeat="person in Registers | propsFilter: {name: $select.search}">
+                                                    <div ng-bind-html="person.registerName | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                            <input type="text" ng-model="GetadminStoresrOutputDto.reg" style="visibility:hidden;height:0px;padding: 0 !important;" name="register" class="form-control" placeholder="Enter your register">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                        </div>
+                        <div class="panel-footer" style="height: 65px;background-color: #fff !important;">
+                            <button class="btn btn-primary btn-wide" type="submit" style="float:right" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                SUBMIT
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

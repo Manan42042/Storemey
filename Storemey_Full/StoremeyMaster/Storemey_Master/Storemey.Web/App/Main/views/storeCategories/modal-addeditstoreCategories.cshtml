@@ -1,0 +1,84 @@
+﻿<div ng-controller="app.views.modal-storeCategories">
+    <div style="background-color:#fbecb5;border-bottom:1px solid #c9cac4">
+        <div id="Closeicon" class="Closeicon" ng-click="cancelAddEdit()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="row">
+        <form role="form" id="frmCountry" name="myForm" ng-submit="register(frmCountry)" ng-validate="validationOptions">
+            <div>
+                <fieldset style="margin:5%">
+                    <legend>
+                        Add new category
+                    </legend>
+                    <div class="panel panel-white">
+                        <div class="panel-body">
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <div class="cropBox croppedBox">
+                                                        <div>
+                                                            <img ng-src="{{GetstoreCategoriesOutputDto.image}}" ng-click="openCropcatemodel()" style="width:100%;height:100%;" />
+                                                        </div>
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="btn btn-primary btn-file">
+                                                        Select an image file
+                                                        <input type="file" id="fileInput" size="5" accept="image/*">
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            Category Name
+                                        </label>
+                                        <input type="text" class="form-control" ng-model="GetstoreCategoriesOutputDto.categoryName" name="categoryName" placeholder="enter category name">
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">
+                                            Description
+                                        </label>
+                                        <input type="text" class="form-control" ng-model="GetstoreCategoriesOutputDto.description" name="description" placeholder="enter description">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">
+                                            Note
+                                        </label>
+                                        <textarea type="text" class="form-control" ng-model="GetstoreCategoriesOutputDto.note" placeholder="enter note" name="note"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary btn-wide" type="submit" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                Save
+                            </button>
+
+                            <button class="btn btn-default btn-wide" type="button" ng-click="cancelAddEdit()">
+                                Back
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>

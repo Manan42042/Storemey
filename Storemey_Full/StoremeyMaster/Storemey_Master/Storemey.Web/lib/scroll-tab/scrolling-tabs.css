@@ -1,0 +1,173 @@
+/**
+ * angular-bootstrap-scrolling-tabs
+ * @version v1.2.0
+ * @link https://github.com/mikejacobson/angular-bootstrap-scrolling-tabs
+ * @author Mike Jacobson <michaeljjacobson1@gmail.com>
+ * @license MIT License, http://www.opensource.org/licenses/MIT
+ */
+.scrtabs-tab-container * {
+  box-sizing: border-box; }
+
+.scrtabs-tab-container {
+  height: 42px; }
+
+.scrtabs-tab-container .tab-content {
+  clear: left; }
+
+.scrtabs-tab-wrapper-container.force-height {
+  height: 42px; }
+
+.scrtabs-tabs-fixed-container {
+    float: left;
+    height: 42px;
+    overflow: hidden;
+    width: 49vw !important;
+}
+
+.scrtabs-allow-scrollbar .scrtabs-tabs-fixed-container {
+  overflow-x: auto; }
+  .scrtabs-allow-scrollbar .scrtabs-tabs-fixed-container::-webkit-scrollbar {
+    display: none; }
+
+.scrtabs-tabs-movable-container {
+  position: relative; }
+
+.scrtabs-tabs-movable-container .tab-content {
+  display: none; }
+
+.scrtabs-tab-scroll-arrow {
+  border: 1px solid #dddddd;
+  border-top: none;
+  color: #428bca;
+  cursor: pointer;
+  display: none;
+  float: left;
+  font-size: 12px;
+  height: 42px;
+  margin-bottom: -1px;
+  padding-left: 2px;
+  padding-top: 13px;
+  width: 20px;
+  z-index:999;
+
+}
+  .scrtabs-tab-scroll-arrow:hover {
+    background-color: #eeeeee; }
+
+.scrtabs-tab-scroll-arrow--is-on-edge {
+  pointer-events: none;
+  opacity: .5; }
+
+.scrtabs-tabs-fixed-container ul.nav-tabs > li {
+    z-index: 999;
+    white-space: nowrap;
+    border: 1px solid #ddd !important;
+    height: 40px !important;
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    z-index: 999 !important;
+}
+
+
+.tab-content {
+    background-color: #FFFFFF;
+    position: relative !important;
+    height: 600px !important;
+}
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    .scrtabs-tabs-fixed-container {
+        width: 100vw !important;
+    }
+
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+    /* Styles */
+
+
+    .scrtabs-tabs-fixed-container {
+        width: 100vw !important;
+    }
+
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width :124px) {
+
+    .scrtabs-tabs-fixed-container {
+        width: 152px !important;
+    }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width :324px) {
+
+    .scrtabs-tabs-fixed-container {
+        width: 467PX !important;
+    }
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width :624px) {
+
+    .scrtabs-tabs-fixed-container {
+        width: 754PX !important;
+    }
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 924px) {
+
+    .scrtabs-tabs-fixed-container {
+        width: 486PX !important;
+    }
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+
+    .scrtabs-tabs-fixed-container {
+        width: 671PX !important;
+    }
+
+}
+
+@media only screen and (min-width : 1524px) {
+
+    .scrtabs-tabs-fixed-container {
+        width: 885PX !important;
+    }
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+
+    .scrtabs-tabs-fixed-container {
+        width: 951PX !important;
+    }
+
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+    /* Styles */
+}

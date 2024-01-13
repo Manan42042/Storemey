@@ -1,0 +1,957 @@
+﻿
+/* INSERT QUERY NO: 1 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Dateline Standard Time', '-12:00', 0
+);
+
+/* INSERT QUERY NO: 2 
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'UTC-11', '-11:00', 0
+);
+*/
+
+
+/* INSERT QUERY NO: 3 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Aleutian Standard Time', '-09:00', 1
+);
+
+/* INSERT QUERY NO: 4 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Hawaiian Standard Time', '-10:00', 0
+);
+
+/* INSERT QUERY NO: 5 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Marquesas Standard Time', '-09:30', 0
+);
+
+/* INSERT QUERY NO: 6 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Alaskan Standard Time', '-08:00', 1
+);
+
+/* INSERT QUERY NO: 7 
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'UTC-09', '-09:00', 0
+);
+*/
+
+/* INSERT QUERY NO: 8 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Pacific Standard Time (Mexico)', '-07:00', 1
+);
+
+/* INSERT QUERY NO: 9 
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'UTC-08', '-08:00', 0
+);
+
+*/
+
+/* INSERT QUERY NO: 10 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Pacific Standard Time', '-07:00', 1
+);
+
+/* INSERT QUERY NO: 11 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'US Mountain Standard Time', '-07:00', 0
+);
+
+/* INSERT QUERY NO: 12 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Mountain Standard Time (Mexico)', '-06:00', 1
+);
+
+/* INSERT QUERY NO: 13 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Mountain Standard Time', '-06:00', 1
+);
+
+/* INSERT QUERY NO: 14 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Central America Standard Time', '-06:00', 0
+);
+
+/* INSERT QUERY NO: 15 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Central Standard Time', '-05:00', 1
+);
+
+/* INSERT QUERY NO: 16 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Easter Island Standard Time', '-05:00', 1
+);
+
+/* INSERT QUERY NO: 17 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Central Standard Time (Mexico)', '-05:00', 1
+);
+
+/* INSERT QUERY NO: 18 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Canada Central Standard Time', '-06:00', 0
+);
+
+/* INSERT QUERY NO: 19 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'SA Pacific Standard Time', '-05:00', 0
+);
+
+/* INSERT QUERY NO: 20 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Eastern Standard Time (Mexico)', '-05:00', 0
+);
+
+/* INSERT QUERY NO: 21 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Eastern Standard Time', '-04:00', 1
+);
+
+/* INSERT QUERY NO: 22 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Haiti Standard Time', '-04:00', 1
+);
+
+/* INSERT QUERY NO: 23 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Cuba Standard Time', '-04:00', 1
+);
+
+/* INSERT QUERY NO: 24 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'US Eastern Standard Time', '-04:00', 1
+);
+
+/* INSERT QUERY NO: 25 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Paraguay Standard Time', '-04:00', 0
+);
+
+/* INSERT QUERY NO: 26 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Atlantic Standard Time', '-03:00', 1
+);
+
+/* INSERT QUERY NO: 27 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Venezuela Standard Time', '-04:00', 0
+);
+
+/* INSERT QUERY NO: 28 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Central Brazilian Standard Time', '-04:00', 0
+);
+
+/* INSERT QUERY NO: 29 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'SA Western Standard Time', '-04:00', 0
+);
+
+/* INSERT QUERY NO: 30 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Pacific SA Standard Time', '-03:00', 1
+);
+
+/* INSERT QUERY NO: 31 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Turks And Caicos Standard Time', '-04:00', 0
+);
+
+/* INSERT QUERY NO: 32 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Newfoundland Standard Time', '-02:30', 1
+);
+
+/* INSERT QUERY NO: 33 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Tocantins Standard Time', '-03:00', 0
+);
+
+/* INSERT QUERY NO: 34 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'E. South America Standard Time', '-03:00', 0
+);
+
+/* INSERT QUERY NO: 35 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'SA Eastern Standard Time', '-03:00', 0
+);
+
+/* INSERT QUERY NO: 36 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Argentina Standard Time', '-03:00', 0
+);
+
+/* INSERT QUERY NO: 37 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Greenland Standard Time', '-02:00', 1
+);
+
+/* INSERT QUERY NO: 38 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Montevideo Standard Time', '-03:00', 0
+);
+
+/* INSERT QUERY NO: 39 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Magallanes Standard Time', '-03:00', 0
+);
+
+/* INSERT QUERY NO: 40 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Saint Pierre Standard Time', '-02:00', 1
+);
+
+/* INSERT QUERY NO: 41 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Bahia Standard Time', '-03:00', 0
+);
+
+/* INSERT QUERY NO: 42 
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'UTC-02', '-02:00', 0
+);
+
+*/
+
+
+/* INSERT QUERY NO: 43 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Mid-Atlantic Standard Time', '-01:00', 1
+);
+
+/* INSERT QUERY NO: 44 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Azores Standard Time', '+00:00', 1
+);
+
+/* INSERT QUERY NO: 45 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Cape Verde Standard Time', '-01:00', 0
+);
+
+/* INSERT QUERY NO: 46 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'UTC', '+00:00', 0
+);
+
+/* INSERT QUERY NO: 47 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Morocco Standard Time', '+01:00', 1
+);
+
+/* INSERT QUERY NO: 48 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'GMT Standard Time', '+01:00', 1
+);
+
+/* INSERT QUERY NO: 49 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Greenwich Standard Time', '+00:00', 0
+);
+
+/* INSERT QUERY NO: 50 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'W. Europe Standard Time', '+02:00', 1
+);
+
+/* INSERT QUERY NO: 51 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Central Europe Standard Time', '+02:00', 1
+);
+
+/* INSERT QUERY NO: 52 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Romance Standard Time', '+02:00', 1
+);
+
+/* INSERT QUERY NO: 53 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Central European Standard Time', '+02:00', 1
+);
+
+/* INSERT QUERY NO: 54 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'W. Central Africa Standard Time', '+01:00', 0
+);
+
+/* INSERT QUERY NO: 55 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Namibia Standard Time', '+01:00', 0
+);
+
+/* INSERT QUERY NO: 56 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Jordan Standard Time', '+03:00', 1
+);
+
+/* INSERT QUERY NO: 57 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'GTB Standard Time', '+03:00', 1
+);
+
+/* INSERT QUERY NO: 58 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Middle East Standard Time', '+03:00', 1
+);
+
+/* INSERT QUERY NO: 59 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Egypt Standard Time', '+02:00', 0
+);
+
+/* INSERT QUERY NO: 60 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'E. Europe Standard Time', '+03:00', 1
+);
+
+/* INSERT QUERY NO: 61 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Syria Standard Time', '+03:00', 1
+);
+
+/* INSERT QUERY NO: 62 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'West Bank Standard Time', '+03:00', 1
+);
+
+/* INSERT QUERY NO: 63 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'South Africa Standard Time', '+02:00', 0
+);
+
+/* INSERT QUERY NO: 64 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'FLE Standard Time', '+03:00', 1
+);
+
+/* INSERT QUERY NO: 65 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Israel Standard Time', '+03:00', 1
+);
+
+/* INSERT QUERY NO: 66 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Kaliningrad Standard Time', '+02:00', 0
+);
+
+/* INSERT QUERY NO: 67 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Libya Standard Time', '+02:00', 0
+);
+
+/* INSERT QUERY NO: 68 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Arabic Standard Time', '+03:00', 0
+);
+
+/* INSERT QUERY NO: 69 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Turkey Standard Time', '+03:00', 0
+);
+
+/* INSERT QUERY NO: 70 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Arab Standard Time', '+03:00', 0
+);
+
+/* INSERT QUERY NO: 71 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Belarus Standard Time', '+03:00', 0
+);
+
+/* INSERT QUERY NO: 72 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Russian Standard Time', '+03:00', 0
+);
+
+/* INSERT QUERY NO: 73 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'E. Africa Standard Time', '+03:00', 0
+);
+
+/* INSERT QUERY NO: 74 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Iran Standard Time', '+04:30', 1
+);
+
+/* INSERT QUERY NO: 75 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Arabian Standard Time', '+04:00', 0
+);
+
+/* INSERT QUERY NO: 76 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Astrakhan Standard Time', '+04:00', 0
+);
+
+/* INSERT QUERY NO: 77 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Azerbaijan Standard Time', '+04:00', 0
+);
+
+/* INSERT QUERY NO: 78 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Russia Time Zone 3', '+04:00', 0
+);
+
+/* INSERT QUERY NO: 79 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Mauritius Standard Time', '+04:00', 0
+);
+
+/* INSERT QUERY NO: 80 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Saratov Standard Time', '+04:00', 0
+);
+
+/* INSERT QUERY NO: 81 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Georgian Standard Time', '+04:00', 0
+);
+
+/* INSERT QUERY NO: 82 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Caucasus Standard Time', '+04:00', 0
+);
+
+/* INSERT QUERY NO: 83 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Afghanistan Standard Time', '+04:30', 0
+);
+
+/* INSERT QUERY NO: 84 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'West Asia Standard Time', '+05:00', 0
+);
+
+/* INSERT QUERY NO: 85 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Ekaterinburg Standard Time', '+05:00', 0
+);
+
+/* INSERT QUERY NO: 86 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Pakistan Standard Time', '+05:00', 0
+);
+
+/* INSERT QUERY NO: 87 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'India Standard Time', '+05:30', 0
+);
+
+/* INSERT QUERY NO: 88 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Sri Lanka Standard Time', '+05:30', 0
+);
+
+/* INSERT QUERY NO: 89 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Nepal Standard Time', '+05:45', 0
+);
+
+/* INSERT QUERY NO: 90 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Central Asia Standard Time', '+06:00', 0
+);
+
+/* INSERT QUERY NO: 91 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Bangladesh Standard Time', '+06:00', 0
+);
+
+/* INSERT QUERY NO: 92 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Omsk Standard Time', '+06:00', 0
+);
+
+/* INSERT QUERY NO: 93 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Myanmar Standard Time', '+06:30', 0
+);
+
+/* INSERT QUERY NO: 94 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'SE Asia Standard Time', '+07:00', 0
+);
+
+/* INSERT QUERY NO: 95 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Altai Standard Time', '+07:00', 0
+);
+
+/* INSERT QUERY NO: 96 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'W. Mongolia Standard Time', '+07:00', 0
+);
+
+/* INSERT QUERY NO: 97 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'North Asia Standard Time', '+07:00', 0
+);
+
+/* INSERT QUERY NO: 98 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'N. Central Asia Standard Time', '+07:00', 0
+);
+
+/* INSERT QUERY NO: 99 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Tomsk Standard Time', '+07:00', 0
+);
+
+/* INSERT QUERY NO: 100 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'China Standard Time', '+08:00', 0
+);
+
+/* INSERT QUERY NO: 101 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'North Asia East Standard Time', '+08:00', 0
+);
+
+/* INSERT QUERY NO: 102 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Singapore Standard Time', '+08:00', 0
+);
+
+/* INSERT QUERY NO: 103 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'W. Australia Standard Time', '+08:00', 0
+);
+
+/* INSERT QUERY NO: 104 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Taipei Standard Time', '+08:00', 0
+);
+
+/* INSERT QUERY NO: 105 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Ulaanbaatar Standard Time', '+08:00', 0
+);
+
+/* INSERT QUERY NO: 106 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'North Korea Standard Time', '+08:30', 0
+);
+
+/* INSERT QUERY NO: 107 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Aus Central W. Standard Time', '+08:45', 0
+);
+
+/* INSERT QUERY NO: 108 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Transbaikal Standard Time', '+09:00', 0
+);
+
+/* INSERT QUERY NO: 109 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Tokyo Standard Time', '+09:00', 0
+);
+
+/* INSERT QUERY NO: 110 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Korea Standard Time', '+09:00', 0
+);
+
+/* INSERT QUERY NO: 111 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Yakutsk Standard Time', '+09:00', 0
+);
+
+/* INSERT QUERY NO: 112 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Cen. Australia Standard Time', '+09:30', 0
+);
+
+/* INSERT QUERY NO: 113 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'AUS Central Standard Time', '+09:30', 0
+);
+
+/* INSERT QUERY NO: 114 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'E. Australia Standard Time', '+10:00', 0
+);
+
+/* INSERT QUERY NO: 115 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'AUS Eastern Standard Time', '+10:00', 0
+);
+
+/* INSERT QUERY NO: 116 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'West Pacific Standard Time', '+10:00', 0
+);
+
+/* INSERT QUERY NO: 117 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Tasmania Standard Time', '+10:00', 0
+);
+
+/* INSERT QUERY NO: 118 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Vladivostok Standard Time', '+10:00', 0
+);
+
+/* INSERT QUERY NO: 119 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Lord Howe Standard Time', '+10:30', 0
+);
+
+/* INSERT QUERY NO: 120 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Bougainville Standard Time', '+11:00', 0
+);
+
+/* INSERT QUERY NO: 121 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Russia Time Zone 10', '+11:00', 0
+);
+
+/* INSERT QUERY NO: 122 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Magadan Standard Time', '+11:00', 0
+);
+
+/* INSERT QUERY NO: 123 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Norfolk Standard Time', '+11:00', 0
+);
+
+/* INSERT QUERY NO: 124 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Sakhalin Standard Time', '+11:00', 0
+);
+
+/* INSERT QUERY NO: 125 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Central Pacific Standard Time', '+11:00', 0
+);
+
+/* INSERT QUERY NO: 126 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Russia Time Zone 11', '+12:00', 0
+);
+
+/* INSERT QUERY NO: 127 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'New Zealand Standard Time', '+12:00', 0
+);
+
+/* INSERT QUERY NO: 128 
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'UTC+12', '+12:00', 0
+);
+
+*/
+
+/* INSERT QUERY NO: 129 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Fiji Standard Time', '+12:00', 0
+);
+
+/* INSERT QUERY NO: 130 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Kamchatka Standard Time', '+13:00', 1
+);
+
+/* INSERT QUERY NO: 131 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Chatham Islands Standard Time', '+12:45', 0
+);
+
+/* INSERT QUERY NO: 132 
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'UTC+13', '+13:00', 0
+);
+*/
+
+/* INSERT QUERY NO: 133 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Tonga Standard Time', '+13:00', 0
+);
+
+/* INSERT QUERY NO: 134 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Samoa Standard Time', '+13:00', 0
+);
+
+/* INSERT QUERY NO: 135 */
+INSERT INTO storeTimeZones(name, current_utc_offset, is_currently_dst)
+VALUES
+(
+'Line Islands Standard Time', '+14:00', 0
+);
+

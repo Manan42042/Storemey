@@ -1,0 +1,50 @@
+﻿<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+    @*<h4 class="mainTitle no-margin" translate="dashboard.WELCOME" translate-values="{ appName: app.name }">Welcome to Packet</h4>*@
+    <h4 class="mainTitle no-margin">Home | Welcome to Storemey</h4>
+    @*<span class="mainDescription"> POS </span>*@
+    @*<div ncy-breadcrumb class="pull-right"></div>*@
+</div>
+<!-- end: BREADCRUMB -->
+<style>
+    .ng-confirm .ng-confirm-box div.ng-confirm-content-pane {
+        min-height: 700px !important;
+    }
+
+    .ng-confirm-box, .ng-confirm-hilight-shake, .ng-confirm-type-animated {
+        margin-top: 140px !important
+    }
+</style>
+<div class="col-md-12">
+    <div class="container-fluid container-fullw" ng-controller="app.views.homepage">
+        <form role="form" id="frmCountry" name="myForm" ng-submit="register(myForm)" ng-validate="validationOptions">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-white">
+                        <div class="panel-body" style="background-color: #fff;">
+
+                            @*<button type="button" class="btn btn-lg btn-primary" ng-click="aside()">
+                                Click to toggle aside
+                                <br>
+                                <small>(using an object)</small>
+                            </button>*@
+
+                            <button type="button" class="btn btn-lg btn-primary" ng-click="aside2()">
+                                Click to toggle aside
+                                <br>
+                                <small>(using an object)</small>
+                            </button>
+
+
+                        </div>
+                        @*<div class="panel-footer" style="height: 65px;background-color: #fff !important;">
+                            <button class="btn btn-primary btn-wide" type="submit" style="float:right" ng-disabled="myForm.$invalid" ng-click="saveAddEdit(this)">
+                                SUBMIT
+                            </button>
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
